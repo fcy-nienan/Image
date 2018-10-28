@@ -22,7 +22,6 @@ import java.util.StringTokenizer;
 public class WordCount{
     public static void main(String[] args) throws Exception {
         MapReduce();
-
     }
     public static void MapReduce()throws Exception{
         Configuration conf = new Configuration();

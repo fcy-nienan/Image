@@ -11,11 +11,13 @@ class HelloWorld {
     println("test")
     ssc.stop();
     test3(_*2);
+
   }
   def test1(x:Int):Int= 4;
   def test2(x:Int):Int=test1(3);
   def test3(x:(Double)=>Double)=x(4);
   def test4[K]={
+    test t=new test(1,2,3);
 
   }
   def test5:Int={
@@ -41,5 +43,11 @@ class C extends{
   override val count=5;
 }with A{
 
+}
+class test(
+  val t1:Int,
+  val t2:Int,
+  val t3:Int
+)extends B{
 }
 

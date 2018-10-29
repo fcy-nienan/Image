@@ -1,17 +1,16 @@
 package com.fcy.BigData.Scala
-
-import java.util
-import java.util.Iterator
-
 import org.apache.spark.SparkConf
-import org.apache.spark.api.java.function.FlatMapFunction
-import org.apache.spark.SparkContext._
 import org.apache.spark.SparkContext
+import org.apache.spark.rdd.RDD
 
 
 object BootStrap {
   def main(args:Array[String]):Unit={
     val context:SparkContext=sc
+    RDD
+
+
+
     val path:String="G:\\words.txt"
     val rdd=context.textFile(path)
     println(rdd.getNumPartitions)
@@ -19,6 +18,7 @@ object BootStrap {
       .map((_, 1)).reduceByKey(_+_)
       .collect()
       .foreach(println)
+//    rdd.flatMap(e=>e.split(" ")).map((_,1)).reduceByKey(_+_).collect().foreach(println);
   }
   def flatmap1()={
     val li = List(1,2,3)

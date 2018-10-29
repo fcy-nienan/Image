@@ -21,7 +21,7 @@ class HelloWorld {
   def test5:Int={
     val a=new A;
 
-    6
+    return 6
   }
 }
 class A{

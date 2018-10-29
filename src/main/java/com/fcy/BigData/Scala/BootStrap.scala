@@ -19,7 +19,6 @@ object BootStrap {
       .map((_, 1)).reduceByKey(_+_)
       .collect()
       .foreach(println)
-//    rdd.flatMap(e=>e.split(" ")).map((_,1)).reduceByKey(_+_).collect().foreach(println);
   }
   def flatmap1()={
     val li = List(1,2,3)

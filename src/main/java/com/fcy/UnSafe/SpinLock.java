@@ -15,7 +15,7 @@ public class SpinLock {
     public static void lock(){
         Thread t=Thread.currentThread();
         while(!signal.compareAndSet(null,t)){
-            System.out.println(t.getName()+"获取锁自旋中");
+
         }
     }
     public static void unlock(){
@@ -26,18 +26,13 @@ public class SpinLock {
         long id=Thread.currentThread().getId();
         String name=Thread.currentThread().getName();
         while(!integer.compareAndSet(0,id)){
-            System.out.println(id+"获取锁自旋中");
         }
-        System.out.println(id+"获取成功!");
-
     }
     public static void intunlock(){
         long id=Thread.currentThread().getId();
         String name=Thread.currentThread().getName();
         while(!integer.compareAndSet(id,0)){
-            System.out.println(id+"获取锁自旋中");
         }
-        System.out.println(id+"释放成功!");
     }
 
     public static void main(String[] args) throws InterruptedException {

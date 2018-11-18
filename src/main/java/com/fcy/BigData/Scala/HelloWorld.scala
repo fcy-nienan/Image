@@ -17,7 +17,6 @@ class HelloWorld {
   def test2(x:Int):Int=test1(3);
   def test3(x:(Double)=>Double)=x(4);
   def test4[K]={
-    test t=new test(1,2,3);
 
   }
   def test5:Int={

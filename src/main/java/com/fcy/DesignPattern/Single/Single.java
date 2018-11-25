@@ -2,11 +2,13 @@ package com.fcy.DesignPattern.Single;
 
 public class Single {
     private static Single single;
+//    最简单的单例模式,多线程不安全
     public static Single getSingle(){
         if(single==null)
             single=new Single();
         return single;
     }
+//    多线程安全,但每次获取都需要去获取锁
     public static Single getSingle1(){
         synchronized(Single.class){
             if(single==null){
@@ -15,6 +17,7 @@ public class Single {
         }
         return single;
     }
+//    多线程不一定安全,原理同下
     public static Single getSingle2(){
         if(single==null){
             synchronized (Single.class){

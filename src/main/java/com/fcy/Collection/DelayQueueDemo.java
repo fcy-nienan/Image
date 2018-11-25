@@ -21,7 +21,7 @@ public class DelayQueueDemo {
     public static void testDelayQueue() throws InterruptedException {
         DelayQueue queue=new DelayQueue();
         for(int i=0;i<10;i++){
-            queue.add(new user(5000,i,i+"fcy"));
+            queue.add(new user(50000000,i,i+"fcy"));
         }
         System.out.println(queue.peek());
         System.out.println(queue.poll());
@@ -45,7 +45,7 @@ public class DelayQueueDemo {
         }
         @Override
         public long getDelay(TimeUnit unit) {
-            return unit.convert(this.expire-System.currentTimeMillis(),TimeUnit.MILLISECONDS);
+            return unit.convert(this.expire-System.currentTimeMillis(),unit);
         }
         @Override
         public int compareTo(Delayed o) {

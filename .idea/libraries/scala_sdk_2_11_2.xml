@@ -1,12 +1,5 @@
 <component name="libraryTable">
-  <library name="scala-sdk-2.11.2" type="Scala">
-    <properties>
-      <compiler-classpath>
-        <root url="file://D:/Language/Scala/lib/scala-compiler.jar" />
-        <root url="file://D:/Language/Scala/lib/scala-library.jar" />
-        <root url="file://D:/Language/Scala/lib/scala-reflect.jar" />
-      </compiler-classpath>
-    </properties>
+  <library name="scala-sdk-2.11.2">
     <CLASSES>
       <root url="jar://D:/Language/Scala/lib/scala-actors-2.11.0.jar!/" />
       <root url="jar://D:/Language/Scala/lib/scala-actors-migration_2.11-1.1.0.jar!/" />

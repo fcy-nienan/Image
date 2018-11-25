@@ -7,7 +7,6 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SubjectThread{
-    private AtomicInteger integer=new AtomicInteger(0);
     private volatile int state=0;
     private CyclicBarrier barrier;
     private volatile boolean flag=false;
@@ -18,7 +17,7 @@ public class SubjectThread{
         this.flag = flag;
     }
     private List<ObserverThread> all=new ArrayList<>();
-    public void addobserver(ObserverThread observerThread){
+    public void addObserver(ObserverThread observerThread){
         observerThread.setSubjectThread(this);
         all.add(observerThread);
     }
@@ -32,7 +31,6 @@ public class SubjectThread{
         try {
             barrier.await();
             System.out.print(id+":seted"+barrier.getParties());
-//            System.out.print("set flag to false");
             this.flag=false;
         } catch (InterruptedException e) {
             e.printStackTrace();

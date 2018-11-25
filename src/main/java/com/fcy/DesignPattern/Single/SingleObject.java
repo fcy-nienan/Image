@@ -49,6 +49,11 @@ public class SingleObject {
         return obj;
     }
 //    只有真正调用getInnerObject方法时才会加载并初始化该静态内部类
+//    使用的是类初始化阶段保证只初始化一次
+    /*
+    * 内部类是和外部类同时存在的
+    * 静态内部类并不是,它是可以单独存在了,只有在使用的时候才初始化
+    * */
     public static Object getInnerObject(){
         return inner.instance;
     }

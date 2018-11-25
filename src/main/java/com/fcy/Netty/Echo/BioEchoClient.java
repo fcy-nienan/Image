@@ -28,13 +28,16 @@ public class BioEchoClient {
         reconnect();
         int x=0;
         String msg;
+        int readCount=0;
         while(true){
             Thread.sleep(3000);
             try {
                 beforeWrite();
                 writer.write("Hello World:"+x);
+                writer.newLine();
                 writer.flush();
                 writeCompleted();
+//                writer.close();
                 x++;
                 beforeRead();
                 while((msg=reader.readLine())!=null){
@@ -42,7 +45,10 @@ public class BioEchoClient {
                 }
                 readCompleted();
             }catch(SocketTimeoutException ee){
+                readCount++;
                 System.out.println("Exception:"+ee.getMessage());
+                if (readCount>5)
+                    reconnect();
             } catch (Exception e) {
                 System.out.println(e.getClass().getSimpleName()+e.getMessage());
                 reconnect();
@@ -58,7 +64,7 @@ public class BioEchoClient {
             socket.setTcpNoDelay(true);//send立刻发送，不缓存，关闭Negale算法
             socket.setKeepAlive(true);
             socket.setReuseAddress(true);
-            socket.setSoLinger(true,1);//调用close时3秒后关闭底层socket
+            socket.setSoLinger(true,3);//调用close时3秒后关闭底层socket
             socket.connect(new InetSocketAddress("localhost",8889));
             reader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
             writer=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
@@ -76,13 +82,15 @@ public class BioEchoClient {
     public static void beforeWrite(){
         System.out.println("before write...");
     }
-    public static void writeCompleted(){
+    public static void writeCompleted() throws IOException {
         System.out.println("write completed...");
+        writer.close();
     }
     public static void beforeRead(){
         System.out.println("before read...");
     }
-    public static void readCompleted(){
+    public static void readCompleted() throws IOException {
         System.out.println("read completed...");
+        reader.close();
     }
 }

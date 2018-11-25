@@ -13,9 +13,9 @@ public class BootStrapThread {
         ObserverThread t2=new ObserverThread();
         ObserverThread t3=new ObserverThread();
 
-        subjectThread.addobserver(t1);
-        subjectThread.addobserver(t2);
-        subjectThread.addobserver(t3);
+        subjectThread.addObserver(t1);
+        subjectThread.addObserver(t2);
+        subjectThread.addObserver(t3);
 
         service.submit(t1);
         service.submit(t2);

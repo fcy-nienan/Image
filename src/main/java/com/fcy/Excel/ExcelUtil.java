@@ -1,16 +1,16 @@
 package com.fcy.Excel;
 
+import org.apache.commons.lang.time.DateUtils;
+import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @descripiton:
@@ -26,12 +26,81 @@ public class ExcelUtil {
         for(int i=0;i<10;i++){
             Map<String,Object> map=new HashMap<>();
             for(int j=0;j<headList.length;j++){
-                map.put(headList[j],"fcy");
+                map.put(headList[j],"fcy"+i+":"+j);
             }
             dataList.add(map);
         }
         createExcel(excel_name,headList,fieldList,dataList);
+
+        File file=new File(excel_name);
+        FileInputStream outputStream=new FileInputStream(file);
+        List<List<Object>> lists=readExcel(outputStream);
+        System.out.println(lists);
+        lists.forEach(e->{
+            e.forEach(j->{
+                System.out.println(j);
+            });
+        });
     }
+    /**
+     * 要求excel版本在2007以上
+     *
+     * @param fileInputStream 文件信息
+     * @return
+     * @throws Exception
+     */
+    public static List<List<Object>> readExcel(FileInputStream fileInputStream) throws Exception {
+        List<List<Object>> list = new LinkedList<List<Object>>();
+        XSSFWorkbook xwb = new XSSFWorkbook(fileInputStream);
+        // 读取第一张表格内容
+        XSSFSheet sheet = xwb.getSheetAt(0);
+        XSSFRow row = null;
+        XSSFCell cell = null;
+        for (int i = (sheet.getFirstRowNum() + 1); i <= (sheet.getPhysicalNumberOfRows() - 1); i++) {
+            row = sheet.getRow(i);
+            if (row == null) {
+                continue;
+            }
+            List<Object> linked = new LinkedList<Object>();
+            for (int j = row.getFirstCellNum(); j <= row.getLastCellNum(); j++) {
+                Object value = null;
+                cell = row.getCell(j);
+                if (cell == null) {
+                    continue;
+                }
+                switch (cell.getCellType()) {
+                    case XSSFCell.CELL_TYPE_STRING:
+                        value = cell.getStringCellValue();
+                        break;
+                    case XSSFCell.CELL_TYPE_NUMERIC:
+                        if ("yyyy\"年\"m\"月\"d\"日\";@".equals(cell.getCellStyle().getDataFormatString())) {
+                            System.out.println(cell.getNumericCellValue()+":日期格式："+cell.getCellStyle().getDataFormatString());
+//                            value = DateUtils.getMillis(HSSFDateUtil.getJavaDate(cell.getNumericCellValue())) / 1000;
+                        } else {
+                            //System.out.println(cell.getNumericCellValue()+":格式："+cell.getCellStyle().getDataFormatString());
+                            value = cell.getNumericCellValue();
+                        }
+                        break;
+                    case XSSFCell.CELL_TYPE_BOOLEAN:
+                        value = cell.getBooleanCellValue();
+                        break;
+                    case XSSFCell.CELL_TYPE_BLANK:
+                        break;
+                    default:
+                        value = cell.toString();
+                }
+                if (value != null && !value.equals("")) {
+                    //单元格不为空，则加入列表
+                    linked.add(value);
+                }
+            }
+            if (linked.size()!= 0) {
+                list.add(linked);
+            }
+        }
+        return list;
+    }
+
     public static void createExcel(String excel_name, String[] headList,
                                    String[] fieldList, List<Map<String, Object>> dataList)
             throws Exception {

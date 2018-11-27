@@ -2,6 +2,8 @@ package com.fcy.Excel;
 
 import org.apache.commons.lang.time.DateUtils;
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -10,6 +12,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -19,15 +22,18 @@ import java.util.*;
  */
 public class ExcelUtil {
     public static void main(String[] args) throws Exception {
+        SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
         String excel_name="D:\\user.xlsx";
-        String[] headList=new String[]{"username","password","email","phone"};
-        String[] fieldList=new String[]{"username","password","email","phone"};
+        String[] headList=new String[]{"姓名","密码","邮箱","电话号码","出生日期"};
+        String[] fieldList=new String[]{"username","password","email","phone","birth"};
         List<Map<String,Object>> dataList=new ArrayList<>();
         for(int i=0;i<10;i++){
             Map<String,Object> map=new HashMap<>();
-            for(int j=0;j<headList.length;j++){
-                map.put(headList[j],"fcy"+i+":"+j);
-            }
+            map.put("username","fcy"+i);
+            map.put("password","521314"+i);
+            map.put("email","807715333@qq.com");
+            map.put("phone","18279516912");
+            map.put("birth",dateFormat.format(new Date()));
             dataList.add(map);
         }
         createExcel(excel_name,headList,fieldList,dataList);
@@ -56,6 +62,22 @@ public class ExcelUtil {
         XSSFSheet sheet = xwb.getSheetAt(0);
         XSSFRow row = null;
         XSSFCell cell = null;
+
+
+        System.out.println(sheet.getFirstRowNum());
+        System.out.println(sheet.getLastRowNum());
+        System.out.println(sheet.getPhysicalNumberOfRows());
+        Iterator iterator=sheet.iterator();
+        while(iterator.hasNext()){
+            Row row1= (Row) iterator.next();
+            Iterator iterator1=row1.cellIterator();
+            while(iterator1.hasNext()){
+                Cell cell1= (Cell) iterator1.next();
+                System.out.println(cell1.getStringCellValue());
+            }
+        }
+
+
         for (int i = (sheet.getFirstRowNum() + 1); i <= (sheet.getPhysicalNumberOfRows() - 1); i++) {
             row = sheet.getRow(i);
             if (row == null) {

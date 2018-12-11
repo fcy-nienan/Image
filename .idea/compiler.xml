@@ -12,4 +12,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8" />
   </component>
+  <component name="SbtSettings">
+    <option name="sbtLauncherJarPath" value="D:/Build/scala/sbt/bin/sbt-launch.jar" />
+    <option name="useApplicationSettings" value="false" />
+  </component>
 </project>

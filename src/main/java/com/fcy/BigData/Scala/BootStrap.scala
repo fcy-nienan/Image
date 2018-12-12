@@ -7,7 +7,6 @@ import org.apache.spark.rdd.RDD
 object BootStrap {
   def main(args:Array[String]):Unit={
     val context:SparkContext=sc
-    RDD
 
 
 

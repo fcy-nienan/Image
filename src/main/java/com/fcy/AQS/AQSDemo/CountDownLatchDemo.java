@@ -10,6 +10,9 @@ import java.util.concurrent.locks.ReentrantLock;
 * 则终止等待
 *
 * CountDownLatch.countDown()只是将计数器减一,他并不会阻塞当前线程
+* 相当于一个人告诉多个人去做一件事,然后等待结果,做事的人做完了之后就调用countDown方法,这个方法相当于只
+* 做一个标记,然后又去干自己的事了
+* 也就是说这个方法并不会阻塞当前线程
 *
 * CountDownLatch内部使用AQS，状态值为传入的参数
 * 每次countDown的时候减一

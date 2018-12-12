@@ -15,10 +15,10 @@ import java.util.concurrent.*;
  */
 public class BaseNet {
     private static ConcurrentHashMap<Long,ProcessNumber> hashMap=new ConcurrentHashMap<>();
-    private static int cycleCount=8000;
-    private static int threadCount=25;
-    private static final int coreSize=threadCount+5;
-    private static final int maxSize=coreSize+5;
+    private static int cycleCount=8000;//循环次数
+    private static int threadCount=21;//线程总数
+    private static final int coreSize=threadCount+5;//线程池核心线程数
+    private static final int maxSize=coreSize+5;//线程池最大线程数
     public static Long init(){
         return 0l;
     }
@@ -31,12 +31,13 @@ public class BaseNet {
             Future future=executor.submit(new Callable<Long>() {
                 @Override
                 public Long call() throws Exception {
-                    long si=wagnyi();
+                    long si=wagnyi();//获取整个html页面大小
                     long id=Thread.currentThread().getId();
                     hashMap.put(id,new ProcessNumber(0,si*cycleCount));
                     countDownLatch.countDown();
+                    System.out.println("stat");
                     Long sum=new Long(0);
-                    for(int i=0;i<cycleCount;i++){
+                    for(int i=0;i<cycleCount;i++){//循环多次
                         wagnyi();
                     }
                     return sum;
@@ -50,7 +51,7 @@ public class BaseNet {
     public static long wagnyi() throws IOException {
         Random random=new Random();
         int ran=random.nextInt(threadCount);
-        URL url=new URL("https://music.163.com/#/user/fans?id=97526496");
+        URL url=new URL("https://music.163.com/#/discover/toplist");
         URLConnection connection=url.openConnection();
         InputStream inputStream=connection.getInputStream();
         BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));
@@ -120,7 +121,8 @@ public class BaseNet {
 // .append("/")
 // .append(totalSum).append("---")
                 .append(numberFormat.format(percentage))
-                .append(totalPart/1024/1024/1024).append("GB");
+                .append(totalPart/1024/1024/1024).append("GB")
+                .append(totalPart/1024/2014).append("MB");
         System.out.print(stringBuilder);
     }
 }

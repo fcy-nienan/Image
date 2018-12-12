@@ -44,8 +44,6 @@ public class QuickSort{
          int start = low;
          int end = high;
          int key = a[low];
-         
-         
          while(end>start){
              //�Ӻ���ǰ�Ƚ�
              while(end>start&&a[end]>=key)  //���û�бȹؼ�ֵС�ģ��Ƚ���һ����ֱ���бȹؼ�ֵС�Ľ���λ�ã�Ȼ���ִ�ǰ����Ƚ�
@@ -81,6 +79,24 @@ public class QuickSort{
 		 //ΪʲôҪstart>low��,��Ϊһ��ѭ���ȽϽ�����start-1���������ߵ�С����ĳ���,���ó��ȵ���ԭ�����lowʱ˵������Ѿ��������
          if(end!=high) sort(a,start+1,high);//�ұ����С��ӹؼ�ֵ����+1�����һ��
 		 //ͬ��,��end����ԭ�����highʱ˵���ұ����������
+     }
+     public static void quickSort1(int[] data,int start,int end){
+         int low=start,high=end;
+         int key=data[low];
+         while (low<high){
+             while (low<high&&data[low]<=key)
+                 low++;
+             while (low<high&&data[high]>key){
+                 high--;
+             }
+             if (low<high){
+                 int tmp=data[low];
+                 data[low]=data[high];
+                 data[high]=tmp;
+             }
+         }
+         quickSort1(data,start,low-1);
+
      }
      
 }

@@ -2,6 +2,8 @@ package com.fcy.AQS.AQSDemo;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.List;
+import java.util.Random;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.ReentrantLock;
 /*
@@ -32,6 +34,9 @@ public class CountDownLatchDemo {
     private static final CountDownLatch latch=new CountDownLatch(threadCount);
     private static final ReentrantLock lock=new ReentrantLock();
     public static void main(String[] args) throws InterruptedException {
+        AsCyclicBarrier();
+    }
+    public static void baseTest() throws InterruptedException {
         for(int i=0;i<10;i++){
             service.submit(new T());
         }
@@ -70,6 +75,42 @@ public class CountDownLatchDemo {
             x++;
         }finally {
             lock.unlock();
+        }
+    }
+    public static void AsCyclicBarrier(){
+        int threads=10;
+        CountDownLatch latch=new CountDownLatch(threads);
+        ThreadPoolExecutor executor=new ThreadPoolExecutor(20,30,0,TimeUnit.MILLISECONDS,new LinkedBlockingQueue<>());
+        for(int i=0;i<10;i++){
+            executor.submit(new RunnableTask(latch));
+        }
+//        executor.shutdown();//等待正在运行的线程结束
+        List<Runnable> futureList=executor.shutdownNow();//通过设置线程的中断标志位
+//        然后返回运行中的线程引用
+    }
+    //使用CountDownLatch来实现CyclicBarrier的效果,多个线程到达一个点后等待其他线程一起执行
+    static class RunnableTask implements Runnable{
+        private CountDownLatch latch;
+        public RunnableTask(CountDownLatch latch){
+            this.latch=latch;
+        }
+        @Override
+        public void run() {
+            long id= Thread.currentThread().getId();
+            System.out.println(id+":Start");
+            try {
+                Thread.sleep(new Random().nextInt(5)*1000);
+                latch.countDown();
+                latch.await();
+            } catch (InterruptedException e) {
+                System.out.println(id+"线程被中断!");
+            }
+            System.out.println(id+":End!");
+            try {
+                Thread.sleep(5000000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

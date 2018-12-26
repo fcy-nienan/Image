@@ -24,7 +24,7 @@ public class PalindromeString {
         return flag;
     }
     public static String getPalindrome(String str){//get longest palindrome
-        String result=null;
+        String result;
         char[] chars=str.toCharArray();
         int m=0,n=0,dis=0;
         for(int i=0;i<chars.length;i++){

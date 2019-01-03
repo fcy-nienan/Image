@@ -12,26 +12,13 @@ public class ArrayMaxSum {
         int[] array=new int[]{-2, -1, -3, -8, 10, -3, 5, -6};
         System.out.println(getMaxSumDP(array));
     }
-    public static int getMaxSum(int[] array){
-        int s=Integer.MIN_VALUE;
-        for(int i=0;i<array.length;i++){
-            int pre=0;
-            for(int j=i;j<array.length;j++){
-                pre+=array[j];
-                s=Math.max(s,pre);
-            }
-        }
-        return s;
-    }
     public static int getMaxSumDP(int[] arrsy){
         int current=arrsy[0];
         int sum=arrsy[0];
         for(int i=0;i<arrsy.length;i++){
             if (current<0)
                 current=0;
-            System.out.println(current);
             current+=arrsy[i];
-            System.out.println(current);
             sum=Math.max(sum,current);
         }
         return sum;

@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="jmxri">
+  <library name="jmxtools">
     <CLASSES>
-      <root url="jar://G:/UsedJar/jmxri.jar!/" />
+      <root url="jar://G:/UsedJar/jmxtools.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

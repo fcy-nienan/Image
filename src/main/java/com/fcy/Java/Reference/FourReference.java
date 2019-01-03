@@ -1,9 +1,7 @@
 package com.fcy.Java.Reference;
 
-import scala.swing.StrongReference;
 
 import java.lang.ref.ReferenceQueue;
-import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 
 /**

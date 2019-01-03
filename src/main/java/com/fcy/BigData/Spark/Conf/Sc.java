@@ -20,6 +20,7 @@ public class Sc {
         // setMaster指定Master
         // setSparkHome指向安装spark的地址，视环境而定
         sparkContext = new JavaSparkContext(conf);
+        sparkContext.hadoopConfiguration();
         return sparkContext;
     }
 }

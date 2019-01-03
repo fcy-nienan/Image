@@ -1,7 +1,6 @@
 package com.fcy.JMX;
 
 
-//import com.sun.jdmk.comm.HtmlAdaptorServer;
 
 import javax.management.MBeanServer;
 import javax.management.MBeanServerFactory;
@@ -24,5 +23,13 @@ public class Main {
             Thread.sleep(3000);
             System.out.println(consoleBase.getState());
         }
+//        ObjectName objectName=new ObjectName("ConsoleAgent:state=htmladpter,port=8082");
+//        ms.registerMBean(server,objectName);
+////
+//        server.start();
+//        while(true){
+//            Thread.sleep(3000);
+//            System.out.println(consoleBase.getState());
+//        }
     }
 }

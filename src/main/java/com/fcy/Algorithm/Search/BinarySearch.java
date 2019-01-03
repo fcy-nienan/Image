@@ -1,4 +1,4 @@
-package com.fcy.Algorithm;
+package com.fcy.Algorithm.Search;
 
 public class BinarySearch {
     public static void main(String[] args) {

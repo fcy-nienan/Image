@@ -1,4 +1,4 @@
-package com.fcy.Algorithm;
+package com.fcy.Algorithm.Search;
 
 // 移动位数:=已匹配的字符数 - 对应的部分匹配值
 public class KMPDemo{

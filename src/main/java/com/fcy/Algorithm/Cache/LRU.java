@@ -1,7 +1,8 @@
 package com.fcy.Algorithm.Cache;
-
-import java.util.HashMap;
-
+/*
+* 最近最少使用算法
+* 为每一个缓存项添加一个字段，读取次数
+* */
 public class LRU {
     private Object[] objects;
     private Integer[] longs;

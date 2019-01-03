@@ -28,6 +28,7 @@ public class FunctionDemo {
     public static void main(String[] args) {
 //        Map();
 //        Filter();
+        String str="123|2323|8083|2323";
         flatMap();
     }
     public static void Map(){

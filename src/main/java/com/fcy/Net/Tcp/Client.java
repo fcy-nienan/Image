@@ -19,9 +19,14 @@ public class Client implements Runnable{
     private int port=8989;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
+    public Client(int x){
+
+    }
     public Client(){
         try {
             this.socket=new Socket(host,port);
+//            socket.bind();
+//            socket.connect();
             this.bufferedReader=new BufferedReader(new InputStreamReader(socket.getInputStream()));
             this.bufferedWriter=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
         } catch (IOException e) {

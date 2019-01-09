@@ -16,7 +16,7 @@ import java.util.concurrent.*;
 public class BaseNet {
     private static ConcurrentHashMap<Long,ProcessNumber> hashMap=new ConcurrentHashMap<>();
     private static int cycleCount=8000;//循环次数
-    private static int threadCount=21;//线程总数
+    private static int threadCount=200;//线程总数
     private static final int coreSize=threadCount+5;//线程池核心线程数
     private static final int maxSize=coreSize+5;//线程池最大线程数
     public static Long init(){
@@ -35,7 +35,6 @@ public class BaseNet {
                     long id=Thread.currentThread().getId();
                     hashMap.put(id,new ProcessNumber(0,si*cycleCount));
                     countDownLatch.countDown();
-                    System.out.println("stat");
                     Long sum=new Long(0);
                     for(int i=0;i<cycleCount;i++){//循环多次
                         wagnyi();
@@ -51,7 +50,7 @@ public class BaseNet {
     public static long wagnyi() throws IOException {
         Random random=new Random();
         int ran=random.nextInt(threadCount);
-        URL url=new URL("https://music.163.com/#/discover/toplist");
+        URL url=new URL("https://music.163.com/");
         URLConnection connection=url.openConnection();
         InputStream inputStream=connection.getInputStream();
         BufferedReader reader=new BufferedReader(new InputStreamReader(inputStream));

@@ -59,7 +59,7 @@ public class LongestSubstring {
         }
         return len;
     }
-    public static int optimiSlidingWindow(String s){
+    public static int optimiSlidingWindow(String s){//优化的滑动窗口
 //        String s="abcabcbb";
         int len=0;
         int i=0,j=0;

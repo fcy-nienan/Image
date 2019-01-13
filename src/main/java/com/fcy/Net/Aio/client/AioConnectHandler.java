@@ -11,7 +11,7 @@ public class AioConnectHandler implements CompletionHandler<Void,AsynchronousSoc
  }
  
     public void completed(Void attachment,AsynchronousSocketChannel connector) { 
-        try {  
+        try {
          connector.write(ByteBuffer.wrap(String.valueOf(content).getBytes())).get();
          startRead(connector); 
         } catch (ExecutionException e) { 

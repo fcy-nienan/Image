@@ -12,7 +12,7 @@ public class TestStringContact {
     public static void testContact(){
         String s="";
         long start=System.currentTimeMillis();
-        for(int i=0;i<1000;i++){
+        for(int i=0;i<10000;i++){
             s+=i+"";
         }
         long end=System.currentTimeMillis();
@@ -20,7 +20,7 @@ public class TestStringContact {
 
         s="";
         start=System.currentTimeMillis();
-        for(int i=0;i<1000;i++){
+        for(int i=0;i<10000;i++){
             s.concat(""+i);
         }
         end=System.currentTimeMillis();
@@ -33,11 +33,5 @@ public class TestStringContact {
         }
         end=System.currentTimeMillis();
         System.out.println("Cost:"+(end-start));
-
-
-        int[][] array=new int[3][5];
-        System.out.println(array.length);
-        System.out.println(array[1].length);
-        System.out.println(" ".charAt(0));
     }
 }

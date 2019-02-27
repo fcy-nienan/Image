@@ -23,78 +23,95 @@ public class Traversing {
             value.append(i+",");
         }
         value.deleteCharAt(value.length()-1);
-        Tree tree=create(value.toString());
-        preOrder(tree);
+        TreeNode treeNode =create(value.toString());
+        preOrder(treeNode);
         System.out.println();
-        inOrder(tree);
+        inOrder(treeNode);
         System.out.println();
-        postOrder(tree);
+        postOrder(treeNode);
         System.out.println();
-        preStackOrder(tree);
+        preStackOrder(treeNode);
         System.out.println();
-        inStackOrder(tree);
+        inStackOrder(treeNode);
         System.out.println();
-        postStackOrder(tree);
+        postStackOrder(treeNode);
         System.out.println();
     }
-    public static void tReference(Tree tree){
-        tree=new Tree(100);
+    public static void tReference(TreeNode treeNode){
+        treeNode =new TreeNode(100);
 //        System.out.println(tree.left);
 //        System.out.println(tree.right);
 //        tree.left=tree.right;
     }
-    public static Tree create(String values){
+    public static TreeNode create(String values){
         String[] strings=values.split(",");
-        Tree tree=new Tree();
-        create(tree,strings,1);
-        return tree;
+        TreeNode treeNode =new TreeNode();
+        create(treeNode,strings,1);
+        return treeNode;
     }
-    public static void create(Tree tree,Object[] object,int index){
-        tree.setValue(object[index]);
+    public static void create(TreeNode treeNode, Object[] object, int index){
+        treeNode.setValue(object[index]);
         int left=2*index;
         int right=left+1;
         if (left<object.length){
-            tree.left=new Tree();
-            create(tree.left,object,left);
+            treeNode.left=new TreeNode();
+            create(treeNode.left,object,left);
         }
         if(right<object.length){
-            tree.right=new Tree();
-            create(tree.right,object,right);
+            treeNode.right=new TreeNode();
+            create(treeNode.right,object,right);
         }
     }
-    public static void preOrder(Tree tree){
-        if (tree!=null){
-            System.out.print(tree.getValue()+",");
-            preOrder(tree.left);
-            preOrder(tree.right);
+    public static void preOrder(TreeNode treeNode){
+        if (treeNode !=null){
+            System.out.print(treeNode.getValue()+",");
+            preOrder(treeNode.left);
+            preOrder(treeNode.right);
         }
     }
-    public static void inOrder(Tree tree){
-        if (tree!=null){
-            inOrder(tree.left);
-            System.out.print(tree.getValue()+",");
-            inOrder(tree.right);
+    public static void inOrder(TreeNode treeNode){
+        if (treeNode !=null){
+            inOrder(treeNode.left);
+            System.out.print(treeNode.getValue()+",");
+            inOrder(treeNode.right);
         }
     }
-    public static void postOrder(Tree tree){
-        if (tree!=null){
-            postOrder(tree.left);
-            postOrder(tree.right);
-            System.out.print(tree.getValue()+",");
+    public static void postOrder(TreeNode treeNode){
+        if (treeNode !=null){
+            postOrder(treeNode.left);
+            postOrder(treeNode.right);
+            System.out.print(treeNode.getValue()+",");
         }
     }
-    public static void preStackOrder(Tree tree){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    public static void preStackOrder(TreeNode treeNode){
         System.out.print("非递归前序遍历:");
-        Stack<Tree> stack=new Stack<>();
-        stack.push(tree);
+        Stack<TreeNode> stack=new Stack<>();
+        stack.push(treeNode);
         while(!stack.empty()){
-            Tree tree1=stack.pop();
-            System.out.print(tree1.getValue()+",");
-            if (tree1.right!=null){
-                stack.push(tree1.right);
+            TreeNode treeNode1 =stack.pop();
+            System.out.print(treeNode1.getValue()+",");
+            if (treeNode1.right!=null){
+                stack.push(treeNode1.right);
             }
-            if (tree1.left!=null){
-                stack.push(tree1.left);
+            if (treeNode1.left!=null){
+                stack.push(treeNode1.left);
             }
         }
     }
@@ -104,9 +121,9 @@ public class Traversing {
      * 所以直接输出该节点的值,然后获取该节点的右节点,右节点入栈,
      * 右节点入栈的时候又将该右节点当作一个根节点,然后根节点的左节点入栈,已知循环知道栈中没有元素
     */
-    public static void inStackOrder(Tree t){
+    public static void inStackOrder(TreeNode t){
         System.out.print("非递归中序遍历:");
-        Stack<Tree> s=new Stack<>();
+        Stack<TreeNode> s=new Stack<>();
         while (t!=null||!s.isEmpty()){
             while (t!=null){
                 s.push(t);
@@ -122,26 +139,48 @@ public class Traversing {
     /**
     *@descripiton 通过记录当前节点的父节点,比较当前节点的值是否为右孩子,如果是则不入栈,如果是则将当前节点的值变为右孩子
     */
-    public static void postStackOrder(Tree tree){
+    public static void postStackOrder(TreeNode treeNode){
         System.out.print("非递归后序遍历:");
-        Stack<Tree> stack=new Stack<>();
-        Tree parent;
-        while (tree!=null||!stack.isEmpty()) {
-            while (tree!=null){
-                stack.push(tree);
-                tree=tree.left;
+        Stack<TreeNode> stack=new Stack<>();
+        TreeNode parent;
+        while (treeNode !=null||!stack.isEmpty()) {
+            while (treeNode !=null){
+                stack.push(treeNode);
+                treeNode = treeNode.left;
             }
             if (!stack.isEmpty()){
-                tree=stack.pop();
-                System.out.print(tree.getValue()+",");
+                treeNode =stack.pop();
+                System.out.print(treeNode.getValue()+",");
                 if (!stack.isEmpty()) {
                     parent = stack.peek();
-                    if (parent.right != tree)
-                        tree = parent.right;
+                    if (parent.right != treeNode)
+                        treeNode = parent.right;
                     else
-                        tree = null;
+                        treeNode = null;
                 }else{
-                    tree=null;//这里两个null是重点,如果当前节点等于右节点则不入栈,如果栈为空则该节点不入栈
+                    treeNode =null;//这里两个null是重点,如果当前节点等于右节点则不入栈,如果栈为空则该节点不入栈
+                }
+            }
+        }
+    }
+    public static void post(TreeNode tree){
+        if (tree!=null){
+            Stack<TreeNode> stack=new Stack<>();
+            stack.push(tree);
+            TreeNode pre=null;
+            while (!stack.empty()){
+                TreeNode node=stack.peek();
+                if ((node.left==null&&node.right==null)||(pre!=null&&(pre==node.left||pre==node.right))){
+                    System.out.println(node.getValue());
+                    stack.pop();
+                    pre=node;
+                }else{
+                    if (node.right!=null){
+                        stack.push(node.right);
+                    }
+                    if (node.left!=null){
+                        stack.push(node.left);
+                    }
                 }
             }
         }

@@ -9,7 +9,7 @@ import java.util.*;
  */
 public class LongestSubstring {
     public static void main(String[] args) {
-        String s="abcabcbb";
+        String s="abcabbcdedfsa";
 
         System.out.println(violentCracking(s));
         System.out.println(lengthOfLongestSubstring(s));
@@ -48,7 +48,7 @@ public class LongestSubstring {
             Character character=s.charAt(j);
             if (set.contains(character)){
                 set.remove(s.charAt(i++));//优化的滑动窗口在这步,如果能直接移除上一个重复的字符,然后i直接跳到这里
-//                当时有疑问只移除第一个有用吗,后来想到移除第一个后set中还有改字符,所以又会进入if语句进行移除
+//                当时有疑问只移除第一个有用吗,后来想到移除第一个后set中还有该字符,所以又会进入if语句进行移除
 //                优化的互动窗口就是用一个HashMap来保存对于字符的索引,所以如果存在改字符就直接把该字符的索引+1
 //                赋值给i
             }else{

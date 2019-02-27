@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class YourThreadPool {
@@ -170,6 +173,7 @@ public class YourThreadPool {
     }
 
     public static void main(String[] args) {
+        ThreadPoolExecutor executor=new ThreadPoolExecutor(10,100,0, TimeUnit.MILLISECONDS,new LinkedBlockingQueue<>());
         Thread t1=new Thread(()->{
             for(int i=0;i<10;i++){
                 System.out.println(i+"  "+Thread.currentThread().getId());

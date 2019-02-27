@@ -22,7 +22,7 @@ import java.util.concurrent.locks.ReentrantLock;
 * 不是0的话就放入clh队列中
 *
 *
-* CountDownLatch会阻塞主线程
+* CountDownLatch会阻塞主线程,不会阻塞子线程
 * CyclicBarrier不会阻塞主线程，只会阻塞子线程
 * */
 public class CountDownLatchDemo {

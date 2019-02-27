@@ -35,7 +35,16 @@ public class tryCath {
     public static void main(String args[]) {
 //        System.out.println(testTryCath());
 //        System.out.println(get1());
-        testInnerFinally();
+//        testInnerFinally();
+        System.out.println(testException());
+    }
+    public static int testException(){//只有try和finally时,try中抛异常没有用
+        try {
+            return 33;
+//            throw new RuntimeException("test");
+        }finally{
+            return 1;
+        }
     }
     public static int get1(){
         a++;

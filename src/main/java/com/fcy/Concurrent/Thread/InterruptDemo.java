@@ -1,5 +1,7 @@
 package com.fcy.Concurrent.Thread;
 
+import java.util.TreeMap;
+
 public class InterruptDemo {
     public static void main(String[] args)throws Exception {
         testT1();
@@ -70,7 +72,7 @@ public class InterruptDemo {
     }
     static class note{
         static Thread t=new Thread();
-
+        TreeMap map;
         public static void main(String[] args) {
             //中断状态默认为false，清除中断状态意味着 如果中断状态为true，则改为false
 //                                         如果中断状态为false 则改为false

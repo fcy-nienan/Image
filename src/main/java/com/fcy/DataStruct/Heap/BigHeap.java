@@ -1,6 +1,5 @@
 package com.fcy.DataStruct.Heap;
 
-import com.fcy.DataStruct.Tree.Tree;
 import lombok.Getter;
 import lombok.Setter;
 

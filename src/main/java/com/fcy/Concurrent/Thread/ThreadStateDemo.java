@@ -16,6 +16,18 @@ import java.net.Socket;
  * TIME_WAITING
 * TERMINTED
 *
+*
+*
+*
+*
+*
+* wait
+* join     join其实就是使异步执行线程转为同步执行
+* yield   yield()方法只是把线程的状态有执行状态打回准备就绪状态，所以，执行这个方法后，有可能马上又开始运行，有可能等待很长时间。。。另外线程的控制不是看时间的。。。是看状态的。
+* notify  notify并不释放锁
+*
+*
+*
 * */
 public class ThreadStateDemo {
     public static void main(String[] args) throws IOException, InterruptedException {

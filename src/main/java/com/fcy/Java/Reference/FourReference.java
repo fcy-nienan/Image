@@ -3,6 +3,8 @@ package com.fcy.Java.Reference;
 
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
+import java.util.HashMap;
+import java.util.WeakHashMap;
 
 /**
  * @descripiton:
@@ -21,14 +23,15 @@ import java.lang.ref.WeakReference;
  */
 public class FourReference {
     public static void main(String[] args) throws InterruptedException {
+        Object o=new Object();
         ReferenceQueue queue=new ReferenceQueue();
-        WeakReference weakReference =new WeakReference(new Object(),queue);
-        System.out.println(weakReference.get());
-        System.out.println(queue.poll());
+        WeakReference reference=new WeakReference(o,queue);
+        o=null;
         System.gc();
-        Thread.sleep(5000);
-        System.out.println(weakReference.get());
-        Thread.sleep(3000);
-        System.out.println(queue.poll().get());
+        Thread.sleep(4000);
+        System.out.println(o);
+        System.out.println(reference.get());
+
     }
+
 }

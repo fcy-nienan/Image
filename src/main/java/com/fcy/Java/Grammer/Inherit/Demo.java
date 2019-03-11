@@ -7,12 +7,10 @@ public class Demo {
     public static void main(String[] args) {
         Demo demo=new Demo();
         Fu f=demo.new Zi();
-
-
         System.out.println(f.num);//这里定义的是父类，而成员变量没有多态，所以即使你new的子类，依然指向父类的成员变量。
         System.out.println(f.fun1());//不解释了，就是多态。
         f.show();
-//        System.out.println(System.getProperty("java.class.path"));
+        System.out.println(demo.equals(new Demo()));
     }
     class Fu {
         public String num = "父类成员变量";

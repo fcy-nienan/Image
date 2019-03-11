@@ -1,6 +1,10 @@
 package com.fcy.Password;
 
+import com.fcy.Java.JDBC.DataSource;
+
+import java.sql.SQLException;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -10,10 +14,12 @@ import java.util.Random;
  */
 public class QQ {
     private static String solt="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()-=_+[]{},./<>?1234567890";
-    public static void main(String[] args) {
-        System.out.println(getPassword(22,15));
+    public static void main(String[] args) throws SQLException {
+        pwDao pwDao=new pwDao();
+//        pwDao.add(getPassword(22,15));
+        System.out.println(pwDao.query(0l));
     }
-    private static String getPassword(int seed,int pwLen){
+    private static pw getPassword(int seed,int pwLen){
         int len=solt.length();
         StringBuilder p=new StringBuilder();
         Random random=new Random(seed);
@@ -21,6 +27,6 @@ public class QQ {
             int next=random.nextInt(len);
             p.append(solt.charAt(next));
         }
-        return p.toString();
+        return new pw(0,"qq",p.toString(),new Date().toString());
     }
 }

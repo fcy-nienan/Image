@@ -13,6 +13,7 @@ import java.util.concurrent.*;
 public class ConcurrentUtil {
     private static final long FutureResultSleep=3000;
     public static void main(String[] args) {
+
         ThreadPoolExecutor executor=new ThreadPoolExecutor(20,20,0,TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>());
         List<Future> futures=new ArrayList<>();

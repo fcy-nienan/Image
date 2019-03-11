@@ -1,5 +1,7 @@
 package com.fcy.Java.JDBC;
 
+import com.fcy.Util.Log.FcyLog;
+
 import java.io.Serializable;
 import java.lang.reflect.*;
 import java.util.*;
@@ -7,7 +9,7 @@ import java.sql.*;
 import java.text.SimpleDateFormat;
 
 public class GenericDAO<T,ID extends Serializable>{
-
+	private static final FcyLog logger=FcyLog.getLogger(GenericDAO.class, FcyLog.Level.DEBUG);
 	private Connection con;//数据库连接对象
 	private Class<T> clazz;//实体类类型
 	private Class<ID> claid;//实体类ID类类型
@@ -18,12 +20,15 @@ public class GenericDAO<T,ID extends Serializable>{
 	private String[] methodname;//反射需要调用的方法名
 	private String[] fieldname;//字段名
 	private String[] fieldtype;//字段类型
-	public int row;
-	
-	public String getTablename(String classtostring){//截取数据库表字符串
-		int len=classtostring.length();
-		String name=classtostring.substring(6,len-3);
-		return captureName(name);
+	private String clazzName;//实体类全路径名
+	private boolean showSql=true;
+	private void showSql(String sql){
+		if (showSql)
+			logger.info(sql);
+	}
+	public String getTablename(){//截取数据库表字符串
+		String entityName=clazzName;
+		return entityName.substring(entityName.lastIndexOf(".")+1,entityName.length());
 	}
 	public String captureName(String name,boolean flag){//首字符大小写
 		char[] cs=name.toCharArray();
@@ -64,11 +69,9 @@ public class GenericDAO<T,ID extends Serializable>{
 		this.claid=(Class<ID>)((ParameterizedType)t).getActualTypeArguments()[1];
 		//t=clazz.newInstance();
 		//myid=claid.newInstance();
-		
-		tablename="My"+getTablename(c.toString());//获取数据库表名
-
+		this.clazzName=this.clazz.getName();
+		tablename=getTablename();//获取数据库表名
 		field=clazz.getDeclaredFields();//获取字段数组
-		
 		methodname=transform(field);//转化方法名
 		/*if(!(t instanceof ParameterizedType)){
 			throw new IllegalArgumentException(c+"没有指定的泛体类型");
@@ -79,6 +82,7 @@ public class GenericDAO<T,ID extends Serializable>{
 		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-MM-dd");
 		String sql="select * from "+tablename+" where "+fieldname[0]+"="+id;
 		try{
+			showSql(sql);
 			con=mysql.getConnection();
 			PreparedStatement pt=con.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs=pt.executeQuery();
@@ -96,9 +100,9 @@ public class GenericDAO<T,ID extends Serializable>{
 				Object obj=m1.invoke(rs,i+1);
 				data.add(obj);
 			}			
-			Constructor cs=clazz.getDeclaredConstructor(List.class);
-			cobj=(T)cs.newInstance(data);
-			return (T)cobj;
+//			Constructor cs=clazz.getDeclaredConstructor(List.class);
+//			cobj=(T)cs.newInstance(data);
+			return (T)data;
 		}catch(Exception e){
 			e.printStackTrace();
 		}finally{
@@ -153,7 +157,7 @@ public class GenericDAO<T,ID extends Serializable>{
 				value[i]=String.valueOf(m.invoke(t));
 			}
 		}catch(Exception e){
-			System.out.println(this.getClass().getName()+"加载错误");
+			logger.error(this.getClass().getName()+"加载错误");
 			throw new SQLException();
 		}
 		return value;
@@ -175,7 +179,7 @@ public class GenericDAO<T,ID extends Serializable>{
 		myid=(ID)value[0];
 		if(isExist(myid)){//如果数据库中有该数据则更新
 			update(t);
-			System.out.println("添加一条数据");
+			logger.info("添加一条数据");
 			return true;
 		}
 		//否则插入
@@ -184,12 +188,12 @@ public class GenericDAO<T,ID extends Serializable>{
 			values+=("'"+value[i]+"'"+",");
 		values=values.substring(0,values.lastIndexOf(","));
 		String sql="insert into "+tablename+" values("+values+")";
-		
+		showSql(sql);
 		try{
 			Connection con=mysql.getConnection();
 			PreparedStatement pt=con.prepareStatement(sql);
 			int row=pt.executeUpdate();
-			System.out.println(sql);
+			logger.info(sql);
 			if(row==1){
 				addreturn=true;
 			}else{
@@ -215,10 +219,11 @@ public class GenericDAO<T,ID extends Serializable>{
 			return row;
 		}
 		try{
+			showSql(sql);
 			Connection con=mysql.getConnection();
 			PreparedStatement pt=con.prepareStatement(sql);
 			row=pt.executeUpdate();
-			System.out.println("删除一条记录");
+			logger.info("删除一条记录");
 		}catch(SQLException e){
 			e.printStackTrace();
 			throw new SQLException();
@@ -234,7 +239,7 @@ public class GenericDAO<T,ID extends Serializable>{
 		if(del(myid)==1)
 			add(t);
 		else{
-			System.out.println("更新失败");
+			logger.info("更新失败");
 		}
 		//String sql="update "+"from "+tablename+" where 
 	}
@@ -244,6 +249,7 @@ public class GenericDAO<T,ID extends Serializable>{
 		Statement st=null;
 		List<T> list=null;
 		try{
+			showSql(sql);
 			boolean var=true;
 			int row;
 			con=mysql.getConnection();
@@ -268,7 +274,7 @@ public class GenericDAO<T,ID extends Serializable>{
 	}
 	static class mysql{
 		public static Connection getConnection(){
-			return null;
+			return new DataSource().getConnection();
 		}
 	}
 	public static void main(String args[])throws Exception{

@@ -2,6 +2,7 @@ package com.fcy.Java.JDBC;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -27,9 +28,6 @@ public class DataSource {
     private String defaultParam="useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false";
     private boolean isAddParam=true;
     private String fileName;
-    public void setIsAddParam(boolean flag){
-        this.isAddParam=flag;
-    }
     public String toString(){
         return this.url;
     }
@@ -48,8 +46,7 @@ public class DataSource {
 
     private void loadFile(String name) throws IOException {
         pro=new Properties();
-        InputStream is =getClass()
-                .getResourceAsStream(name);
+        InputStream is =getClass().getResourceAsStream(name);
         try {
             pro.load(is);
         } catch (IOException e) {
@@ -126,7 +123,8 @@ public class DataSource {
         }
     }
     public static void main(String[] args) throws IOException {
-        DataSource source=new DataSource();
-
+        System.out.println(DataSource.class.getPackage().getName());
+        URL url=DataSource.class.getProtectionDomain().getCodeSource().getLocation();
+        System.out.println(url.getPath());
     }
 }

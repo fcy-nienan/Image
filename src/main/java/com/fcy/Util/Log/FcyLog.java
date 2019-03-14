@@ -2,6 +2,12 @@ package com.fcy.Util.Log;
 
 /**
  * @descripiton:
+ * 关于日志
+ * 日志输出到哪里
+ * 日志输出的格式
+ * 输出哪个级别的日志
+ *
+ *
  * @author: fcy
  * @date: 2019-03-09  18:27
  */

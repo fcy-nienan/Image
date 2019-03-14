@@ -1,15 +1,9 @@
 package com.fcy.BigData.Scala
 import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
-import org.apache.spark.rdd.RDD
-
-
 object BootStrap {
   def main(args:Array[String]):Unit={
     val context:SparkContext=sc
-
-
-
     val path:String="G:\\words.txt"
     val rdd=context.textFile(path)
     println(rdd.getNumPartitions)

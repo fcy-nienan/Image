@@ -10,7 +10,6 @@ import java.util.Random;
  */
 public class TreeSearch {
     public static void main(String[] args) {
-        HashMap map;
         TreeNode treeNode1 =new TreeNode();
         Random random=new Random();
         for(int i=1;i<6;i++){

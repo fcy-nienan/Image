@@ -3,7 +3,6 @@ package com.fcy.Concurrent.AQS.AQSDemo;
 import java.util.concurrent.*;
 
 public class FutureTaskDemo {
-    static long x=0;
     public static void main(String[] args) throws InterruptedException {
         SynchronousQueue queue=new SynchronousQueue();
         System.out.println(queue.offer("kk"));

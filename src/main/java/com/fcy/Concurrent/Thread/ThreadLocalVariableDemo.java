@@ -30,11 +30,14 @@ public class ThreadLocalVariableDemo {
         return new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
     }
     public static void main(String[] args) {
+        System.out.println(localInt.get());
+        System.out.println(localInt.get());
 
-        HashSet<String> set=new HashSet<String>();
-        set.add("kk");
-        set.add("kk");
-        System.out.println(set.size());
+        System.out.println(localId.get());
+        System.out.println(localId.get());
+
+        System.out.println(local.get());
+        System.out.println(local.get());
     }
     public static void testThreadLocal(){
         SimpleDateFormat format=local.get();

@@ -12,7 +12,6 @@ public class KMPDemo{
 		int m=module.length;
 		for(q=1;q<m;q++){
 			k=next[q-1];
- 
 			while(module[q]!=module[k]&&k>0){//子串匹配
 				System.out.println("子串匹配next数组");
 				for(int s:next){

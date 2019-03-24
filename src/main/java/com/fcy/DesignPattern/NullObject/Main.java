@@ -1,7 +1,4 @@
 package com.fcy.DesignPattern.NullObject;
-
-import org.apache.commons.math3.analysis.function.Abs;
-
 /**
  * @descripiton:
  * @author: fcy

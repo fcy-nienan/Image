@@ -1,7 +1,6 @@
 package com.fcy.Net.Nio;
 
-import java.io.File;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
@@ -27,5 +26,10 @@ public class MapperByteBufferDemo {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public static void Normal() throws IOException {
+        FileInputStream inputStream=new FileInputStream("H:\\springboot.keystore");
+        byte[] bytes=new byte[1024];
+        inputStream.read(bytes);
     }
 }

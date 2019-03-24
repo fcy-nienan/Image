@@ -1,5 +1,6 @@
 package com.fcy.DataStruct.Tree;
 
+import java.util.HashMap;
 import java.util.Stack;
 
 /**
@@ -14,9 +15,13 @@ import java.util.Stack;
  * @date: 2019-02-24  12:52
  */
 public class BinarySearchTree {
+    private static ThreadLocal<HashMap> local;
     private TreeNode<Integer> root;
 
     public static void main(String[] args) {
+        ThreadLocal local;
+        Thread thread;
+
         BinarySearchTree tree=new BinarySearchTree();
         int[] data=new int[]{4,8,2,6,3,9,1,0,5,7};
         for(int i:data){

@@ -1,4 +1,6 @@
 package com.fcy.DataStruct.Tree;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 /**
  * @descripiton:
@@ -23,25 +25,42 @@ public class Traversing {
             value.append(i+",");
         }
         value.deleteCharAt(value.length()-1);
+        System.out.println(value);
         TreeNode treeNode =create(value.toString());
-        preOrder(treeNode);
+        DFS(treeNode);
         System.out.println();
-        inOrder(treeNode);
-        System.out.println();
-        postOrder(treeNode);
-        System.out.println();
-        preStackOrder(treeNode);
-        System.out.println();
-        inStackOrder(treeNode);
-        System.out.println();
-        postStackOrder(treeNode);
-        System.out.println();
+        BFS(treeNode);
     }
-    public static void tReference(TreeNode treeNode){
-        treeNode =new TreeNode(100);
-//        System.out.println(tree.left);
-//        System.out.println(tree.right);
-//        tree.left=tree.right;
+    public static void BFS(TreeNode root){
+        Queue<TreeNode> queue=new LinkedList();
+        queue.add(root);
+        while (!queue.isEmpty()){
+            TreeNode node=queue.element();
+            System.out.print(node.getValue()+"--");
+            queue.remove();
+            if (node.left!=null){
+                queue.add(node.left);
+            }
+            if (node.right!=null){
+                queue.add(node.right);
+            }
+        }
+
+    }
+    public static void DFS(TreeNode root){
+        Stack<TreeNode> stack=new Stack();
+        stack.push(root);
+        while (!stack.empty()){
+            TreeNode node=stack.peek();
+            System.out.print(node.getValue()+"--");
+            stack.pop();
+            if (node.right!=null){
+                stack.push(node.right);
+            }
+            if (node.left!=null){
+                stack.push(node.left);
+            }
+        }
     }
     public static TreeNode create(String values){
         String[] strings=values.split(",");

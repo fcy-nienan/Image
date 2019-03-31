@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class Client {
     public static void main(String[] args) {
+
         Master master=new Master(new Worker(),10);
         Random random=new Random();
         for(int i=0;i<100;i++){

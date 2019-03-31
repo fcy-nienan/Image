@@ -7,7 +7,7 @@ package com.fcy.DesignPattern.MultiThread.LeaderFollow;
  */
 public class Worker implements Runnable{
     public enum State{
-        LEADER,FOLLOW,PROCESSING;
+        LEADER,FOLLOW,PROCESSING
     }
     private Thread t;
     private static Object mutex=new Object();

@@ -15,5 +15,4 @@ public class CustomerFactory {
         }
         return new NilCustomer();
     }
-
 }

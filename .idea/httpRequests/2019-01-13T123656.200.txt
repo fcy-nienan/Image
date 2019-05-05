@@ -1,0 +1,173 @@
+HTTP/1.1 200 OK
+Server: Apache-Coyote/1.1
+Content-Type: text/html;charset=UTF-8
+Content-Language: zh-CN
+Content-Length: 3345
+Date: Tue, 11 Dec 2018 16:07:40 GMT
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <base href="http://wkq.chinasoftosg.com:80/WeCard/">
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="pragma" content="no-cache" >
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate, max-age=1" >
+    <meta http-equiv="expires" content="0" >
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <title>å¾®æå¡</title>
+    <link rel="stylesheet" href="css/weidaka.css"/>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/jquery.cookie.min.js"></script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+	<script>
+function isFinish(){
+    var script1=document.getElementById("script1");
+    script1.src=script1.src.toString()+'?tmp='+Math.random().toString();
+    if(location.href.match("tmp=")){
+          return;
+    }else{
+        window.location=window.location.toString()+'?tmp='+Math.random().toString();
+    }
+}
+
+    </script>
+	<script type="text/javascript">
+    var lobnumber="0000159560";
+	function getlobnumber(){
+		return lobnumber;
+	}
+    var name="èæ¥ ";
+	function getname(){
+		return name;
+	}
+    </script>
+  </head>
+<script type="text/javascript">
+var path="/WeCard";
+function getBasePath(){
+	return path;
+}
+</script>
+  <body onload="isFinish()">
+    <div class="wdk_top">
+        <a href="/WeCard/card/openRecord.do" class="wdk_top_link">è¯·æ¥çæå¡è®°å½</a> 
+  
+        <a href="/WeCard/wdk_faq.html" class="wdk_top_link">å¸¸è§é®é¢</a>
+    </div>
+     <!--æ¶é´-->
+    <section class="wdk_time">
+        <div>
+            <ul>
+                <li id="hours"></li>
+                <li id="point">:</li>
+                <li id="min"></li>
+                <li id="point">:</li>
+                <li id="sec"></li>
+            </ul>
+        </div>
+        <div id="Date"></div>
+    </section>
+    <img src="images/wdk_bg.png" class="daka_bg" onclick="getMylocation()"/>
+    <button type="button" class="dk_btn" onclick="getMylocation()"><span></span>è¯·æå¡<span></span></button>
+   <!--     
+    <div class="tip">
+        <ul>
+            <li>1ãå»ºè®®éæ©ç½ç»ä¿¡å·è¯å¥½çä½ç½®æå¡</li>
+            <li>2ãå»ºè®®æå¡æ¶æå¼ç§»å¨ç½ç»ãWIFIä»¥åGPS</li>
+            <li>3ãå»ºè®®æå¡æç¤ºâè¶åºèå´XXXç±³âæåµä¸éæ°æå¼å¾®æå¡é¡µé¢åè¯</li>
+        </ul>
+    </div>
+
+ <img src="images/daka_bg.png" class="daka_bg"/> -->
+ 
+    
+    <!-- æ¨¡ææ¡-->
+    <div id="dk_moadal_wrap">
+        <div class="window_mask"></div>
+        <div class="dk_moadal">
+            <header>ç³»ç»æç¤º</header>
+            <div id="dk_moadal_body"></div>
+            <button type="button" onclick="modalDissmiss()">ç¡®å®</button>
+        </div>
+    </div>
+    
+    
+    <!--å è½½ææ-->
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+	<!--å è½½ææend-->
+    
+<script src="js/weidaka.js?v=3" id="script1"></script>
+<script src="js/rem.js"></script>
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+POST http://wkq.chinasoftosg.com/WeCard/card/punsh.do HTTP/1.1
+Host: wkq.chinasoftosg.com
+Connection: keep-alive
+Content-Length: 91
+Accept: */*
+Origin: http://wkq.chinasoftosg.com
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; MI 6  Build/NMF26X) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 MicroMessenger/6.6.7.1321(0x26060736) NetType/WIFI Language/zh_CN
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://wkq.chinasoftosg.com/WeCard/my.do?code=033tw2mg1fPyrs0H0vlg1ziimg1tw2m4&state=123
+Accept-Encoding: gzip,deflate
+Accept-Language: zh-CN,en-US;q=0.8
+Cookie: JSESSIONID=F6BC97F5C0E6FF9DC7E6683A48A382F0; rememberMe=06KnNNRYpqt/h/g1rXUzxxtd019Am7jdCEhkCF1Cpfw2L2y8yCV8TiabdBTmiIO+ztwYf5vLb1ew1SEkXeEwe99chO7ZSb/+QUyKcG2g1wMdP0+w07UaO4kbRFfpNq5UW+PG3CuLyr7e5xoIghDO9RA6z6tzxyOKGw0eG49EE1LWA7gzCiPE3zJfJvIUJhAnfAK2QxG1VYwJy/8LrSkfbIlkxQtIpTWeHaL0DwdNd0qVyd9YUV0s+5JeK+6wVk0N9PqZLfCg4SHQ1kkzfMgKJr+zMsJqIIkCnrPmH7bkk3+KDV6lDAKtkp7I5Bt3HLtpxh8sqT2aqaN95nICsHdrB4RGfyIXwOaWXQUyZCGe3GF8ZqOrSDrDnzjRjZ2ebzI0VTbfWi4/w9nJkbYqTrIYyU3Hv0ERW1KqGuUJpc/qvz7McG/jATbx2/hZ9J3+494whjbmVzup6E3OmLiOz/iEpMohtK5V+EdOsPHsDBdEQmG+Csx+dP162piFqUEaSyBuzBMW0aW6sE+DjT1Fbg4tKNrGwVFSq4fZ91A8bPR5+qk=
+
+latitude=31.17649&longitude=121.39994&ship_place_ind=500&onwership_place=%E4%B8%8A%E6%B5%B7
+
+
+
+
+
+
+
+
+
+
+
+
+POST http://wkq.chinasoftosg.com/LogSys/logc/addRecordLog.do HTTP/1.1
+Host: wkq.chinasoftosg.com
+Connection: keep-alive
+Content-Length: 538
+Accept: */*
+Origin: http://wkq.chinasoftosg.com
+X-Requested-With: XMLHttpRequest
+User-Agent: Mozilla/5.0 (Linux; Android 4.4.2; MI 6  Build/NMF26X) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/30.0.0.0 Mobile Safari/537.36 MicroMessenger/6.6.7.1321(0x26060736) NetType/WIFI Language/zh_CN
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://wkq.chinasoftosg.com/WeCard/my.do?code=033tw2mg1fPyrs0H0vlg1ziimg1tw2m4&state=123
+Accept-Encoding: gzip,deflate
+Accept-Language: zh-CN,en-US;q=0.8
+Cookie: JSESSIONID=C27D173980565CE6F3C96A8B4331955F
+
+msg=getLocation%3Aok++++1++2018%2F12%2F11+%E4%B8%8A%E5%8D%888%3A11%3A16+-+84++2++2018%2F12%2F11+%E4%B8%8A%E5%8D%888%3A11%3A16+-+118++3++2018%2F12%2F11+%E4%B8%8A%E5%8D%888%3A11%3A16+-+120++4++2018%2F12%2F11+%E4%B8%8A%E5%8D%888%3A11%3A16+-+562++pushCardSucc+1001%E5%BE%90%E6%B1%87%E5%8C%BA%E6%A1%82%E7%AE%90%E8%B7%AF69%E5%8F%B729%E5%8F%B7%E6%A5%BC-%E6%A1%82%E7%AE%90%E5%9B%AD%E5%8A%9E%E5%85%AC%E5%8C%BA++5++2018%2F12%2F11+%E4%B8%8A%E5%8D%888%3A11%3A16+-+568&locationval=31.17649%2C121.39994&lobnumber=0000159560&name=%E8%81%82%E6%A5%A0

@@ -16,7 +16,7 @@ public class QQ {
     private static String solt="qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%^&*()-=_+[]{},./<>?1234567890";
     public static void main(String[] args) throws SQLException {
         pwDao pwDao=new pwDao();
-//        pwDao.add(getPassword(22,15));
+        pwDao.add(getPassword(22,15));
         System.out.println(pwDao.query(0l));
     }
     private static pw getPassword(int seed,int pwLen){

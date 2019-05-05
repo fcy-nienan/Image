@@ -5,27 +5,10 @@ public class Base {
 //        switchCase();
 //        intAdd();
 //        add();
-//        d1();
 //        d2();
-//        d3();
 //        d4();
 //        d5();
 //        d6();
-//        System.out.println(ss);
-        new Base().stringTest(1,2,2);
-    }
-    public void stringTest(int aa,int bb,int cd){
-        int c=10;
-        c+=1l;
-        if(c>12){
-            c=3;
-        }else{
-            c=4;
-        }
-        int b=c>>2;
-        b=c<<2;
-        c=c>>>2;
-        b=c&2;
     }
 //    没有break不会跳出来
     public static void switchCase(){
@@ -34,13 +17,17 @@ public class Base {
         switch(c) {
             case 'B' :
                 num ++ ;
+                System.out.println("B");
             case 'A' :
                 num ++ ;
+                System.out.println("A");
             case 'Y' :
                 num ++ ;
-                break ;
-            default :
-                num -- ;
+                System.out.println("Y");
+            default : {
+                num--;
+                System.out.println("default");
+            }
         }
         System.out.println(num) ;
     }
@@ -48,51 +35,32 @@ public class Base {
 // 　　否则，如果其中一个操作数是float类型，另一个将会转换为float类型。　
 // 　否则，如果其中一个操作数是long类型，另一个会转换为long类型。　
 // 　否则，两个操作数都转换为int类型
+//    扩展的运算符有一个默认的强制转换,但是声明的变量类型是int类型,则最后还是会转换为int类型
     public static void intAdd(){
         int num = 2147483647 ;
         num += 2L ;//num=(int)(num+2l);强转
 //        num=num+2l;//出错
+        num+=2;
         System.out.println(num) ;
     }
 //    num*2;
 //    num=num+1;
 //    num=num*2;
+//    result:100
     public static void add(){
         int num = 50 ;
         num = num ++ * 2 ;
         System.out.println(num) ;
     }
-    public static void LongAddInt(){
-        long num = 100 ;
-
-//        System.out.println(y);
-//        int x = num + 2 ;
-//        System.out.println(x) ;
-    }
-    public static void d1(){
-        System.out.println(inc(10)+inc(8)+inc(-10));
-        System.out.println(3+5+3);//编译期就会算出来了
-    }
-    public static int inc(int temp) {
-        if (temp > 0) {
-            return temp * 2 ;
-        }
-        return -1 ;
-    }
 //    i++和++i
+//    result:5
     public static void d2(){
         int i = 1 ;
         int j = i++ ;
-        if((i==(++j))&&((i++)==j))     {
+        if((i==(++j))&&((i++)==j)){
             i += j ;
         }
         System.out.println("i = "+i);
-    }
-//    int类型溢出会自动装换为long型
-    public static void d3(){
-        int num = 2147483647 ;
-        long temp = num + 2L ;
-        System.out.println(num+" "+temp) ;
     }
 //    拼接整数位字符串  不会相加
     public static void d4(){
@@ -102,20 +70,18 @@ public class Base {
         }
         System.out.println(str) ;
     }
+//    float和double类型的数都有一个小数点位
+//    result:10202.0   1.0
     public static void d5(){
         int x = 10 ;
         double y = 20.2 ;
         long z = 10L;
         String str = "" + x + y * z ;
         System.out.println(str) ;
-        String String=null;
-        System.out.println(String);
+        double f=1;
+        System.out.println(f);
     }
-    /*
-    * 可以这样命名
-    *           String String=null;
-    *
-    * */
+//    可以认为default匹配所有
     public static void d6(){
         int i=9;
         switch(i){
@@ -131,5 +97,4 @@ public class Base {
             }
         }
     }
-    public static int ss;
 }

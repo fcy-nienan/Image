@@ -9,9 +9,9 @@ public class BatchDemo {
         String host="127.0.0.1";
         String username="root";
         String password="838502";
-        String database="novel";
+        String database="sso";
         String drivername="com.mysql.jdbc.Driver";
-        String url="jdbc:mysql://"+host+":3306"+"?"+database;
+        String url="jdbc:mysql://"+host+":3306"+"/"+database;
         Connection connection=null;
         try{
             Class.forName(drivername);

@@ -1,0 +1,90 @@
+Index: src/main/java/com/fcy/Java/ClassLoader/DisClassLoader.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/com/fcy/Java/ClassLoader/DisClassLoader.java	(date 1557072983289)
++++ src/main/java/com/fcy/Java/ClassLoader/DisClassLoader.java	(date 1557072983289)
+@@ -1,9 +1,13 @@
+ package com.fcy.Java.ClassLoader;
+ 
+ import com.mysql.jdbc.JDBC4Connection;
++import org.apache.spark.sql.sources.In;
+ import sun.reflect.CallerSensitive;
+ import sun.reflect.Reflection;
+ 
++import java.io.*;
++import java.lang.reflect.Method;
++import java.net.URL;
+ import java.sql.Connection;
+ import java.sql.Driver;
+ import java.sql.DriverManager;
+@@ -12,35 +16,43 @@
+ 
+ /**
+  * @descripiton:
++ * Class.forName和loadClass都会走双亲委托模型,我之前还以为Class.forName不走这条路的
++ * ClassLoader的getResource是从该类加载器的类路径加载资源文件的,同样走双亲委托模型,先从父类加载器
++ * 的类路径寻找资源文件,然后再从自己的类路径加载资源文件(前提是你重写了findResource方法)
++ *
++ * 线程上下文加载器设置为系统类加载器,那么BootStrap中委托给系统类加载器后是否还要走一次双亲委托机制?还是直接加载?
+  * @author: fcy
+  * @date: 2019-05-03  11:29
+  */
+ public class DisClassLoader {
+-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+-        System.out.println(java.sql.Driver.class.getClassLoader());
+-        System.out.println(com.mysql.jdbc.Driver.class.getClassLoader());
+-        String url = "jdbc:mysql://localhost:3306/hdfs";
+-        Connection conn = java.sql.DriverManager.getConnection(url, "root", "838502");
+-        Enumeration<Driver> driverEnum=DriverManager.getDrivers();
+-        while (driverEnum.hasMoreElements()){
+-            Driver driver=driverEnum.nextElement();
+-            System.out.printf("%s : %s \r\n",driver.getClass().getName(),driver.getClass().getClassLoader());
++    public static void main(String[] args) throws Exception{
++        DriverManager dirverManager;
++        OneClassLoader oneClassLoader=new OneClassLoader();
++        TwoClassLoader twoClassLoader=new TwoClassLoader(oneClassLoader);
++        System.out.println(oneClassLoader.getParent());
++        System.out.println(twoClassLoader.getParent());
++        String outerClassName="com.classloader.demo.test";
++        Class clazz=null;
++        clazz=twoClassLoader.loadClass(outerClassName);
++//        clazz=Class.forName(outerClassName,true,twoClassLoader);
++
++        URL url=oneClassLoader.getResource("/ttt.txt");
++//        System.out.println(url.getPath());
++        InputStream inputStream=url.openStream();
++        byte[] bytes=new byte[1024];
++        int c=inputStream.read(bytes);
++        System.out.println(new String(bytes,0,c));
++        Object o= null;
++        try {
++            o = clazz.newInstance();
++            Method method=o.getClass().getDeclaredMethod("dis");
++            method.invoke(o);
++        } catch (InstantiationException e) {
++            e.printStackTrace();
++        } catch (IllegalAccessException e) {
++            e.printStackTrace();
+         }
+-        System.out.printf("%s : %s \r\n","java.sql.Driver",java.sql.Driver.class.getClassLoader());
+-        System.out.println(conn.getClass().getName());
+-        System.out.println(conn.getClass().getClassLoader());
+-        System.out.println(System.getProperty("jdbc.drivers"));
+-        System.out.printf("java.ext.dir:%s \r\n",System.getProperty("java.ext.dir"));
+-        JDBC4Connection connection;
+-        ClassLoader classLoader;
+-//        Class.forName("test");
+-        calledClass calledClass=new calledClass();
+-        calledClass.dis();
++        System.out.println(o.getClass().getClassLoader());
++        System.out.println(o.getClass().getName());
+     }
+-    static class calledClass{
+-        @CallerSensitive
+-        public void dis(){
+-            System.out.println(Reflection.getCallerClass().getName());
+-        }
+-    }
+ }

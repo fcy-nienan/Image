@@ -26,11 +26,11 @@ public class WordCount{
     public static void MapReduce()throws Exception{
         Configuration conf = new Configuration();
 
-//        conf.set("fs.default.name","hdfs://localhost:9001");
+        conf.set("fs.default.name","hdfs://127.0.0.1:9000");
 //        System.setProperty("HADOOP_USER_NAME", "root");
-        String[] ioArgs = new String[] { "hdfs://localhost:9001/test/words.txt",
-                "hdfs://localhost:9001/test/output" };
-        String[] io=new String[]{"/test/words.txt","/test/output"};
+        String[] ioArgs = new String[] { "hdfs://127.0.0.1:/9000/tmp/words.txt",
+                "hdfs://127.0.0.1:9000/test/output" };
+        String[] io=new String[]{"/tmp/words.txt","/tmp/output"};
         String[] otherArgs = new GenericOptionsParser(conf, ioArgs).getRemainingArgs();
         Job job = new Job(conf);
         job.setJarByClass(WordCount.class);

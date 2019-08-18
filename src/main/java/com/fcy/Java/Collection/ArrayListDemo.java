@@ -1,8 +1,6 @@
 package com.fcy.Java.Collection;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Vector;
+import java.util.*;
 
 /**
  * @descripiton: ArrayList默认大小为10，扩容是newCapacity=old+old>>2
@@ -15,12 +13,19 @@ import java.util.Vector;
  */
 public class ArrayListDemo {
     public static void main(String args[]) {
-
+        testArrayList();
     }
     public static void testArrayList(){
+
+
         ArrayList<String> list=new ArrayList();
         list.contains(null);
         Vector vector=new Vector<>();
         LinkedList linkedList=new LinkedList();
+        System.out.println(new Date().getMonth());
+        Calendar calendar=Calendar.getInstance();
+        int i = calendar.get(Calendar.MONTH);
+        System.out.println(i);
+
     }
 }

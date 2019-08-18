@@ -6,10 +6,4 @@ public interface ConsoleMBean {
     void start();
     void stop();
     void dis(String i);
-    default void test(){
-
-    }
-    static void test1(){
-
-    }
 }

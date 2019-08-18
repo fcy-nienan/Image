@@ -1,11 +1,15 @@
 package com.fcy.BigData.Spark;
 
 import com.fcy.BigData.Spark.Conf.Sc;
+import org.apache.hadoop.yarn.api.ApplicationMasterProtocol;
+import org.apache.hadoop.yarn.api.impl.pb.client.ApplicationMasterProtocolPBClientImpl;
+import org.apache.hadoop.yarn.api.records.Container;
 import org.apache.hadoop.yarn.exceptions.YarnException;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
 import org.apache.spark.api.java.JavaSparkContext;
 import org.apache.spark.api.java.function.VoidFunction;
+import org.apache.spark.rdd.RDD;
 import org.apache.spark.scheduler.Stage;
 import org.apache.spark.scheduler.Task;
 import scala.Tuple2;
@@ -24,16 +28,22 @@ import java.util.List;
  */
 public class HelloWorld {
     public static void main(String[] args) throws IOException, YarnException, InterruptedException, ParseException {
-//        String rddFilePath="G:\\words.txt";
-//        JavaSparkContext sc = Sc.sc();
-////        JavaPairRDD<String,Integer> pairRDD=sc.textFile(rddFilePath)
-////                .flatMap(line -> Arrays.asList(line.split(" ")).iterator())
-////                .mapToPair(s->new Tuple2<String,Integer>((String) s,1))
-////                .reduceByKey((x,y)->x+y);
-//        sc.textFile(rddFilePath).foreach(e-> System.out.println(e));
-//        System.out.println(sc.textFile(rddFilePath).getNumPartitions());
-//        sc.textFile(rddFilePath).map(e->e.split(" "));
-////        pairRDD.foreach(e-> System.out.println(e));
+        String rddFilePath="G:\\words.txt";
+        JavaSparkContext sc = Sc.sc();
+//        JavaPairRDD<String,Integer> pairRDD=sc.textFile(rddFilePath)
+//                .flatMap(line -> Arrays.asList(line.split(" ")).iterator())
+//                .mapToPair(s->new Tuple2<String,Integer>((String) s,1))
+//                .reduceByKey((x,y)->x+y);
+        sc.textFile(rddFilePath).foreach(e-> System.out.println(e));
+        System.out.println(sc.textFile(rddFilePath).getNumPartitions());
+        sc.textFile(rddFilePath).map(e->e.split(" ")).collect();
+        ApplicationMasterProtocol protocol;
+        Container container;
+        RDD rdd;
+        Stage stage;
+        Task task;
+        ApplicationMasterProtocolPBClientImpl applicationMasterProtocolPBClient;
+//        pairRDD.foreach(e-> System.out.println(e));
         SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy-mm-dd");
         String start="2012-12-12";
         String end="2012-12-13";

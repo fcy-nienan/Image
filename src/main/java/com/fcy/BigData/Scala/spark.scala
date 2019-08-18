@@ -12,12 +12,14 @@ object spark {
       StructField("vin",StringType,true)::
       StructField("mark",StringType,true)::Nil
     );
+    println(schema.length);
     println(schema.fieldIndex("field"))
     println(schema.fieldIndex("vehicle"))
     println(schema.fieldIndex("vin"))
     println(schema.fieldIndex("mark"))
     schema.printTreeString();
     schema.fieldNames.map(x=>print(x));
+
 
   }
 }

@@ -1,45 +1,16 @@
 package com.fcy.Algorithm.Sort;
 
+import java.util.Arrays;
+
 public class QuickSort{
 
      public static void main(String []args){
-        System.out.println("Hello World");
         int[] a = {12,20,5,16,15,1,30,45,23,9,9,12,12,12};
-		for(int i = 0; i<a.length; i++){
-             System.out.print(a[i]+"  ");
-         }
-		 System.out.println();
         int start = 0;
         int end = a.length-1;
-        sort(a,start,end);
-        for(int i = 0; i<a.length; i++){
-             System.out.println(a[i]);
-         }
-        
+        quick3(a,start,end);
+         System.out.println(Arrays.toString(a));
      }
-     /*public static void mysort(int[] a,int low,int high){
-		 int start=low;
-		 int end=high;
-		 int key=a[start];
-		 while(start<end){
-			while(start<end&&a[end]>=key)
-					end--;
-			if(a[end]<=key){
-				int temp=a[start];
-				a[start]=a[end];
-				a[end]=temp;
-			}
-			while(start<end&&a[start]<=key)
-				start++;
-			if(a[start]>=key){
-				int temp=a[start];
-				a[start]=a[end];
-				a[end]=temp;
-				
-			}
-		}
-		if(start>low)mysort(a,low,start);
-	 }*/
      public static void sort(int[] a,int low,int high){
          int start = low;
          int end = high;
@@ -97,6 +68,53 @@ public class QuickSort{
          }
          quickSort1(data,start,low-1);
 
+     }
+     public static void quickSort(int[] data,int start,int end){
+         int low=start,high=end,key=data[start];
+         while(low<high){
+             while(low<high&&data[high]>=key){
+                 high--;
+             }
+             if(low<high){
+                 int tmp=data[low];
+                 data[low]=data[high];
+                 data[high]=tmp;
+             }
+             while(low<high&&data[low]<=key){
+                 low++;
+             }
+             if(low<high){
+                 int tmp=data[low];
+                 data[low]=data[high];
+                 data[high]=tmp;
+             }
+         }
+         if (low!=start)quickSort(data,start,low-1);
+         if (high!=end)quickSort(data,low+1,end);
+     }
+     public static void quick3(int[] array,int start,int end){
+         int low=start,high=end;
+         int key=array[low];
+         while(low<high){
+             while(low<high&&array[high]>=key){
+                 high--;
+             }
+             if (low<high){
+                 int temp=array[high];
+                 array[high]=array[low];
+                 array[low]=temp;
+             }
+             while(low<high&&array[low]<=key){
+                 low++;
+             }
+             if (low<high){
+                 int temp=array[high];
+                 array[high]=array[low];
+                 array[low]=temp;
+             }
+         }
+         if (start!=low)quick3(array,start,low-1);
+         if (end!=high)quick3(array,low+1,end);
      }
      
 }

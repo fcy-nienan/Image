@@ -2,9 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/input" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Password/QQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Password/QQ.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Image.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/A.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/B.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/C.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/HelloWorld$$anonfun$test$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/HelloWorld.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/Interface$class.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/Interface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/ex.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/hiret.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark$$anonfun$main$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/QQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Password/QQ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/MD5Utils.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +52,7 @@
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="jdkForImporter" value="1.8" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
@@ -48,7 +71,7 @@
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.language.Kotlin.scripting" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -62,6 +85,40 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="Application.MD5Utils">
+    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Util.MD5Utils" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.Util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QQ" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Password.QQ" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.Password.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MD5Utils" />
+        <item itemvalue="Application.QQ" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="" />
@@ -69,7 +126,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1566149268501</updated>
-      <workItem from="1566149271907" duration="847000" />
+      <workItem from="1566149271907" duration="1071000" />
+      <workItem from="1566621997884" duration="4424000" />
+      <workItem from="1566629312037" duration="810000" />
+      <workItem from="1566637614754" duration="2344000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1566149942087</created>
@@ -78,7 +138,21 @@
       <option name="project" value="LOCAL" />
       <updated>1566149942087</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix dir">
+      <created>1566150167757</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566150167757</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix dir">
+      <created>1566150293719</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566150293719</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -89,7 +163,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -98,6 +174,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="init" />
-    <option name="LAST_COMMIT_MESSAGE" value="init" />
+    <MESSAGE value="fix dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix dir" />
   </component>
 </project>

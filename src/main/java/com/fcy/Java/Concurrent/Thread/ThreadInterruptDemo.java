@@ -15,6 +15,15 @@ public class ThreadInterruptDemo {
             y=23;
         }
     }
+    static class run1 implements Runnable{
+        @Override
+        public void run() {
+            while (!Thread.currentThread().isInterrupted()){
+                doSomeThing();
+            }
+        }
+        private void doSomeThing(){}
+    }
     public void test(){
         y=23;
     }

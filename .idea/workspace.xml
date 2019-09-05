@@ -2,32 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/AQS/pratice1/CyclicBarrierDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/classic/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/classic/Constructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/classic/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/link/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/link/ComputerBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Password/QQ.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Password/QQ.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Image.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/A.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/B.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/C.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/HelloWorld$$anonfun$test$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/HelloWorld.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/Interface$class.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/Interface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/ex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/hiret.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark$$anonfun$main$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/QQ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Password/QQ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/MD5Utils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/HDFS/HDFSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/HDFS/HDFSClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/Hadoop/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/Hadoop/WordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/FileSearch/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadInterruptDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadInterruptDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadLocalVariableDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadLocalVariableDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/Builder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/Construct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/KFCBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/MDLBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/MyStringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/PDFtoHtml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/RandomId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/HDFS/HDFSClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/HDFS/HDFSClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Hadoop/WordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Hadoop/WordCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/QQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/pw.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/pwDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/MyStringUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/RandomId.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,6 +40,14 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -85,13 +96,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MD5Utils">
-    <configuration name="MD5Utils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fcy.Util.MD5Utils" />
+  <component name="RunManager" selected="Application.ThreadLocalVariableDemo">
+    <configuration name="BaseNet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Net.Base.BaseNet" />
       <module name="Image" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fcy.Util.*" />
+          <option name="PATTERN" value="com.fcy.Net.Base.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +110,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QQ" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fcy.Password.QQ" />
+    <configuration name="Computer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.DesignPattern.Builder.link.Computer" />
       <module name="Image" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fcy.Password.*" />
+          <option name="PATTERN" value="com.fcy.Java.DesignPattern.Builder.link.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HDFSClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.BigData.HDFS.HDFSClient" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.BigData.HDFS.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ThreadLocalVariableDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.Thread.ThreadLocalVariableDemo" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.Java.Concurrent.Thread.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.BigData.Hadoop.WordCount" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.BigData.Hadoop.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,8 +164,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MD5Utils" />
-        <item itemvalue="Application.QQ" />
+        <item itemvalue="Application.ThreadLocalVariableDemo" />
+        <item itemvalue="Application.BaseNet" />
+        <item itemvalue="Application.WordCount" />
+        <item itemvalue="Application.Computer" />
+        <item itemvalue="Application.HDFSClient" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +182,9 @@
       <workItem from="1566149271907" duration="1071000" />
       <workItem from="1566621997884" duration="4424000" />
       <workItem from="1566629312037" duration="810000" />
-      <workItem from="1566637614754" duration="2344000" />
+      <workItem from="1566637614754" duration="2467000" />
+      <workItem from="1566713089344" duration="43998000" />
+      <workItem from="1567272162966" duration="8426000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1566149942087</created>
@@ -152,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566150293719</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix dir">
+      <created>1566646885339</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566646885340</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -176,5 +238,16 @@
     <MESSAGE value="init" />
     <MESSAGE value="fix dir" />
     <option name="LAST_COMMIT_MESSAGE" value="fix dir" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadLocalVariableDemo.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

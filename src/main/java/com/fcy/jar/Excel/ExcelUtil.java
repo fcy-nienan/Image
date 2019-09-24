@@ -170,4 +170,28 @@ public class ExcelUtil {
         // 操作结束，关闭文件
         fos.close();
     }
+    public static String getCellStringValue(Cell cell){
+        Objects.requireNonNull(cell);
+        String value="";
+        switch (cell.getCellType()) {
+            case XSSFCell.CELL_TYPE_STRING:
+                value = cell.getStringCellValue();
+                break;
+            case XSSFCell.CELL_TYPE_NUMERIC:
+                if ("yyyy\"年\"m\"月\"d\"日\";@".equals(cell.getCellStyle().getDataFormatString())) {
+                    System.out.println(cell.getNumericCellValue()+":日期格式："+cell.getCellStyle().getDataFormatString());
+                } else {
+                    value = String.valueOf(cell.getNumericCellValue());
+                }
+                break;
+            case XSSFCell.CELL_TYPE_BOOLEAN:
+                value = String.valueOf(cell.getBooleanCellValue());
+                break;
+            case XSSFCell.CELL_TYPE_BLANK:
+                break;
+            default:
+                value = cell.toString();
+        }
+        return value;
+    }
 }

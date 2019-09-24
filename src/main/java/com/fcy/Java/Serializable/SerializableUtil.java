@@ -6,17 +6,8 @@ import java.util.List;
 
 public class SerializableUtil {
     public static void main(String[] args) {
-        List<Object> all=new ArrayList<>();
-        for(int i=0;i<10;i++) {
-            all.add(new Object());
-        }
-        byte[] bytes=writeObject(all);
-        System.out.println(bytes.length);
-        Object obj=readObject(bytes);
-        List<Object> mains=(ArrayList<Object>)obj;
-        mains.forEach(e->{
-            System.out.println(e.toString());
-        });
+        File file=new File("E:\\test\\");
+        System.out.println(file.getAbsoluteFile().toString());
     }
 //    序列化list集合,集合中的数据也必须实现序列化接口，要不然会抛出异常
 //    从序列化的byte数组中构造对象

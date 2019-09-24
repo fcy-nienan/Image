@@ -9,7 +9,4 @@ public interface ConsoleMBean {
     default void test(){
 
     }
-    static void test1(){
-
-    }
 }

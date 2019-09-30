@@ -18,7 +18,6 @@ public class SerializableUtil {
         try {
             is = new ObjectInputStream(inputStream);
             object=is.readObject();
-
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -35,9 +34,6 @@ public class SerializableUtil {
             bytes=byteArrayOutputStream.toByteArray();
         }catch (Exception e){
             e.printStackTrace();
-        }
-        for(int i=0;i<bytes.length;i++){
-            System.out.print(bytes[i]+" ");
         }
         return bytes;
     }

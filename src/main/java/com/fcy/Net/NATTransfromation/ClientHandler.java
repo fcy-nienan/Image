@@ -155,7 +155,7 @@ public class ClientHandler implements Runnable{
                 }
 //                urlData.put(path, command4.getData());
 //                logger.info("开始保存到文件中:");
-//                FileUtil.save(command4.getData(), "D:\\test");
+//                IOUtil.save(command4.getData(), "D:\\test");
             }catch (InterruptedException e){
                 logger.info("程序异常退出,请联系开发人员!"+e.toString());
                 System.exit(0);

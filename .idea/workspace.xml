@@ -9,16 +9,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/com/fcy/DataStruct/Tree/Traversing.java" line="84" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a24f097e-cfcd-49dc-9149-96d222f10a0f" name="Default" comment="LeetCode">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Format/Sout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/SoutAndLogger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Util/EveryDayGitPushAndShutdown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/ClassLoader/ClassLoaderDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/ClassLoader/ClassLoaderDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/ExchangeDemo$ThreadA.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/ExchangeDemo$ThreadA.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/ExchangeDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/ExchangeDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/ClassLoader/ClassLoaderDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/ClassLoader/ClassLoaderDemo.class" afterDir="false" />
-    </list>
+    <list default="true" id="a24f097e-cfcd-49dc-9149-96d222f10a0f" name="Default" comment="LeetCode" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
@@ -70,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/Util/EveryDayGitPushAndShutdown.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+            <state relative-caret-position="200">
+              <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -2773,7 +2764,7 @@
       <workItem from="1568871615595" duration="16097000" />
       <workItem from="1569217676462" duration="28588000" />
       <workItem from="1569737188981" duration="12173000" />
-      <workItem from="1570496178594" duration="35641000" />
+      <workItem from="1570496178594" duration="35968000" />
     </task>
     <task id="LOCAL-00001" summary="spark">
       <created>1540740100237</created>
@@ -2954,7 +2945,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1697881000" />
+    <option name="totallyTimeSpent" value="1698208000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -2967,9 +2958,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.70947367" visible="true" weight="0.24358974" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.70947367" visible="true" weight="0.24358974" />
       <window_info id="Designer" order="1" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -2981,7 +2971,7 @@
       <window_info anchor="bottom" id="REST Client" order="0" weight="0.44262296" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.18815331" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4977307" visible="true" weight="0.22439024" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4977307" weight="0.22439024" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.41289198" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -2992,7 +2982,7 @@
       <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" weight="0.3295082" />
       <window_info anchor="bottom" id="Version Control" order="13" weight="0.3622951" />
-      <window_info anchor="bottom" id="Terminal" order="14" weight="0.19508196" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="14" visible="true" weight="0.28617886" />
       <window_info anchor="bottom" id="JRebel Executor" order="15" />
       <window_info anchor="bottom" id="Event Log" order="16" sideWeight="0.50226927" side_tool="true" weight="0.20731707" />
       <window_info anchor="bottom" id="Database Console" order="17" weight="0.49667773" />
@@ -3930,8 +3920,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/Util/EveryDayGitPushAndShutdown.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        <state relative-caret-position="200">
+          <caret line="10" column="51" selection-start-line="10" selection-start-column="51" selection-end-line="10" selection-end-column="51" />
         </state>
       </provider>
     </entry>

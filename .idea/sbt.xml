@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ScalaSbtSettings">
-    <option name="customLauncherPath" value="-Dsbt.log.format=true  -Dfile.encoding=UTF8  -Dsbt.global.base=D:/Build/scala/sconf/base -Dsbt.boot.directory=D:/Build/scala/sconf/boot/  -Dsbt.repository.config=D:/Build/scala/sbt/sconf/repositories  -Dsbt.ivy.home=D:/Build/scala/sbt/ivy2 -Xmx512M  -Xss2M  -XX:+CMSClassUnloadingEnabled" />
-    <option name="customVMPath" />
-    <option name="vmParameters" value="-Dsbt.log.format=true  -Dfile.encoding=UTF8  -Dsbt.global.base=D:/Build/scala/sconf/base -Dsbt.boot.directory=D:/Build/scala/sconf/boot/  -Dsbt.repository.config=D:/Build/scala/sbt/sconf/repositories  -Dsbt.ivy.home=D:/Build/scala/sbt/ivy2 -Xmx512M  -Xss2M  -XX:+CMSClassUnloadingEnabled" />
-  </component>
-</project>

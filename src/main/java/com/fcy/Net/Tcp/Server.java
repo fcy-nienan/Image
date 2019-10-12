@@ -20,16 +20,25 @@ public class Server {
     }
     private ThreadPoolExecutor executor;
     private ServerSocket serverSocket;
-    private int port=8989;
-    public Server(){
+    private String host="127.0.0.1";
+    private int port=8080;
+
+    public Server(String host,int port){
         executor=new ThreadPoolExecutor(200,400,0,TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<>());
         try {
-            serverSocket=new ServerSocket();
-            serverSocket.bind(new InetSocketAddress("192.168.43.176",port));
+            serverSocket.bind(new InetSocketAddress(this.host,this.port));
+            serverSocket=new ServerSocket(port);
+            serverSocket.setReuseAddress(true);
+            serverSocket.bind(new InetSocketAddress(host,port));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public Server(){
+        System.out.println(this.host);
+        System.out.println("sdf");
+//        this(host,port);
     }
     public void listen(){
         while(true){

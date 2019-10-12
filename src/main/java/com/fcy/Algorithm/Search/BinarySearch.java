@@ -1,5 +1,8 @@
 package com.fcy.Algorithm.Search;
 
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ThreadPoolExecutor;
+
 public class BinarySearch {
     public static void main(String[] args) {
         int[] arrays={2,5,7,1,9,5,6,4,10,19,13,26,14};
@@ -72,6 +75,23 @@ public class BinarySearch {
         if(start!=low)QuickSort(array,start,low-1);
         if(end!=high)QuickSort(array,low+1,end);
     }
+    static void quickSort(int[] array,int start,int end){
+        ThreadPoolExecutor executor;
+        if(start<0||end<0)throw new IllegalArgumentException("argument can not be negative!");
+        if(start>end)throw new IllegalArgumentException("argument error1"+start+","+end);
+        int low=start,high=end;
+        int k=array[(start+end)/2];
+        while(low<high){
+            while(low<high&&array[high]>=k){
+                high--;
+            }
+            ForkJoinPool pool;
+
+        }
+
+    }
+
+
 //    快排    改进:key的选取
     static void QuickSort1(int[] array,int start,int end){
 //        start和end两个下标后面要用

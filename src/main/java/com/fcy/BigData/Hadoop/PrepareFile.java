@@ -23,7 +23,7 @@ public class PrepareFile {
             file.createNewFile();
         }
         BufferedWriter writer=new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file)));
-        for(int i=0;i<100000000;i++){
+        for(int i=0;i<10000000;i++){
             int index=random.nextInt(10);
             for(int j=0;j<index;j++) {
                 int innerIndex=random.nextInt(7);

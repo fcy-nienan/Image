@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  */
 public class HDFSClient {
     private Logger logger=Logger.getLogger(HDFSClient.class.getName());
-    private String defaultFs="hdfs://localhost:9001";
+    private String defaultFs="hdfs://master:9000";
     private Configuration configuration;
     private FileSystem fileSystem;
     public void getDisHost() throws IOException {
@@ -28,9 +28,13 @@ public class HDFSClient {
         }
 
     }
-    private void init() throws IOException {
+    public boolean exist(String inputPath) throws IOException {
+        return fileSystem.exists(new Path(inputPath));
+    }
+    public void init() throws IOException {
         configuration=new Configuration();
         configuration.set("fs.defaultFS",defaultFs);
+        System.setProperty("HADOOP_USER_NAME","root");
         fileSystem=FileSystem.get(configuration);
         RemoteIterator<LocatedFileStatus> iterator=fileSystem.listFiles(new Path("/"),true);
         while (iterator.hasNext()){
@@ -95,8 +99,7 @@ public class HDFSClient {
     public static void main(String[] args) throws IOException {
         HDFSClient client=new HDFSClient();
         client.init();
-        System.out.println(client.upload("G:\\test1", "/test1.txt"));
-        System.out.println(client.down("/test1.txt", "D:\\test1.txt"));
+        System.out.println(client.upload("D:\\Resources\\LinuxEnvironmentConfig\\bigdataConf.txt", "/test1.txt"));
         client.getDisHost();
     }
     public void disFileStatus(LocatedFileStatus fileStatus) throws IOException {

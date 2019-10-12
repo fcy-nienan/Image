@@ -1,24 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ArtifactsWorkspaceSettings">
-    <artifacts-to-build>
-      <artifact name="Image:war exploded" />
-    </artifacts-to-build>
-  </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/main/java/com/fcy/DataStruct/Tree/Traversing.java" line="84" />
-  </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a24f097e-cfcd-49dc-9149-96d222f10a0f" name="Default" comment="LeetCode" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/.idea/httpRequests/" />
+=======
+    <list default="true" id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/AQS/pratice1/CyclicBarrierDemo1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/classic/Builder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/classic/Constructor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/classic/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/link/Computer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/link/ComputerBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/HDFS/HDFSClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/HDFS/HDFSClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/Hadoop/WordCount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/BigData/Hadoop/WordCount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/FileSearch/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadInterruptDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadInterruptDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadLocalVariableDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadLocalVariableDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/Builder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/Construct.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/KFCBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/MDLBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Builder/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/MyStringUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/PDFtoHtml.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/RandomId.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/HDFS/HDFSClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/HDFS/HDFSClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Hadoop/WordCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Hadoop/WordCount.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/QQ.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/pw.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Password/pwDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/MyStringUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/RandomId.class" beforeDir="false" />
+    </list>
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Image$ReadXlsxAsZip.ic" NAME="ReadXlsxAsZip Coverage Results" MODIFIED="1568874026859" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.fcy.jar.Excel.*</FILTER>
@@ -252,19 +279,27 @@
         </entry>
       </file>
     </leaf>
+=======
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+<<<<<<< HEAD
         <option value="HTML File" />
         <option value="Enum" />
         <option value="Go File" />
         <option value="package-info" />
+=======
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
         <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="FindInProjectRecents">
     <findStrings>
       <find>multi</find>
@@ -313,15 +348,21 @@
     </dirStrings>
   </component>
   <component name="GOROOT" path="D:/Language/Go" />
+=======
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
-  <component name="GoLibraries">
-    <option name="urls">
-      <list>
-        <option value="file://D:/WorkSpace/Go" />
-      </list>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\Code\Packages\maven" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+        <option name="userSettingsFile" value="D:\Code\Build\apache-maven-3.6.1\conf\settings.xml" />
+      </MavenGeneralSettings>
     </option>
+<<<<<<< HEAD
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -402,10 +443,22 @@
     <option name="x" value="-7" />
     <option name="width" value="1377" />
     <option name="height" value="704" />
+=======
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
+  </component>
+  <component name="ProjectId" id="1PbibcVPtXSkD1bdo7mvkOGczyr" />
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -462,12 +515,13 @@
       <pane id="AndroidView" />
     </panes>
   </component>
+=======
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
   <component name="PropertiesComponent">
-    <property name="DefaultGoTemplateProperty" value="Go File" />
-    <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="GO_FMT" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="Param&#9;PSI&#9;JAVA://com.fcy.Net.Bio.BioSocketParam" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< HEAD
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
@@ -2282,6 +2336,13 @@
         </RestClientRequest>
       </list>
     </option>
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../CodeTool/NetWork/Git/bin/git.exe" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -2295,6 +2356,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.SoutAndLogger">
     <configuration default="true" type="GoApplicationRunConfiguration" factoryName="Go Application">
       <module name="Image" />
@@ -2315,10 +2377,12 @@
       <filePath value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
+=======
+  <component name="RunManager" selected="Application.ThreadLocalVariableDemo">
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
     <configuration name="BaseNet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Net.Base.BaseNet" />
       <module name="Image" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fcy.Net.Base.*" />
@@ -2329,13 +2393,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="Sout" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Format.Sout" />
+=======
+    <configuration name="Computer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.DesignPattern.Builder.link.Computer" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
       <module name="Image" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
+<<<<<<< HEAD
           <option name="PATTERN" value="com.fcy.Java.Format.*" />
+=======
+          <option name="PATTERN" value="com.fcy.Java.DesignPattern.Builder.link.*" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -2343,6 +2416,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="SoutAndLogger" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.SoutAndLogger" />
       <module name="Image" />
@@ -2350,6 +2424,14 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fcy.Java.*" />
+=======
+    <configuration name="HDFSClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.BigData.HDFS.HDFSClient" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.BigData.HDFS.*" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -2357,6 +2439,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
@@ -2365,11 +2448,18 @@
     </configuration>
     <configuration name="copyFileTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.IO.copyFileTest" />
+=======
+    <configuration name="ThreadLocalVariableDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.Thread.ThreadLocalVariableDemo" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
       <module name="Image" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
+<<<<<<< HEAD
           <option name="PATTERN" value="com.fcy.Java.IO.*" />
+=======
+          <option name="PATTERN" value="com.fcy.Java.Concurrent.Thread.*" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -2377,13 +2467,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="updateStaus" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Concurrent.updateStaus" />
+=======
+    <configuration name="WordCount" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.BigData.Hadoop.WordCount" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
       <module name="Image" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
+<<<<<<< HEAD
           <option name="PATTERN" value="com.fcy.Concurrent.*" />
+=======
+          <option name="PATTERN" value="com.fcy.BigData.Hadoop.*" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -2391,6 +2489,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="go build Hello.go" type="GoApplicationRunConfiguration" factoryName="Go Application" nameIsGenerated="true">
       <module name="Go" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -2554,18 +2653,25 @@
         <item itemvalue="Application.BaseNet" />
         <item itemvalue="Application.updateStaus" />
         <item itemvalue="Application.copyFileTest" />
+=======
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ThreadLocalVariableDemo" />
+        <item itemvalue="Application.BaseNet" />
+        <item itemvalue="Application.WordCount" />
+        <item itemvalue="Application.Computer" />
+        <item itemvalue="Application.HDFSClient" />
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
       </list>
     </recent_temporary>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a24f097e-cfcd-49dc-9149-96d222f10a0f" name="Default" comment="" />
-      <created>1524462534696</created>
+      <changelist id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="" />
+      <created>1566149268501</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1524462534696</updated>
       <workItem from="1524462537517" duration="55175000" />
       <workItem from="1524649244682" duration="36199000" />
@@ -2768,32 +2874,45 @@
     </task>
     <task id="LOCAL-00001" summary="spark">
       <created>1540740100237</created>
+=======
+      <updated>1566149268501</updated>
+      <workItem from="1566149271907" duration="1071000" />
+      <workItem from="1566621997884" duration="4424000" />
+      <workItem from="1566629312037" duration="810000" />
+      <workItem from="1566637614754" duration="2467000" />
+      <workItem from="1566713089344" duration="43998000" />
+      <workItem from="1567272162966" duration="8426000" />
+    </task>
+    <task id="LOCAL-00001" summary="init">
+      <created>1566149942087</created>
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1540740100237</updated>
+      <updated>1566149942087</updated>
     </task>
-    <task id="LOCAL-00002" summary="spark">
-      <created>1540820892577</created>
+    <task id="LOCAL-00002" summary="fix dir">
+      <created>1566150167757</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1540820892577</updated>
+      <updated>1566150167757</updated>
     </task>
-    <task id="LOCAL-00003" summary="repair">
-      <created>1540825531666</created>
+    <task id="LOCAL-00003" summary="fix dir">
+      <created>1566150293719</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1540825531667</updated>
+      <updated>1566150293719</updated>
     </task>
-    <task id="LOCAL-00004" summary="repair">
-      <created>1540830884587</created>
+    <task id="LOCAL-00004" summary="fix dir">
+      <created>1566646885339</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1540830884587</updated>
+      <updated>1566646885340</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00005" summary="repair">
       <created>1542547854093</created>
       <option name="number" value="00005" />
@@ -3053,6 +3172,11 @@
       <window_info anchor="right" id="PlantUML" order="13" show_stripe_button="false" />
     </layout-to-restore>
   </component>
+=======
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -3062,123 +3186,24 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="spark" />
-    <MESSAGE value="repair" />
-    <MESSAGE value="整理结构" />
-    <MESSAGE value="Net Transformation 1.0" />
-    <MESSAGE value="LeetCode" />
-    <option name="LAST_COMMIT_MESSAGE" value="LeetCode" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="init" />
+    <MESSAGE value="fix dir" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix dir" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/Variable/Base.java</url>
-          <line>3</line>
-          <properties class="com.fcy.Java.Grammer.Variable.Base" method="main">
-            <option name="EMULATED" value="true" />
-          </properties>
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Concurrent/Thread/ThreadFactoryMain.java</url>
-          <line>64</line>
-          <properties class="com.fcy.Concurrent.Thread.ThreadFactoryMain">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/jar/pdf/PdfUtil.java</url>
-          <line>25</line>
-          <properties class="com.fcy.jar.pdf.PdfUtil" method="getPdfContent">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/Variable/Base.java</url>
-          <line>49</line>
-          <properties class="com.fcy.Java.Grammer.Variable.Base" method="add">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/Variable/Base.java</url>
-          <line>13</line>
-          <properties class="com.fcy.Java.Grammer.Variable.Base" method="switchCase">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/Variable/Base.java</url>
-          <line>38</line>
-          <properties class="com.fcy.Java.Grammer.Variable.Base" method="intAdd">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Concurrent/Thread/ListTest.java</url>
-          <line>48</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://F:/java/jdk/src.zip!/java/util/concurrent/locks/AbstractQueuedSynchronizer.java</url>
-          <line>379</line>
-          <properties />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Concurrent/Thread/MyThreadPool.java</url>
-          <line>83</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://F:/java/jdk/src.zip!/java/sql/DriverManager.java</url>
-          <line>647</line>
-          <properties />
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+<<<<<<< HEAD
           <url>jar://F:/java/jdk/src.zip!/java/sql/DriverManager.java</url>
           <line>563</line>
           <properties />
@@ -3204,27 +3229,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Concurrent/Thread/ThreadLocalVariableDemo.java</url>
+=======
+          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/ThreadLocalVariableDemo.java</url>
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
           <line>32</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://F:/java/jdk/src.zip!/java/sql/DriverManager.java</url>
-          <line>551</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/fcy/Java/ClassLoader/IsFollowParentDelegation.java</url>
-          <line>12</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>jar://F:/java/jdk/src.zip!/java/sql/DriverManager.java</url>
-          <line>246</line>
-          <properties />
-          <option name="timeStamp" value="54" />
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$USER_HOME$/.m2/repository/org/apache/xmlbeans/xmlbeans/2.3.0/xmlbeans-2.3.0.jar!/org/apache/xmlbeans/impl/piccolo/xml/PiccoloLexer.class</url>
@@ -3247,6 +3256,7 @@
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="ZooKeeperConfig">
     <option name="host" value="127.0.0.1" />
     <option name="port" value="2181" />
@@ -4028,4 +4038,6 @@
       </state>
     </states>
   </component>
+=======
+>>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
 </project>

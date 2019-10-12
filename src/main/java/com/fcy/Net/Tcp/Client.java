@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class Client implements Runnable{
     private Socket socket;
     private String host="192.168.43.176";
-    private int port=8989;
+    private int port=8080;
     private BufferedReader bufferedReader;
     private BufferedWriter bufferedWriter;
     public Client(int x){
@@ -35,7 +35,7 @@ public class Client implements Runnable{
     }
     public void run(){
         while(true){
-            String msg=getContent("Thread.txt");
+            String msg=getContent("test.txt");
             msg=String.valueOf(socket.getPort());
             send(msg);
             try {

@@ -6,84 +6,66 @@ import lombok.NoArgsConstructor;
 
 import java.util.*;
 
-public class HashMapDemo {
-    public static void main(String[] args) {
-//        testHashMap();
-        testHashMapFourTraversing();
-    }
-    /*
-    * HashMap的四种遍历
-    * */
-    public static void testHashMapFourTraversing(){
-        HashMap<String,String> map=new HashMap<>();
-        for(int i=0;i<10;i++){
-            map.put("key:"+i,"  "+i+":value");
-        }
-        System.out.println("First");
-        Iterator<Map.Entry<String,String>> iterator=map.entrySet().iterator();
-        while(iterator.hasNext()){
-            Map.Entry<String,String> entry=iterator.next();
-            System.out.println(entry.getKey()+entry.getValue());
-        }
-        System.out.println("Second");
-        for(Map.Entry<String,String> entry:map.entrySet()){
-            System.out.println(entry.getKey()+entry.getValue());
-        }
-        System.out.println("Third");
-        Set<String> set=map.keySet();
-        set.forEach(e->{
-            System.out.println(e+map.get(e));
-        });
-        System.out.println("Four");
-        Iterator<String> keys=map.keySet().iterator();
-        while(keys.hasNext()){
-            String key=keys.next();
-            System.out.println(key+map.get(key));
-        }
-        System.out.println("Only Traversing Values");
-        Collection<String> values=map.values();
-        Set<String> sets=new HashSet<>(values);
-        sets.forEach(e->{
-            System.out.println(e);
-        });
-    }
-    /*
-    * 测试HashMap的Contains系列方法
-    * */
-    public static void testHashMap(){
-        HashMap<User,User> map=new HashMap<>();
-        User u = null;
-        for(int i=0;i<10;i++){
-            User uu=new User(i+"username",i+"password");
-            u=uu;
-            map.put(uu,uu);
-        }
-        Set<Map.Entry<User,User>> set=map.entrySet();
-        set.forEach(e->{
-            System.out.println(e.getKey()+"  "+e.getValue());
-        });
-        User utemp=new User("1username", "1password");
-        System.out.println(map.containsKey(utemp));
-        System.out.println(map.containsValue(utemp));
-        System.out.println(map.containsKey(u));
-    }
+public class HashMapDemo<K,V> {
+    private Node<K,V>[] table;
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
-    static class User {
-        private String username;
-        private String password;
+    public static class Node<K,V>{
+        private int hash;
+        private K key;
+        private V value;
+        private Node<K,V> next;
         public boolean equals(Object o){
-            User u=(User)o;
-            if((u.getPassword().equals(this.password)) &&
-                    u.getUsername().equals(this.username))
+            if (o==this)
                 return true;
-            else
-                return false;
+            if (o instanceof Map.Entry){
+                Map.Entry entry= (Map.Entry) o;
+                if (Objects.equals(entry.getKey(),key)&&Objects.equals(entry.getValue(),value)){
+                    return true;
+                }
+            }
+            return false;
         }
-        /*public int hashCode(){
-            return 0;
-        }*/
+    }
+//    x=o.hashCode=0000111111110000 1111111100000000
+//    h>>>16=                       0000111111110000
+//    result=      0000111111110000 1111000011110000
+//    So we apply a transform that spreads the impact of higher bits downward
+//    所以我们应用一个转换,向下扩展更高位的影响,使得参与运算的尽量是低16位
+    public static int hash(Object o){
+        int h=0;
+        return o==null?0:(h=o.hashCode())^(h>>>16);
+    }
+    public static void main(String[] args) {
+
+    }
+    public Node<K,V>[] resize(){
+        int size=0;
+        return null;
+    }
+    public void put(int hash,K k,V v,boolean onlyAbsend,boolean evict){
+        int len=0,i;
+        Node<K,V>[] tab;
+        if ((tab=table)==null||tab.length==0){
+            len=(tab=resize()).length;
+        }
+        Node<K,V> p;
+        if ((p=tab[i=(hash&(len-1))])==null){
+            p=new Node<>(hash,k,v,null);
+        }
+    }
+//    该方法使得给定的容量都为大于他的最近的二次幂,给定10,返回16,给定7,返回8
+//    大于,最近
+    public static int tableSizeFor(int cap){
+        int n=cap-1;
+        n|=n>>>1;//无符号右移一位并或
+        n|=n>>>2;
+        n|=n>>>4;
+        n|=n>>>8;
+        n|=n>>>16;
+        //上诉使得某数的最高位后面都为1
+        return n<0?1:n>Integer.MAX_VALUE?Integer.MAX_VALUE:n+1;
     }
 }
 

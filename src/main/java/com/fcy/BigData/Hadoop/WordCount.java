@@ -1,7 +1,9 @@
 package com.fcy.BigData.Hadoop;
 
+import com.fcy.BigData.HDFS.HDFSClient;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -24,15 +26,34 @@ public class WordCount{
         MapReduce();
     }
     public static void MapReduce()throws Exception{
+        System.setProperty("HADOOP_USER_NAME","root");
+        String inputPath="hdfs://master:9000/input/wordcount";
+        String outputPath="hdfs://master:9000/output/1";
         Configuration conf = new Configuration();
-
-//        conf.set("fs.default.name","hdfs://localhost:9001");
-//        System.setProperty("HADOOP_USER_NAME", "root");
-        String[] ioArgs = new String[] { "hdfs://localhost:9001/test/words.txt",
-                "hdfs://localhost:9001/test/output" };
-        String[] io=new String[]{"/test/words.txt","/test/output"};
+        FileSystem fs=FileSystem.get(conf);
+        if (fs.exists(new Path(outputPath))){
+            fs.delete(new Path(outputPath),true);
+        }
+        conf.set("fs.default.name","hdfs://master:9000");
+        conf.set("mapreduce.framework.name", "yarn");
+        conf.set("yarn.scheduler.minimum-allocation-mb","512");
+        conf.set("yarn.scheduler.maximum-allocation-mb","1024");
+        conf.set("yarn.app.mapreduce.am.resource.mb","200");
+        conf.set("yarn.resourcemanager.address", "http://master:8032");
+        conf.set("yarn.resourcemanager.scheduler.address", "master:8030");
+        conf.set("yarn.application.classpath","/base/bigdata/hadoop/etc/hadoop,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/common/lib/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/common/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/hdfs/lib/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/hdfs/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/mapreduce/lib/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/mapreduce/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/yarn/lib/*,\n" +
+                "\t\t\t/base/bigdata/hadoop/share/hadoop/yarn/*");
+        conf.set("mapreduce.app-submission.cross-platform", "true");
+        String[] ioArgs = new String[] { inputPath,outputPath};
         String[] otherArgs = new GenericOptionsParser(conf, ioArgs).getRemainingArgs();
-        Job job = new Job(conf);
+        Job job = Job.getInstance(conf,"WordCount");
         job.setJarByClass(WordCount.class);
         job.setMapperClass(MapClass.class);
         job.setReducerClass(ReduceClass.class);

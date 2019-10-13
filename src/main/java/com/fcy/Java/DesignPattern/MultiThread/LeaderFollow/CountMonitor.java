@@ -5,6 +5,7 @@ package com.fcy.Java.DesignPattern.MultiThread.LeaderFollow;
  * @author: fcy
  * @date: 2018-11-27  23:11
  */
+//监听一组worker线程运行情况
 public class CountMonitor implements Runnable{
     private Worker[] workers;
     private Thread t;

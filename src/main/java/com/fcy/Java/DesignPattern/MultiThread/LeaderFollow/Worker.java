@@ -5,6 +5,7 @@ package com.fcy.Java.DesignPattern.MultiThread.LeaderFollow;
  * @author: fcy
  * @date: 2018-11-26  23:30
  */
+//worker线程,执行任务并且成为leader
 public class Worker implements Runnable{
     public enum State{
         LEADER,FOLLOW,PROCESSING

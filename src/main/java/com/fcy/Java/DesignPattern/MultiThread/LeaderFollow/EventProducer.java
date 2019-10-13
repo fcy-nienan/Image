@@ -7,6 +7,7 @@ import java.util.*;
  * @author: fcy
  * @date: 2018-11-26  23:31
  */
+//worker线程需要去处理的任务
 public class EventProducer {
     public static Object accept(){
         return new HandlerEvent();

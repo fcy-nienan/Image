@@ -1,108 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="fix dir">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/Thread/DataBaseThread.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/DefaultValue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Runtime/RegexInvalidTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Notes/DataBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Notes/MESI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Notes/NetWork.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/Notes/DataBase.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/Notes/MESI.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/Notes/NetWork.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/jmxri.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Concurrent/AQS/AQSDemo/StampedLockDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Concurrent/Thread/HashMapConcurrentDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/ClassLoader/ClassLoaderDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/ClassLoader/ClassLoaderDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/AQS/AQSDemo/ExchangeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/AQS/AQSDemo/ExchangeDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/MultiThread/Reactor/Dispatcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/MultiThread/Reactor/Dispatcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Observer/Thread/BootStrapThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/DesignPattern/Observer/Thread/BootStrapThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Format/Sout.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Format/StringFormatExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Grammer/TestIf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/Config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/Config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/DataSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/DataSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/GenericDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JMX/ConsoleMBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JMX/ConsoleMBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Serializable/SerializableUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Serializable/SerializableUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/SoutAndLogger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/XML/SAX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/XML/SAX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Net/NATTransfromation/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Net/NATTransfromation/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/DateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/EveryDayGitPushAndShutdown.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/BinaryUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/CreateFileCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/EnvironmentVariable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/IOUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/MkDirCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/ScanNewestFileTask.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Common/SystemUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Server/ClientHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Server/FileServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/Server/NewestFileContainer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/FileTransfer/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel.rar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/EventModelXLS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/EventModelXLSX.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/ExcelUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/ReadExcelHead.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/ReadXlsxAsZip.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/UserModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/XLS2TXT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/jar/Excel/XLSX2TXT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/ExchangeDemo$ThreadA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/ExchangeDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/AQS/AQSDemo/StampedLockDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Concurrent/Thread/HashMapConcurrentDemo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/ClassLoader/ClassLoaderDemo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/ClassLoader/ClassLoaderDemo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/LeaderFollow/EventProducer$HandlerEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/LeaderFollow/EventProducer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/Reactor/Dispatcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/NullObject/AbstractCustomer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/Observer/Thread/BootStrapThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/Format/Sout.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/Format/StringFormatExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/Grammer/TestIf.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/Config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/DataSource.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/DataSource.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/GenericDAO$mysql.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/GenericDAO$mysql.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/GenericDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/JDBC/GenericDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/JMX/ConsoleMBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/JMX/ConsoleMBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/Serializable/SerializableUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/Serializable/SerializableUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/SoutAndLogger$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/SoutAndLogger$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/SoutAndLogger$LogRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/SoutAndLogger$SystemRecord.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/SoutAndLogger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/XML/SAX.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/XML/SAX.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/DateUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/BinaryUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/Command.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/CreateFileCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/EnvironmentVariable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/IOUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/MkDirCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/ScanNewestFileTask.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Common/SystemUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Server/ClientHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Server/FileServer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Util/FileTransfer/Server/NewestFileContainer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/EventModelXLS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/EventModelXLSX$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/EventModelXLSX$SheetHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/EventModelXLSX.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/ExcelUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/ReadExcelHead.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/ReadXlsxAsZip$ExcelSalParser.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/ReadXlsxAsZip.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/UserModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/XLS2TXT.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/jar/Excel/XLSX2TXT.class" beforeDir="false" />
-    </list>
+    <list default="true" id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,7 +166,7 @@
       <workItem from="1569737201091" duration="1784000" />
       <workItem from="1569892938430" duration="1189000" />
       <workItem from="1569999860050" duration="1793000" />
-      <workItem from="1570452937320" duration="8314000" />
+      <workItem from="1570452937320" duration="8552000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1566149942087</created>
@@ -297,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1566646885340</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix dir">
+      <created>1570940255509</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1570940255509</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

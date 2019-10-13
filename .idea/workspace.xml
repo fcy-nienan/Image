@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Runtime/RegexInvalidTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Runtime/RegexInvalidTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +168,7 @@
       <workItem from="1569737201091" duration="1784000" />
       <workItem from="1569892938430" duration="1189000" />
       <workItem from="1569999860050" duration="1793000" />
-      <workItem from="1570452937320" duration="19809000" />
+      <workItem from="1570452937320" duration="20433000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1566149942087</created>

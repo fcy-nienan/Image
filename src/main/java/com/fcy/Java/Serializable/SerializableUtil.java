@@ -6,8 +6,17 @@ import java.util.List;
 
 public class SerializableUtil {
     public static void main(String[] args) {
-        File file=new File("E:\\test\\");
-        System.out.println(file.getAbsoluteFile().toString());
+        List<Object> all=new ArrayList<>();
+        for(int i=0;i<10;i++) {
+            all.add(new Object());
+        }
+        byte[] bytes=writeObject(all);
+        System.out.println(bytes.length);
+        Object obj=readObject(bytes);
+        List<Object> mains=(ArrayList<Object>)obj;
+        mains.forEach(e->{
+            System.out.println(e.toString());
+        });
     }
 //    序列化list集合,集合中的数据也必须实现序列化接口，要不然会抛出异常
 //    从序列化的byte数组中构造对象
@@ -18,6 +27,7 @@ public class SerializableUtil {
         try {
             is = new ObjectInputStream(inputStream);
             object=is.readObject();
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -34,6 +44,9 @@ public class SerializableUtil {
             bytes=byteArrayOutputStream.toByteArray();
         }catch (Exception e){
             e.printStackTrace();
+        }
+        for(int i=0;i<bytes.length;i++){
+            System.out.print(bytes[i]+" ");
         }
         return bytes;
     }

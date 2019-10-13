@@ -21,7 +21,7 @@ public class GenericDAO<T,ID extends Serializable>{
 	private String[] fieldname;//字段名
 	private String[] fieldtype;//字段类型
 	private String clazzName;//实体类全路径名
-	private boolean showSql=false;
+	private boolean showSql=true;
 	private void showSql(String sql){
 		if (showSql)
 			logger.info(sql);
@@ -84,7 +84,6 @@ public class GenericDAO<T,ID extends Serializable>{
 		try{
 			showSql(sql);
 			con=mysql.getConnection();
-			System.out.println(con);
 			PreparedStatement pt=con.prepareStatement(sql,ResultSet.TYPE_SCROLL_INSENSITIVE,ResultSet.CONCUR_READ_ONLY);
 			ResultSet rs=pt.executeQuery();
 			Class cla=Class.forName("java.sql.ResultSet");
@@ -158,7 +157,6 @@ public class GenericDAO<T,ID extends Serializable>{
 				value[i]=String.valueOf(m.invoke(t));
 			}
 		}catch(Exception e){
-			e.printStackTrace();
 			logger.error(this.getClass().getName()+"加载错误");
 			throw new SQLException();
 		}

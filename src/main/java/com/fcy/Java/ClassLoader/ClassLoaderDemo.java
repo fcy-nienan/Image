@@ -8,13 +8,10 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.logging.Logger;
 
 public class ClassLoaderDemo extends ClassLoader{
-    private static Logger logger=Logger.getLogger(ClassLoaderDemo.class.getName());
     private String path="H://";
     public Class<?> findClass(String name){
-        logger.info("");
         String pathname=name.replace(".","/");
         String classPath=path+pathname+".class";
         InputStream is=null;

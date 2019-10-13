@@ -115,15 +115,16 @@ public class DataSource {
     public Connection getConnection(){
         return threadLocal.get();
     }
-    public static Connection create(){
+    private static Connection create(){
         try {
             return DriverManager.getConnection(url,username,password);
         } catch (SQLException e) {
-            e.printStackTrace();
             return null;
         }
     }
     public static void main(String[] args) throws IOException {
-        System.out.println(new DataSource().getConnection());
+        System.out.println(DataSource.class.getPackage().getName());
+        URL url=DataSource.class.getProtectionDomain().getCodeSource().getLocation();
+        System.out.println(url.getPath());
     }
 }

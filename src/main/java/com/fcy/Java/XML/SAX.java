@@ -14,47 +14,51 @@ public class SAX extends DefaultHandler {
         SAXParserFactory parser=SAXParserFactory.newInstance();
         SAXParser saxParser=parser.newSAXParser();
         SAX sax=new SAX();
-        saxParser.parse("F:\\sheet1.xml",sax);
+        saxParser.parse("test.xml",sax);
     }
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if (!qName.equals("row")||!qName.equals("c")){
-            return;
-        }
+        super.startElement(uri, localName, qName, attributes);
         System.out.println("qName:"+qName);
+        for(int i=0;i<attributes.getLength();i++){
+            System.out.println("attributes:"+attributes.getQName(i));
+            System.out.println("value:"+attributes.getValue(i));
+        }
     }
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-        if (!qName.equals("row")||!qName.equals("c")){
-            return;
-        }
+        super.endElement(uri, localName, qName);
         System.out.println("end:"+uri+localName+qName);
     }
 
     @Override
     public void characters(char[] ch, int start, int length) throws SAXException {
+        super.characters(ch, start, length);
         System.out.println("content:"+new String(ch,start,length));
     }
 
     @Override
     public void startPrefixMapping(String prefix, String uri) throws SAXException {
-        //        no op
+        super.startPrefixMapping(prefix, uri);
+        System.out.println("prefix:"+prefix);
+        System.out.println("uri:"+uri);
     }
 
     @Override
     public void endPrefixMapping(String prefix) throws SAXException {
-        //        no op
+        super.endPrefixMapping(prefix);
+        System.out.println("prefix:"+prefix);
     }
 
     @Override
     public void startDocument() throws SAXException {
-        //        no op
+        super.startDocument();
     }
 
     @Override
     public void endDocument() throws SAXException {
-        //        no op
+        super.endDocument();
     }
 }

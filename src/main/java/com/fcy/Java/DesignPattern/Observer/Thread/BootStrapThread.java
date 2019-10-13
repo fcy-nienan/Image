@@ -1,11 +1,5 @@
 package com.fcy.Java.DesignPattern.Observer.Thread;
 
-<<<<<<< HEAD
-import com.fcy.DesignPattern.Observer.Thread.ObserverThread;
-import com.fcy.DesignPattern.Observer.Thread.SubjectThread;
-
-=======
->>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 

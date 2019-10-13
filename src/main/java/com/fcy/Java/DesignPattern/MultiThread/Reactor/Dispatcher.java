@@ -1,13 +1,5 @@
 package com.fcy.Java.DesignPattern.MultiThread.Reactor;
 
-<<<<<<< HEAD
-import com.fcy.DesignPattern.MultiThread.Reactor.AbstractEventHandler;
-import com.fcy.DesignPattern.MultiThread.Reactor.Event;
-import com.fcy.DesignPattern.MultiThread.Reactor.EventType;
-import com.fcy.DesignPattern.MultiThread.Reactor.Selector;
-
-=======
->>>>>>> 4bdc1c1e1debb71d9dff9d6ef70e2ecb0e3d059f
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 

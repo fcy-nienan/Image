@@ -56,7 +56,6 @@ public class Worker implements Runnable{
     }
     public void dealEvent(Object event){
         int size=((EventProducer.HandlerEvent)event).handler();
-        System.out.println("finished :"+size);
     }
     public void toLeader(){
         synchronized (mutex) {

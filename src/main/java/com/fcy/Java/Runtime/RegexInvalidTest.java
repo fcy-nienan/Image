@@ -1,7 +1,7 @@
 package com.fcy.Java.Runtime;
 
 import java.io.File;
-
+//发现无法使用*号 执行mv /dir/* /dir2/文件没有移动
 public class RegexInvalidTest {
     public static void main(String args[]) {
 

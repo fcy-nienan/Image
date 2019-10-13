@@ -34,10 +34,15 @@ public class Worker implements Runnable{
         threadLocal.set(State.FOLLOW);
         otherVisitState=State.FOLLOW;
         while(true){
-          toLeader();
-          toProcess();
-          dealEvent(event);
-          toFollow();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            toLeader();
+            toProcess();
+            dealEvent(event);
+            toFollow();
       }
     }
     public void toFollow(){
@@ -50,6 +55,7 @@ public class Worker implements Runnable{
     }
     public void dealEvent(Object event){
         int size=((EventProducer.HandlerEvent)event).handler();
+        System.out.println("finished :"+size);
     }
     public void toLeader(){
         synchronized (mutex) {

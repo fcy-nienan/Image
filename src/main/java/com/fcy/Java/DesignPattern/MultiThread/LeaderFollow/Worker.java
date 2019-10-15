@@ -1,5 +1,7 @@
 package com.fcy.Java.DesignPattern.MultiThread.LeaderFollow;
 
+import java.sql.SQLException;
+
 /**
  * @descripiton:
  * @author: fcy
@@ -40,6 +42,7 @@ public class Worker implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+            SQLException exception;
             toLeader();
             toProcess();
             dealEvent(event);

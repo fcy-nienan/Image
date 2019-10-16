@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a751cbd2-6f7f-490b-854a-85b41dc8afef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/jmxri.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/scala_sdk_2_11_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/A.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/B.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BaseProgram/QuickSort1$$anonfun$main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BaseProgram/QuickSort1$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BaseProgram/QuickSort1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$$anonfun$main$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/BootStrap.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/C.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/HelloWorld$$anonfun$test$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/HelloWorld.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/Interface$class.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/Interface.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/actor/ActorConcat$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/actor/ActorConcat.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/actor/t1$$anonfun$act$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/actor/t1$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/actor/t1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/ex.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/hiret.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark$$anonfun$main$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark$.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/spark.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/fcy/BigData/Scala/test.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Image.kotlin_module" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/Image.kotlin_module" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/EveryDay.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -60,11 +29,23 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/Count.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12">
-              <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            <state relative-caret-position="148">
+              <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/Util/sout.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="138">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -110,6 +91,13 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/main/java/com/fcy/Util/sout.java" />
+      </list>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -122,7 +110,7 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="1" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="1377" />
     <option name="height" value="704" />
@@ -217,6 +205,15 @@
               <item name="DesignPattern" type="462c0819:PsiDirectoryNode" />
               <item name="Observer" type="462c0819:PsiDirectoryNode" />
               <item name="Thread" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Image" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Image" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="fcy" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -390,7 +387,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="949000" />
+    <option name="totallyTimeSpent" value="2785000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1377" height="704" extended-state="0" />
@@ -406,11 +403,11 @@
       <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Messages" weight="0.40695652" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.26434782" />
+      <window_info anchor="bottom" id="Terminal" weight="0.26434782" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32869565" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.19130434" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -596,7 +593,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/EveryDay.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -626,8 +623,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/Count.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12">
-          <caret line="12" column="20" lean-forward="true" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        <state relative-caret-position="148">
+          <caret line="12" column="20" selection-start-line="12" selection-start-column="20" selection-end-line="12" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fcy/Util/sout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

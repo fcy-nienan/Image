@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="a751cbd2-6f7f-490b-854a-85b41dc8afef" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/EveryDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/EveryDay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Util/sout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Util/sout.java" afterDir="false" />
+=======
+    <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/EveryDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/EveryDay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/EveryDay.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/EveryDay.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/LeaderFollow/Worker$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/LeaderFollow/Worker$State.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/LeaderFollow/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/fcy/Java/DesignPattern/MultiThread/LeaderFollow/Worker.class" afterDir="false" />
+>>>>>>> tmp
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+<<<<<<< HEAD
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
   </component>
@@ -265,6 +274,10 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.importing" />
+=======
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+>>>>>>> tmp
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -278,6 +291,7 @@
       </list>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Application.sout">
     <configuration name="Count" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Count" />
@@ -292,6 +306,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+=======
+  <component name="RunManager" selected="Application.GitTask">
+>>>>>>> tmp
     <configuration name="EveryDay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.EveryDay" />
       <module name="Image" />
@@ -318,6 +335,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+<<<<<<< HEAD
     <configuration name="WorkerContainer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.DesignPattern.MultiThread.LeaderFollow.WorkerContainer" />
       <module name="Image" />
@@ -358,69 +376,23 @@
         <item itemvalue="Application.Count" />
         <item itemvalue="Application.WorkerContainer" />
         <item itemvalue="Application.GitTask" />
+=======
+    <list>
+      <item itemvalue="Application.EveryDay" />
+      <item itemvalue="Application.GitTask" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GitTask" />
+        <item itemvalue="Application.EveryDay" />
+>>>>>>> tmp
       </list>
     </recent_temporary>
   </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="61c05744-0990-4ff6-a9fe-34ce47aa1079" name="Default Changelist" comment="" />
-      <created>1566149268501</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1566149268501</updated>
-      <workItem from="1566149271907" duration="1071000" />
-      <workItem from="1566621997884" duration="4424000" />
-      <workItem from="1566629312037" duration="810000" />
-      <workItem from="1566637614754" duration="2467000" />
-      <workItem from="1566713089344" duration="43998000" />
-      <workItem from="1567272162966" duration="8426000" />
-      <workItem from="1569076073899" duration="597000" />
-      <workItem from="1569737201091" duration="1784000" />
-      <workItem from="1569892938430" duration="1189000" />
-      <workItem from="1569999860050" duration="1793000" />
-      <workItem from="1570452937320" duration="25985000" />
-    </task>
-    <task id="LOCAL-00001" summary="init">
-      <created>1566149942087</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1566149942087</updated>
-    </task>
-    <task id="LOCAL-00002" summary="fix dir">
-      <created>1566150167757</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1566150167757</updated>
-    </task>
-    <task id="LOCAL-00003" summary="fix dir">
-      <created>1566150293719</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1566150293719</updated>
-    </task>
-    <task id="LOCAL-00004" summary="fix dir">
-      <created>1566646885339</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1566646885340</updated>
-    </task>
-    <task id="LOCAL-00005" summary="fix dir">
-      <created>1570940255509</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1570940255509</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="6561000" />
   </component>
@@ -460,74 +432,20 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+=======
+>>>>>>> tmp
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="1">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="structure">
-                    <value>
-                      <list>
-                        <option value="dir:D:/Code/WorkSpace/java/NewWorkSpace/Image/src/main/java/com/fcy/Java/Grammer" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER" />
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="OPEN_TABS">
-      <set>
-        <option value="1" />
-      </set>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list />
-          </value>
-        </entry>
-        <entry key="User">
-          <value>
-            <list />
+            <State />
           </value>
         </entry>
       </map>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="fix dir" />
@@ -700,4 +618,6 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> tmp
 </project>

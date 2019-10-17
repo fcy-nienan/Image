@@ -16,9 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class EveryDay {
     public static void main(String[] args) throws Exception {
-<<<<<<< HEAD
         File file=new File("D:\\","sdlfkjsdf");
-=======
         byte b=127;
         int y=8923+b;
         byte b1=-100;
@@ -27,7 +25,6 @@ public class EveryDay {
         System.out.println(z);
 
         System.out.println(y);
->>>>>>> tmp
 
 
     }

@@ -16,11 +16,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class EveryDay {
     public static void main(String[] args) throws Exception {
-        String s="Hello World";
-        s.split(" ");
-        System.out.println(s.substring(1,2));
-        String te;
-        String test;
+        File file=new File("D:\\","sdlfkjsdf");
 
 
     }

@@ -19,13 +19,12 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 //如果Invalid先一步到来,那么当前CPU写入缓存行的时候发现缓存行已经失效了,那么会重新从内存中读取数据
 //暂时是这么理解的
 public class MESITest{
-    private volatile int x;
-    private int y;
-    private int z;
+    private volatile int z;
     private int s;
     private AtomicInteger a=new AtomicInteger();
     private static long zOffset;
     private static Unsafe unsafe;
+    private static final int count=10000000;
     private static MESITest test=new MESITest();
     static {
         try {
@@ -63,32 +62,10 @@ public class MESITest{
         getAndAddInt(test,zOffset,1);
 
     }
-    public void addx(){
-        x++;
-    }
-    public void addy(){
-        y++;
-    }
-    class xt implements Runnable{
-        @Override
-        public void run() {
-            for(int i=0;i<10000000;i++){
-                test.addx();
-            }
-        }
-    }
-    class yt implements Runnable{
-        @Override
-        public void run() {
-            for (int i=0;i<10000000;i++){
-                test.addy();
-            }
-        }
-    }
     class zt implements Runnable{
         @Override
         public void run() {
-            for (int i=0;i<10000000;i++){
+            for (int i=0;i<count;i++){
                 test.addz();
             }
         }
@@ -96,7 +73,7 @@ public class MESITest{
     class st implements Runnable{
         @Override
         public void run() {
-            for (int i=0;i<10000000;i++){
+            for (int i=0;i<count;i++){
                 adds();
             }
         }
@@ -104,7 +81,7 @@ public class MESITest{
     class at implements Runnable{
         @Override
         public void run() {
-            for (int i=0;i<10000000;i++){
+            for (int i=0;i<count;i++){
                 adda();
             }
         }
@@ -117,13 +94,9 @@ public class MESITest{
         ThreadPoolExecutor executor=new ThreadPoolExecutor(100,200,0, TimeUnit.SECONDS,new ArrayBlockingQueue(100));
         long start=System.currentTimeMillis();
         for (int i=0;i<20;i++){
-//            Future<?> submit = executor.submit(test.new xt());
-//            Future<?> submit1 = executor.submit(test.new yt());
             Future<?> submit2 = executor.submit(test.new zt());
 //            Future<?> submit3 = executor.submit(test.new st());
 //            Future<?> submit4 = executor.submit(test.new at());
-//            futures.add(submit);
-//            futures.add(submit1);
             futures.add(submit2);
 //            futures.add(submit3);
 //            futures.add(submit4);
@@ -143,8 +116,6 @@ public class MESITest{
         }
         long end=System.currentTimeMillis();
         System.out.println("cost time:"+(end-start));
-        System.out.println("x:"+x);
-        System.out.println("y:"+y);
         System.out.println("z:"+z);
         System.out.println("s:"+s);
         System.out.println("a:"+a);

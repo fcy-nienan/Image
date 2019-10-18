@@ -29,10 +29,7 @@ public class MESITest extends t{
     private static long zOffset;
     private static Unsafe unsafe;
     static {
-        Field value = Unsafe.class.getDeclaredField("theUnsafe");
-        value.setAccessible(true);
-        unsafe=value.get(null);
-        zOffset=unsafe.objectFieldOffset(MESITest.class.getDeclaredField("z"));
+
     }
     public static void addz(){
 

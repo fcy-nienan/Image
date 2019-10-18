@@ -38,12 +38,6 @@ public class MESITest{
             e.printStackTrace();
         }
     }
-    private void update(Object o,long offset){
-        int c=0;
-        do{
-            c=unsafe.getIntVolatile(o,offset);
-        }while (!unsafe.compareAndSwapInt(o,offset,c,c+1));
-    }
     public void adds(){
         synchronized (this){
             s++;
@@ -60,13 +54,16 @@ public class MESITest{
     }
     public void addz(){
         getAndAddInt(test,zOffset,1);
-
     }
     class zt implements Runnable{
+        private MESITest object;
+        public zt(MESITest t){
+            this.object=t;
+        }
         @Override
         public void run() {
             for (int i=0;i<count;i++){
-                test.addz();
+                object.addz();
             }
         }
     }
@@ -94,12 +91,10 @@ public class MESITest{
         ThreadPoolExecutor executor=new ThreadPoolExecutor(100,200,0, TimeUnit.SECONDS,new ArrayBlockingQueue(100));
         long start=System.currentTimeMillis();
         for (int i=0;i<20;i++){
-            Future<?> submit2 = executor.submit(test.new zt());
-//            Future<?> submit3 = executor.submit(test.new st());
-//            Future<?> submit4 = executor.submit(test.new at());
-            futures.add(submit2);
-//            futures.add(submit3);
-//            futures.add(submit4);
+//            Future<?> submit2 = executor.submit(test.new zt(test));
+            Future<?> submit4 = executor.submit(test.new at());
+//            futures.add(submit2);
+            futures.add(submit4);
         }
         while (true){
             int count=0;

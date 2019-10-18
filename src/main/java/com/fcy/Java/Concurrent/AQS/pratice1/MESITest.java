@@ -7,10 +7,7 @@ import sun.misc.Unsafe;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ArrayBlockingQueue;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
@@ -20,7 +17,6 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 //暂时是这么理解的
 public class MESITest{
     private volatile int z;
-    private AtomicInteger a=new AtomicInteger();
     private static long zOffset;
     private static Unsafe unsafe;
     private static final int count=10000000;
@@ -48,40 +44,58 @@ public class MESITest{
     }
     static class MESIThread extends Thread{
         private MESITest object;
-        public MESIThread(MESITest t){
+        private CountDownLatch latch;
+        public MESIThread(MESITest t,CountDownLatch latch){
             this.object=t;
+            this.latch=latch;
         }
         @Override
         public void run() {
             for (int i=0;i<count;i++) {
                 object.getAndIncrement();
             }
+            latch.countDown();
         }
     }
     static class AtomicThread extends Thread{
         private AtomicInteger integer;
-        public AtomicThread(AtomicInteger i){
+        private CountDownLatch latch;
+        public AtomicThread(AtomicInteger i,CountDownLatch latch){
             this.integer=i;
+            this.latch=latch;
         }
         @Override
         public void run() {
             for (int i=0;i<count;i++) {
                 integer.getAndIncrement();
             }
+            latch.countDown();
         }
     }
-    public static void main(String args[]) {
-        int threadCount=1;
+    public static void main(String args[]) throws InterruptedException {
+        int threadCount=12;
+        long start,end;
         AtomicInteger integer=new AtomicInteger();
+        CountDownLatch integerLatch=new CountDownLatch(threadCount);
         MESITest mesiTest=new MESITest();
+        CountDownLatch mesiLatch=new CountDownLatch(threadCount);
+        start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
-            MESIThread thread=new MESIThread(mesiTest);
+            MESIThread thread=new MESIThread(mesiTest,mesiLatch);
             thread.start();
         }
+        mesiLatch.await();
+        end=System.currentTimeMillis();
+        System.out.println(mesiTest.z+"   cost time:"+(end-start));
+
+        start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
-            AtomicThread thread=new AtomicThread(integer);
+            AtomicThread thread=new AtomicThread(integer,integerLatch);
             thread.start();
         }
+        integerLatch.await();
+        end=System.currentTimeMillis();
+        System.out.println(integer.get()+"   cost time:"+(end-start));
 
 
     }

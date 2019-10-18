@@ -1,5 +1,6 @@
 package com.fcy.Java.Concurrent.AQS.pratice1;
 
+import com.fcy.Java.UnSafe.UnSafeDemo;
 import com.fcy.Notes.MESI;
 import sun.misc.Unsafe;
 
@@ -16,65 +17,78 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 //而当前处理器又已经读取了该缓存行的数据进行+1操作,那么如果当前处理器写入缓存中时Invalid信息还没来当前值就有效
 //如果Invalid先一步到来,那么当前CPU写入缓存行的时候发现缓存行已经失效了,那么会重新从内存中读取数据
 //暂时是这么理解的
-class t{
-    private int kkk;
-    int ddd;
-    protected int ccc;
-    public long dddd;
-}
-public class MESITest extends t{
-    private static volatile int x;
-    private static int y;
-    private static int z;
+public class MESITest{
+    private volatile int x;
+    private int y;
+    private int z;
     private static long zOffset;
     private static Unsafe unsafe;
+    private static MESITest test=new MESITest();
     static {
+        try {
+            Field field= Unsafe.class.getDeclaredField("theUnsafe");
+            field.setAccessible(true);
+            unsafe= (Unsafe) field.get(null);
+            zOffset=unsafe.objectFieldOffset(
+                    MESITest.class.getDeclaredField("z")
+            );
+        } catch (NoSuchFieldException | IllegalAccessException e) {
+            e.printStackTrace();
+        }
 
     }
-    public static void addz(){
-
+    private void update(Object o,long offset){
+        long c=0;
+        do{
+            c=unsafe.getLongVolatile(o,offset);
+        }while (!unsafe.compareAndSwapLong(o,offset,c,c+1));
     }
-    public static void addx(){
+    public void addz(){
+        update(MESITest.class,zOffset);
+    }
+    public void addx(){
         x++;
     }
-    public static void addy(){
+    public void addy(){
         y++;
     }
-    static class xt implements Runnable{
+    class xt implements Runnable{
         @Override
         public void run() {
             for(int i=0;i<10000000;i++){
-                addx();
+                test.addx();
             }
         }
     }
-    static class yt implements Runnable{
+    class yt implements Runnable{
         @Override
         public void run() {
             for (int i=0;i<10000000;i++){
-                addy();
+                test.addy();
+            }
+        }
+    }
+    class zt implements Runnable{
+        @Override
+        public void run() {
+            for (int i=0;i<10000000;i++){
+                test.addz();
             }
         }
     }
     public static void main(String args[]) {
-        Field[] declaredFields = MESITest.class.getDeclaredFields();
-        System.out.println("decl fields!");
-        for (Field declaredField : declaredFields) {
-            System.out.println(declaredField.getName());
-        }
-        System.out.println("fields!");
-        for (Field field : MESITest.class.getFields()) {
-            System.out.println(field.getName());
-        }
+        test.test();
     }
-    private static void test(){
+    private void test(){
         List<Future> futures=new ArrayList<>();
         ThreadPoolExecutor executor=new ThreadPoolExecutor(100,200,0, TimeUnit.SECONDS,new ArrayBlockingQueue(100));
         for (int i=0;i<20;i++){
-            Future<?> submit = executor.submit(new xt());
-            Future<?> submit1 = executor.submit(new yt());
+            Future<?> submit = executor.submit(test.new xt());
+            Future<?> submit1 = executor.submit(test.new yt());
+//            Future<?> submit2 = executor.submit(test.new zt());
             futures.add(submit);
             futures.add(submit1);
+//            futures.add(submit2);
         }
         executor.shutdown();
         while (true){
@@ -92,5 +106,6 @@ public class MESITest extends t{
         }
         System.out.println("x:"+x);
         System.out.println("y:"+y);
+        System.out.println("z:"+z);
     }
 }

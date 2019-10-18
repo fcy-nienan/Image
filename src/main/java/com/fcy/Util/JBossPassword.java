@@ -7,6 +7,9 @@ import java.util.logging.Logger;
 
 public class JBossPassword {
     public static void main(String[] args) throws Exception {
+        password(new String[]{"-d","-3683a71d6647034c207a6df87216de44"});
+    }
+    public static void password(String[] args) throws Exception {
         if ((args.length != 2) ||
                 !(args[0].equals("-e") | args[0].equals("-d"))) {
             System.out.println(

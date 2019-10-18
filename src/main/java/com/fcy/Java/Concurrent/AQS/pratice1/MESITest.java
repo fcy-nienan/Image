@@ -20,7 +20,6 @@ import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 //暂时是这么理解的
 public class MESITest{
     private volatile int z;
-    private int s;
     private AtomicInteger a=new AtomicInteger();
     private static long zOffset;
     private static Unsafe unsafe;
@@ -36,11 +35,6 @@ public class MESITest{
             );
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
-        }
-    }
-    public void adds(){
-        synchronized (this){
-            s++;
         }
     }
     public void adda(){
@@ -67,14 +61,6 @@ public class MESITest{
             }
         }
     }
-    class st implements Runnable{
-        @Override
-        public void run() {
-            for (int i=0;i<count;i++){
-                adds();
-            }
-        }
-    }
     class at implements Runnable{
         @Override
         public void run() {
@@ -91,10 +77,8 @@ public class MESITest{
         ThreadPoolExecutor executor=new ThreadPoolExecutor(100,200,0, TimeUnit.SECONDS,new ArrayBlockingQueue(100));
         long start=System.currentTimeMillis();
         for (int i=0;i<20;i++){
-//            Future<?> submit2 = executor.submit(test.new zt(test));
-            Future<?> submit4 = executor.submit(test.new at());
-//            futures.add(submit2);
-            futures.add(submit4);
+            Future<?> submit2 = executor.submit(test.new zt(test));
+            futures.add(submit2);
         }
         while (true){
             int count=0;
@@ -112,7 +96,6 @@ public class MESITest{
         long end=System.currentTimeMillis();
         System.out.println("cost time:"+(end-start));
         System.out.println("z:"+z);
-        System.out.println("s:"+s);
         System.out.println("a:"+a);
         executor.shutdown();
 

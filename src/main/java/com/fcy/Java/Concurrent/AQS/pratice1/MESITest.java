@@ -46,23 +46,43 @@ public class MESITest{
         }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
         return c;
     }
+    static class MESIThread extends Thread{
+        private MESITest object;
+        public MESIThread(MESITest t){
+            this.object=t;
+        }
+        @Override
+        public void run() {
+            for (int i=0;i<count;i++) {
+                object.getAndIncrement();
+            }
+        }
+    }
+    static class AtomicThread extends Thread{
+        private AtomicInteger integer;
+        public AtomicThread(AtomicInteger i){
+            this.integer=i;
+        }
+        @Override
+        public void run() {
+            for (int i=0;i<count;i++) {
+                integer.getAndIncrement();
+            }
+        }
+    }
     public static void main(String args[]) {
+        int threadCount=1;
         AtomicInteger integer=new AtomicInteger();
-        long start=System.currentTimeMillis();
-        for (int i=0;i<count;i++) {
-            integer.getAndIncrement();
+        MESITest mesiTest=new MESITest();
+        for (int i=0;i<threadCount;i++){
+            MESIThread thread=new MESIThread(mesiTest);
+            thread.start();
         }
-        long end=System.currentTimeMillis();
-        System.out.println("atomic:"+(end-start));
-
-
-        MESITest test=new MESITest();
-        start=System.currentTimeMillis();
-        for (int i=0;i<count;i++) {
-            test.getAndIncrement();
+        for (int i=0;i<threadCount;i++){
+            AtomicThread thread=new AtomicThread(integer);
+            thread.start();
         }
-        end=System.currentTimeMillis();
-        System.out.println("customer:"+(end-start));
+
 
     }
 }

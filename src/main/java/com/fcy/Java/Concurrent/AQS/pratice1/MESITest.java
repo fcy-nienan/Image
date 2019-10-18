@@ -23,8 +23,7 @@ public class MESITest{
     private AtomicInteger a=new AtomicInteger();
     private static long zOffset;
     private static Unsafe unsafe;
-    private static final int count=1000000;
-    private static MESITest test=new MESITest();
+    private static final int count=10000000;
     static {
         try {
             Field field= Unsafe.class.getDeclaredField("theUnsafe");

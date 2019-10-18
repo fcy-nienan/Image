@@ -95,17 +95,17 @@ public class MESITest{
     private void test(){
         List<Future> futures=new ArrayList<>();
         ThreadPoolExecutor executor=new ThreadPoolExecutor(100,200,0, TimeUnit.SECONDS,new ArrayBlockingQueue(100));
+        long start=System.currentTimeMillis();
         for (int i=0;i<20;i++){
-            Future<?> submit = executor.submit(test.new xt());
-            Future<?> submit1 = executor.submit(test.new yt());
+//            Future<?> submit = executor.submit(test.new xt());
+//            Future<?> submit1 = executor.submit(test.new yt());
             Future<?> submit2 = executor.submit(test.new zt());
-            Future<?> submit3 = executor.submit(test.new st());
-            futures.add(submit);
-            futures.add(submit1);
+//            Future<?> submit3 = executor.submit(test.new st());
+//            futures.add(submit);
+//            futures.add(submit1);
             futures.add(submit2);
-            futures.add(submit3);
+//            futures.add(submit3);
         }
-        executor.shutdown();
         while (true){
             int count=0;
             for (int i=0;i<futures.size();i++){
@@ -119,9 +119,13 @@ public class MESITest{
                 break;
             }
         }
+        long end=System.currentTimeMillis();
+        System.out.println("cost time:"+(end-start));
         System.out.println("x:"+x);
         System.out.println("y:"+y);
         System.out.println("z:"+z);
         System.out.println("s:"+s);
+        executor.shutdown();
+
     }
 }

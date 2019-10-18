@@ -38,10 +38,10 @@ public class MESITest{
 
     }
     private void update(Object o,long offset){
-        long c=0;
+        int c=0;
         do{
-            c=unsafe.getLongVolatile(o,offset);
-        }while (!unsafe.compareAndSwapLong(o,offset,c,c+1));
+            c=unsafe.getIntVolatile(o,offset);
+        }while (!unsafe.compareAndSwapInt(o,offset,c,c+1));
     }
     public void addz(){
         update(MESITest.class,zOffset);
@@ -85,10 +85,10 @@ public class MESITest{
         for (int i=0;i<20;i++){
             Future<?> submit = executor.submit(test.new xt());
             Future<?> submit1 = executor.submit(test.new yt());
-//            Future<?> submit2 = executor.submit(test.new zt());
+            Future<?> submit2 = executor.submit(test.new zt());
             futures.add(submit);
             futures.add(submit1);
-//            futures.add(submit2);
+            futures.add(submit2);
         }
         executor.shutdown();
         while (true){

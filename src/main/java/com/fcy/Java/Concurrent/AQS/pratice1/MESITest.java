@@ -23,7 +23,7 @@ public class MESITest{
     private AtomicInteger a=new AtomicInteger();
     private static long zOffset;
     private static Unsafe unsafe;
-    private static final int count=10000000;
+    private static final int count=1000000;
     private static MESITest test=new MESITest();
     static {
         try {
@@ -37,67 +37,33 @@ public class MESITest{
             e.printStackTrace();
         }
     }
-    public void adda(){
-        a.getAndIncrement();
+    public int getAndIncrement(){
+        return this.getAndAddInt(this,zOffset,1);
     }
-    public final void getAndAddInt(Object var1, long var2, int var4) {
-        int var5;
+    public int getAndAddInt(Object object,long offset,int add){
+        int c;
         do {
-            var5 = unsafe.getIntVolatile(var1, var2);
-        } while(!unsafe.compareAndSwapInt(var1, var2, var5, var5 + var4));
-    }
-    public void addz(){
-        getAndAddInt(test,zOffset,1);
-    }
-    class zt implements Runnable{
-        private MESITest object;
-        public zt(MESITest t){
-            this.object=t;
-        }
-        @Override
-        public void run() {
-            for (int i=0;i<count;i++){
-                object.addz();
-            }
-        }
-    }
-    class at implements Runnable{
-        @Override
-        public void run() {
-            for (int i=0;i<count;i++){
-                adda();
-            }
-        }
+            c=unsafe.getIntVolatile(object,offset);
+        }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
+        return c;
     }
     public static void main(String args[]) {
-        test.test();
-    }
-    private void test(){
-        List<Future> futures=new ArrayList<>();
-        ThreadPoolExecutor executor=new ThreadPoolExecutor(100,200,0, TimeUnit.SECONDS,new ArrayBlockingQueue(100));
+        AtomicInteger integer=new AtomicInteger();
         long start=System.currentTimeMillis();
-        for (int i=0;i<20;i++){
-            Future<?> submit2 = executor.submit(test.new zt(test));
-            futures.add(submit2);
-        }
-        while (true){
-            int count=0;
-            for (int i=0;i<futures.size();i++){
-                if (!futures.get(i).isCancelled()&&futures.get(i).isDone()){
-                    count++;
-                }else{
-                    break;
-                }
-            }
-            if (count==futures.size()){
-                break;
-            }
+        for (int i=0;i<count;i++) {
+            integer.getAndIncrement();
         }
         long end=System.currentTimeMillis();
-        System.out.println("cost time:"+(end-start));
-        System.out.println("z:"+z);
-        System.out.println("a:"+a);
-        executor.shutdown();
+        System.out.println("atomic:"+(end-start));
+
+
+        MESITest test=new MESITest();
+        start=System.currentTimeMillis();
+        for (int i=0;i<count;i++) {
+            test.getAndIncrement();
+        }
+        end=System.currentTimeMillis();
+        System.out.println("customer:"+(end-start));
 
     }
 }

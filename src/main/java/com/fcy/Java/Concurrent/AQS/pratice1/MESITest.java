@@ -21,6 +21,7 @@ public class MESITest{
     private volatile int x;
     private int y;
     private int z;
+    private int s;
     private static long zOffset;
     private static Unsafe unsafe;
     private static MESITest test=new MESITest();
@@ -43,8 +44,13 @@ public class MESITest{
             c=unsafe.getIntVolatile(o,offset);
         }while (!unsafe.compareAndSwapInt(o,offset,c,c+1));
     }
+    public void adds(){
+        synchronized (this){
+            s++;
+        }
+    }
     public void addz(){
-        update(MESITest.class,zOffset);
+        update(test,zOffset);
     }
     public void addx(){
         x++;
@@ -76,6 +82,14 @@ public class MESITest{
             }
         }
     }
+    class st implements Runnable{
+        @Override
+        public void run() {
+            for (int i=0;i<10000000;i++){
+                adds();
+            }
+        }
+    }
     public static void main(String args[]) {
         test.test();
     }
@@ -86,9 +100,11 @@ public class MESITest{
             Future<?> submit = executor.submit(test.new xt());
             Future<?> submit1 = executor.submit(test.new yt());
             Future<?> submit2 = executor.submit(test.new zt());
+            Future<?> submit3 = executor.submit(test.new st());
             futures.add(submit);
             futures.add(submit1);
             futures.add(submit2);
+            futures.add(submit3);
         }
         executor.shutdown();
         while (true){
@@ -107,5 +123,6 @@ public class MESITest{
         System.out.println("x:"+x);
         System.out.println("y:"+y);
         System.out.println("z:"+z);
+        System.out.println("s:"+s);
     }
 }

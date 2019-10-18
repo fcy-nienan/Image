@@ -1,15 +1,10 @@
-package com.fcy.Java.Concurrent.AQS.pratice1;
+package com.fcy.Java.Concurrent.CustomerLockDemo;
 
-import com.fcy.Java.UnSafe.UnSafeDemo;
-import com.fcy.Notes.MESI;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 //MESI协议  若缓存行处于S状态,如果此时有另一个处理器发出了Invalid信息
 //而当前处理器又已经读取了该缓存行的数据进行+1操作,那么如果当前处理器写入缓存中时Invalid信息还没来当前值就有效
@@ -42,36 +37,6 @@ public class MESITest{
         }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
         return c;
     }
-    static class MESIThread extends Thread{
-        private MESITest object;
-        private CountDownLatch latch;
-        public MESIThread(MESITest t,CountDownLatch latch){
-            this.object=t;
-            this.latch=latch;
-        }
-        @Override
-        public void run() {
-            for (int i=0;i<count;i++) {
-                object.getAndIncrement();
-            }
-            latch.countDown();
-        }
-    }
-    static class AtomicThread extends Thread{
-        private AtomicInteger integer;
-        private CountDownLatch latch;
-        public AtomicThread(AtomicInteger i,CountDownLatch latch){
-            this.integer=i;
-            this.latch=latch;
-        }
-        @Override
-        public void run() {
-            for (int i=0;i<count;i++) {
-                integer.getAndIncrement();
-            }
-            latch.countDown();
-        }
-    }
     public static void main(String args[]) throws InterruptedException {
         int threadCount=12;
         long start,end;
@@ -81,7 +46,7 @@ public class MESITest{
         CountDownLatch mesiLatch=new CountDownLatch(threadCount);
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
-            MESIThread thread=new MESIThread(mesiTest,mesiLatch);
+            MESIThread thread=new MESIThread(mesiTest,mesiLatch,count);
             thread.start();
         }
         mesiLatch.await();
@@ -90,7 +55,7 @@ public class MESITest{
 
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
-            AtomicThread thread=new AtomicThread(integer,integerLatch);
+            AtomicThread thread=new AtomicThread(integer,integerLatch,count);
             thread.start();
         }
         integerLatch.await();

@@ -36,7 +36,6 @@ public class MESITest{
         } catch (NoSuchFieldException | IllegalAccessException e) {
             e.printStackTrace();
         }
-
     }
     private void update(Object o,long offset){
         int c=0;

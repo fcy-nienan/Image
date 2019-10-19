@@ -28,14 +28,20 @@ public class MESITest{
         }
     }
     public int getAndIncrement(){
+//        return unsafe.getAndAddInt(this,zOffset,1);
         return this.getAndAddInt(this,zOffset,1);
     }
     public int getAndAddInt(Object object,long offset,int add){
-        int c;
-        do {
-            c=unsafe.getIntVolatile(object,offset);
-        }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
-        return c;
+//        int c;
+//        do {
+//            c=unsafe.getIntVolatile(object,offset);
+//        }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
+//        return c;
+        boolean update = false;
+        do{
+            update = unsafe.compareAndSwapObject(this, offset, z, z + 1);
+        }while (!update);
+        return 1;
     }
     public static void main(String args[]) throws InterruptedException {
         int threadCount=12;
@@ -44,21 +50,33 @@ public class MESITest{
         CountDownLatch integerLatch=new CountDownLatch(threadCount);
         MESITest mesiTest=new MESITest();
         CountDownLatch mesiLatch=new CountDownLatch(threadCount);
+
+
+        Thread[] threads=new Thread[threadCount];
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
             MESIThread thread=new MESIThread(mesiTest,mesiLatch,count);
             thread.start();
+            threads[i]=thread;
         }
-        mesiLatch.await();
+        for (Thread t:threads){
+            t.join();
+        }
+//        mesiLatch.await();
         end=System.currentTimeMillis();
         System.out.println(mesiTest.z+"   cost time:"+(end-start));
 
+        Thread[] threads1=new Thread[threadCount];
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
             AtomicThread thread=new AtomicThread(integer,integerLatch,count);
             thread.start();
+            threads1[i]=thread;
         }
-        integerLatch.await();
+        for (Thread t:threads1){
+            t.join();
+        }
+//        integerLatch.await();
         end=System.currentTimeMillis();
         System.out.println(integer.get()+"   cost time:"+(end-start));
 

@@ -17,6 +17,6 @@ public class AtomicThread extends Thread{
         for (int i=0;i<count;i++) {
             integer.getAndIncrement();
         }
-        latch.countDown();
+//        latch.countDown();
     }
 }

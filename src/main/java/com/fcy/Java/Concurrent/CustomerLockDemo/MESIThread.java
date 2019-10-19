@@ -16,6 +16,6 @@ public class MESIThread extends Thread{
         for (int i=0;i<count;i++) {
             object.getAndIncrement();
         }
-        latch.countDown();
+//        latch.countDown();
     }
 }

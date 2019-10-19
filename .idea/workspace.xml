@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="" />
+    <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/TestNative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/FcyAtomicInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/FcyAtomicInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/FcyAtomicThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/FcyAtomicThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/GenericDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/JDBC/GenericDAO.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +62,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.GitTask">
+  <component name="RunManager" selected="Application.TestNative">
     <configuration name="CustomCASTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="D:\Code\Language\java\jre" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.CustomCASTest" />
       <module name="Image" />
       <extension name="coverage">
@@ -95,19 +104,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Gzip" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fcy.Util.Gzip" />
-      <module name="Image" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fcy.Util.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="MESITest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.MESITest" />
       <module name="Image" />
@@ -121,20 +117,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestNative" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.TestNative" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.GitTask" />
-      <item itemvalue="Application.Gzip" />
       <item itemvalue="Application.MESITest" />
       <item itemvalue="Application.GxfInter" />
       <item itemvalue="Application.CustomCASTest" />
+      <item itemvalue="Application.TestNative" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GitTask" />
+        <item itemvalue="Application.TestNative" />
         <item itemvalue="Application.CustomCASTest" />
+        <item itemvalue="Application.GitTask" />
         <item itemvalue="Application.MESITest" />
         <item itemvalue="Application.GxfInter" />
-        <item itemvalue="Application.Gzip" />
       </list>
     </recent_temporary>
   </component>
@@ -145,7 +154,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="7755000" />
+      <workItem from="1571424487920" duration="16005000" />
     </task>
     <servers />
   </component>

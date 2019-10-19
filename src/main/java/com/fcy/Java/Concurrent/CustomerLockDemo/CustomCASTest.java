@@ -8,30 +8,26 @@ import java.util.concurrent.atomic.AtomicInteger;
 //暂时是这么理解的
 public class CustomCASTest{
     public static void main(String args[]) throws InterruptedException {
-        int threadCount=12;
+        String s;
+        Double ttt;
+        int threadCount=24;
         int count=10000000;
         long start,end;
 
-        AtomicInteger atomicInteger=new AtomicInteger();
-        CountDownLatch integerLatch=new CountDownLatch(threadCount);
-
-
-        start=System.currentTimeMillis();
-        for (int i=0;i<threadCount;i++){
-            AtomicThread thread=new AtomicThread(atomicInteger,integerLatch,count);
-            thread.start();
-        }
-        integerLatch.await();
-        end=System.currentTimeMillis();
-        System.out.println(atomicInteger.get()+"   AtomicInteger cost time:"+(end-start));
-
-
-
+//        AtomicInteger atomicInteger=new AtomicInteger();
+//        CountDownLatch integerLatch=new CountDownLatch(threadCount);
+//        start=System.currentTimeMillis();
+//        for (int i=0;i<threadCount;i++){
+//            AtomicThread thread=new AtomicThread(atomicInteger,integerLatch,count);
+//            thread.start();
+//        }
+//        integerLatch.await();
+//        end=System.currentTimeMillis();
+//        System.out.println(atomicInteger.get()+"   AtomicInteger cost time:"+(end-start));
 
 
         FcyAtomicInteger fcyAtomicInteger=new FcyAtomicInteger();
         CountDownLatch fcyLatch=new CountDownLatch(threadCount);
-
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
             FcyAtomicThread thread=new FcyAtomicThread(fcyAtomicInteger,fcyLatch,count);

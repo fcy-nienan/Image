@@ -7,9 +7,10 @@ import java.lang.reflect.*;
 import java.util.*;
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.logging.Logger;
 
 public class GenericDAO<T,ID extends Serializable>{
-	private static final FcyLog logger=FcyLog.getLogger(GenericDAO.class, FcyLog.Level.DEBUG);
+	private static final Logger logger=Logger.getLogger(GenericDAO.class.getName());
 	private Connection con;//数据库连接对象
 	private Class<T> clazz;//实体类类型
 	private Class<ID> claid;//实体类ID类类型
@@ -157,7 +158,7 @@ public class GenericDAO<T,ID extends Serializable>{
 				value[i]=String.valueOf(m.invoke(t));
 			}
 		}catch(Exception e){
-			logger.error(this.getClass().getName()+"加载错误");
+			logger.info(this.getClass().getName()+"加载错误");
 			throw new SQLException();
 		}
 		return value;

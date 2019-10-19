@@ -32,16 +32,16 @@ public class MESITest{
         return this.getAndAddInt(this,zOffset,1);
     }
     public int getAndAddInt(Object object,long offset,int add){
-//        int c;
-//        do {
-//            c=unsafe.getIntVolatile(object,offset);
-//        }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
-//        return c;
-        boolean update = false;
-        do{
-            update = unsafe.compareAndSwapObject(this, offset, z, z + 1);
-        }while (!update);
-        return 1;
+        int c;
+        do {
+            c=unsafe.getIntVolatile(object,offset);
+        }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
+        return c;
+//        boolean update = false;
+//        do{
+//            update = unsafe.compareAndSwapObject(this, offset, z, z + 1);
+//        }while (!update);
+//        return 1;
     }
     public static void main(String args[]) throws InterruptedException {
         int threadCount=12;

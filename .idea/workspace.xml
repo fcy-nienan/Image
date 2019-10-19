@@ -113,7 +113,7 @@
     <configuration name="TestNative" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.TestNative" />
       <module name="Image" />
-      <option name="VM_PARAMETERS" value="-XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly" />
+      <option name="VM_PARAMETERS" value="、" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
@@ -148,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="20559000" />
+      <workItem from="1571424487920" duration="20854000" />
     </task>
     <servers />
   </component>

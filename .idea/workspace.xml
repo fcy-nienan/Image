@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/AtomicThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/AtomicThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/FcyAtomicInteger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/MESITest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/MESITest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/MESIThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/MESIThread.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +58,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MESITest">
-    <configuration name="EveryDay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fcy.EveryDay" />
+  <component name="RunManager" selected="Application.CustomCASTest">
+    <configuration name="CustomCASTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.CustomCASTest" />
       <module name="Image" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fcy.*" />
+          <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,19 +125,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.EveryDay" />
       <item itemvalue="Application.GitTask" />
       <item itemvalue="Application.Gzip" />
       <item itemvalue="Application.MESITest" />
       <item itemvalue="Application.GxfInter" />
+      <item itemvalue="Application.CustomCASTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.CustomCASTest" />
         <item itemvalue="Application.MESITest" />
         <item itemvalue="Application.GxfInter" />
         <item itemvalue="Application.Gzip" />
         <item itemvalue="Application.GitTask" />
-        <item itemvalue="Application.EveryDay" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +148,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="2390000" />
+      <workItem from="1571424487920" duration="2775000" />
     </task>
     <servers />
   </component>

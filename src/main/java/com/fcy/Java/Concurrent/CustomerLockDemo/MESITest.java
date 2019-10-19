@@ -37,11 +37,6 @@ public class MESITest{
             c=unsafe.getIntVolatile(object,offset);
         }while (!unsafe.compareAndSwapInt(object,offset,c,c+add));
         return c;
-//        boolean update = false;
-//        do{
-//            update = unsafe.compareAndSwapObject(this, offset, z, z + 1);
-//        }while (!update);
-//        return 1;
     }
     public static void main(String args[]) throws InterruptedException {
         int threadCount=12;
@@ -52,33 +47,37 @@ public class MESITest{
         CountDownLatch mesiLatch=new CountDownLatch(threadCount);
 
 
-        Thread[] threads=new Thread[threadCount];
+        MESIThread[] threads=new MESIThread[threadCount];
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
             MESIThread thread=new MESIThread(mesiTest,mesiLatch,count);
             thread.start();
             threads[i]=thread;
         }
-        for (Thread t:threads){
-            t.join();
-        }
-//        mesiLatch.await();
+        mesiLatch.await();
         end=System.currentTimeMillis();
+        long total=0;
+        for (MESIThread thread : threads) {
+            total+=thread.getCost();
+        }
         System.out.println(mesiTest.z+"   cost time:"+(end-start));
+        System.out.println(mesiTest.z+"   total cost time:"+total);
 
-        Thread[] threads1=new Thread[threadCount];
+        AtomicThread[] threads1=new AtomicThread[threadCount];
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
             AtomicThread thread=new AtomicThread(integer,integerLatch,count);
             thread.start();
             threads1[i]=thread;
         }
-        for (Thread t:threads1){
-            t.join();
-        }
-//        integerLatch.await();
+        integerLatch.await();
         end=System.currentTimeMillis();
+        long atomicTotal=0;
+        for (AtomicThread atomicThread : threads1) {
+            atomicTotal+=atomicThread.getCost();
+        }
         System.out.println(integer.get()+"   cost time:"+(end-start));
+        System.out.println(integer.get()+"   total cost time:"+atomicTotal);
 
 
     }

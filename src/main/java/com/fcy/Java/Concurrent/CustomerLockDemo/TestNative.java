@@ -9,7 +9,7 @@ public class TestNative {
         long total1=0;
         long t1 = System.currentTimeMillis();
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            total1+= doubleToLongBits(i);
+            total1+= Double.doubleToRawLongBits(i);
         }
         long t2 = System.currentTimeMillis();
         System.out.println(t2 - t1 + "ms");

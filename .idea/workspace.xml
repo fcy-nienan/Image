@@ -55,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CustomCASTest">
+  <component name="RunManager" selected="Application.GitTask">
     <configuration name="CustomCASTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.CustomCASTest" />
       <module name="Image" />
@@ -130,11 +130,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GitTask" />
         <item itemvalue="Application.CustomCASTest" />
         <item itemvalue="Application.MESITest" />
         <item itemvalue="Application.GxfInter" />
         <item itemvalue="Application.Gzip" />
-        <item itemvalue="Application.GitTask" />
       </list>
     </recent_temporary>
   </component>

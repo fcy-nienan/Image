@@ -4,14 +4,14 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class FcyAtomicThread extends Thread{
-    private AtomicInteger integer;
+    private FcyAtomicInteger integer;
     private CountDownLatch latch;
     private int count;
     private long cost;
     public long getCost(){
         return this.cost;
     }
-    public FcyAtomicThread(AtomicInteger i,CountDownLatch latch,int count){
+    public FcyAtomicThread(FcyAtomicInteger i,CountDownLatch latch,int count){
         this.integer=i;
         this.latch=latch;
         this.count=count;
@@ -25,7 +25,6 @@ public class FcyAtomicThread extends Thread{
         }
         end=System.currentTimeMillis();
         cost=end-start;
-        System.out.println("customer cas cost time:"+cost);
         latch.countDown();
     }
 }

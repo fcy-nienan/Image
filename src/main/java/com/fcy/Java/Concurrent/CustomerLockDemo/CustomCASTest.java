@@ -33,6 +33,28 @@ public class CustomCASTest{
         System.out.println(atomicInteger.get()+"   total cost time:"+atomicTotal);
 
 
+
+
+
+
+
+        FcyAtomicThread[] threads=new FcyAtomicThread[threadCount];
+        start=System.currentTimeMillis();
+        for (int i=0;i<threadCount;i++){
+            FcyAtomicThread thread=new FcyAtomicThread(fcyAtomicInteger,fcyLatch,count);
+            thread.start();
+            threads[i]=thread;
+        }
+        fcyLatch.await();
+        end=System.currentTimeMillis();
+        long customerTotal=0;
+        for (FcyAtomicThread atomicThread : threads) {
+            customerTotal+=atomicThread.getCost();
+        }
+        System.out.println(fcyAtomicInteger.get()+"   cost time:"+(end-start));
+        System.out.println(fcyAtomicInteger.get()+"   total cost time:"+customerTotal);
+
+
     }
 }
 

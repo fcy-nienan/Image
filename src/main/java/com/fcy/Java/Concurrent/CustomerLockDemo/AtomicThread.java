@@ -25,7 +25,6 @@ public class AtomicThread extends Thread{
         }
         end=System.currentTimeMillis();
         cost=end-start;
-        System.out.println("atomic cas cost time:"+cost);
         latch.countDown();
     }
 }

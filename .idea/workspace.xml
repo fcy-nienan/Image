@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/TestDoubleNative.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/TestDoubleNative.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/TestDoubleNative.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -149,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="21858000" />
+      <workItem from="1571424487920" duration="22146000" />
     </task>
     <servers />
   </component>

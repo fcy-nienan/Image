@@ -24,6 +24,7 @@ public class MESIThread extends Thread{
         }
         end=System.currentTimeMillis();
         cost=end-start;
+        System.out.println("customer cas cost time:"+cost);
         latch.countDown();
     }
 }

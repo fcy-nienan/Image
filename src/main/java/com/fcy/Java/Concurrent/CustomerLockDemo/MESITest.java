@@ -39,7 +39,7 @@ public class MESITest{
         return c;
     }
     public static void main(String args[]) throws InterruptedException {
-        int threadCount=12;
+        int threadCount=2;
         long start,end;
         AtomicInteger integer=new AtomicInteger();
         CountDownLatch integerLatch=new CountDownLatch(threadCount);

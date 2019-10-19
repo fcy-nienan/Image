@@ -1,5 +1,7 @@
 package com.fcy.Java.Concurrent.CustomerLockDemo;
 
+import sun.misc.Unsafe;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 //MESI协议  若缓存行处于S状态,如果此时有另一个处理器发出了Invalid信息
@@ -9,7 +11,9 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CustomCASTest{
     public static void main(String args[]) throws InterruptedException {
         String s;
+        Unsafe unsafe;
         Double ttt;
+        Object o;
         int threadCount=24;
         int count=10000000;
         long start,end;

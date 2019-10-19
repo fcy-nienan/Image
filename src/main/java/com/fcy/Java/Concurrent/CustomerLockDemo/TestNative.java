@@ -5,7 +5,16 @@ import sun.misc.DoubleConsts;
 import java.io.File;
 
 public class TestNative {
-    public static void main(String args[]) {
+    public static void main(String args[]) throws InterruptedException {
+        Object o=new Object();
+        long start=System.currentTimeMillis();
+        synchronized (o){
+            o.wait(1000);
+            long end=System.currentTimeMillis();
+            System.out.println(end-start+ "ts");
+        }
+
+
         long total1=0;
         long t1 = System.currentTimeMillis();
         for (int i = 0; i < Integer.MAX_VALUE; i++) {

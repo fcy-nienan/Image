@@ -112,7 +112,16 @@ public class FcyAtomicInteger {
      * @return the previous value
      */
     public final int getAndIncrement() {
-        return unsafe.getAndAddInt(this, valueOffset, 1);
+        Object var1=this;
+        long var2=valueOffset;
+        int var4=1;
+        int var5;
+        do {
+            var5 = unsafe.getIntVolatile(var1, var2);
+        } while(!unsafe.compareAndSwapInt(var1, var2, var5, var5 + var4));
+
+        return var5;
+//        return unsafe.getAndAddInt(this, valueOffset, 1);
     }
 
     /**

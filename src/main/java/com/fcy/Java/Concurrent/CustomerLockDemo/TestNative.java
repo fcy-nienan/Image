@@ -8,11 +8,7 @@ public class TestNative {
     public static void main(String args[]) throws InterruptedException {
         Object o=new Object();
         long start=System.currentTimeMillis();
-        synchronized (o){
-            o.wait(1000);
-            long end=System.currentTimeMillis();
-            System.out.println(end-start+ "ts");
-        }
+
 
 
         long total1=0;

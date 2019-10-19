@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CustomCASTest{
     private static final int count=10000000;
     public static void main(String args[]) throws InterruptedException {
-        int threadCount=2;
+        int threadCount=12;
         long start,end;
         AtomicInteger atomicInteger=new AtomicInteger();
         FcyAtomicInteger fcyAtomicInteger=new FcyAtomicInteger();

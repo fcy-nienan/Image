@@ -2,21 +2,23 @@ package com.fcy.Java.Concurrent.CustomerLockDemo;
 
 import sun.misc.Unsafe;
 
+import java.lang.reflect.Field;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.IntBinaryOperator;
 import java.util.function.IntUnaryOperator;
 
 public class FcyAtomicInteger {
     private static final long serialVersionUID = 621479024346807050L;
-
     // setup to use Unsafe.compareAndSwapInt for updates
-    private static final Unsafe unsafe = Unsafe.getUnsafe();
+    private static final Unsafe unsafe ;
     private static final long valueOffset;
-
     static {
         try {
+            Field field=Unsafe.class.getDeclaredField("theUnsafe");
+            field.setAccessible(true);
+            unsafe= (Unsafe) field.get(null);
             valueOffset = unsafe.objectFieldOffset
-                    (AtomicInteger.class.getDeclaredField("value"));
+                    (FcyAtomicInteger.class.getDeclaredField("value"));
         } catch (Exception ex) { throw new Error(ex); }
     }
 

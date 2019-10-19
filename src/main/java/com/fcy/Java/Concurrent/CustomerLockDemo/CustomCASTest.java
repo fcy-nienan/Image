@@ -13,9 +13,8 @@ public class CustomCASTest{
         long start,end;
 
         AtomicInteger atomicInteger=new AtomicInteger();
-        FcyAtomicInteger fcyAtomicInteger=new FcyAtomicInteger();
         CountDownLatch integerLatch=new CountDownLatch(threadCount);
-        CountDownLatch fcyLatch=new CountDownLatch(threadCount);
+
 
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){
@@ -30,7 +29,8 @@ public class CustomCASTest{
 
 
 
-
+        FcyAtomicInteger fcyAtomicInteger=new FcyAtomicInteger();
+        CountDownLatch fcyLatch=new CountDownLatch(threadCount);
 
         start=System.currentTimeMillis();
         for (int i=0;i<threadCount;i++){

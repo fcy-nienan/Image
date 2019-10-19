@@ -1,6 +1,0 @@
-JvmtiExport can_access_local_variables 0
-JvmtiExport can_hotswap_or_post_breakpoint 0
-JvmtiExport can_post_on_exceptions 0
-# 102 ciObject found
-ciMethod com/fcy/Java/Concurrent/CustomerLockDemo/GxfInter casIncreament ()V 4465 825 6057 0 -1
-ciMethodData com/fcy/Java/Concurrent/CustomerLockDemo/GxfInter casIncreament ()V 0 0 orig 264 72 34 204 85 0 0 0 0 16 49 43 28 0 0 0 0 248 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 30 2 0 0 177 178 0 0 233 222 0 0 0 0 0 0 0 0 0 0 2 0 0 0 1 0 6 0 2 0 0 0 176 0 0 0 255 255 255 255 5 0 6 0 0 0 0 0 data 22 0x60005 0x169d 0x34b317378 0x1 0x32ba39bc8 0x2 0x130005 0x365 0x0 0x0 0x0 0x0 0x240005 0x3a8 0x0 0x0 0x0 0x0 0x290007 0xc5b 0xffffffffffffffa0 0x18ec oops 2

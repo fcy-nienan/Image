@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/AB.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +57,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestNative">
+  <component name="RunManager" selected="Application.AB">
+    <configuration name="AB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.AB" />
+      <module name="Image" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CustomCASTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="D:\Code\Language\java\jre" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -79,19 +92,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fcy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GxfInter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.GxfInter" />
-      <module name="Image" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -128,17 +128,17 @@
     <list>
       <item itemvalue="Application.GitTask" />
       <item itemvalue="Application.MESITest" />
-      <item itemvalue="Application.GxfInter" />
       <item itemvalue="Application.CustomCASTest" />
       <item itemvalue="Application.TestNative" />
+      <item itemvalue="Application.AB" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AB" />
         <item itemvalue="Application.TestNative" />
         <item itemvalue="Application.CustomCASTest" />
         <item itemvalue="Application.GitTask" />
         <item itemvalue="Application.MESITest" />
-        <item itemvalue="Application.GxfInter" />
       </list>
     </recent_temporary>
   </component>
@@ -149,7 +149,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="23451000" />
+      <workItem from="1571424487920" duration="24089000" />
     </task>
     <servers />
   </component>

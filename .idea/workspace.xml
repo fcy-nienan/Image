@@ -55,7 +55,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.AB">
+  <component name="RunManager" selected="Application.TestNative">
     <configuration name="AB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.AB" />
       <module name="Image" />
@@ -132,8 +132,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.AB" />
         <item itemvalue="Application.TestNative" />
+        <item itemvalue="Application.AB" />
         <item itemvalue="Application.CustomCASTest" />
         <item itemvalue="Application.GitTask" />
         <item itemvalue="Application.MESITest" />
@@ -147,7 +147,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="24820000" />
+      <workItem from="1571424487920" duration="25414000" />
     </task>
     <servers />
   </component>

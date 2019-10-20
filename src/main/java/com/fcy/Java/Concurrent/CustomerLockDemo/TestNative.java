@@ -9,9 +9,7 @@ public class TestNative {
         testNative();
         testNative();
         testNative();
-        testNative();
 
-        testOuter();
         testOuter();
         testOuter();
         testOuter();

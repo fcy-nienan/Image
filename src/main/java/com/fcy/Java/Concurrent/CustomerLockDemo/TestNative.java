@@ -7,6 +7,7 @@ import java.io.File;
 public class TestNative {
     public static void main(String args[]) throws InterruptedException {
         Object o=new Object();
+        Thread.currentThread();
         long start=System.currentTimeMillis();
 
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="000a477c-c668-44f0-b680-b51b6924f6ca" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.TestNative">
+  <component name="RunManager" selected="Application.CustomCASTest">
     <configuration name="AB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.AB" />
       <module name="Image" />
@@ -76,7 +77,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.CustomCASTest" />
       <module name="Image" />
-      <option name="VM_PARAMETERS" value="-Xint" />
+      <option name="VM_PARAMETERS" value="-Xcomp" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
@@ -136,8 +137,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestNative" />
         <item itemvalue="Application.CustomCASTest" />
+        <item itemvalue="Application.TestNative" />
         <item itemvalue="Application.AB" />
         <item itemvalue="Application.GitTask" />
         <item itemvalue="Application.MESITest" />
@@ -151,7 +152,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="32325000" />
+      <workItem from="1571424487920" duration="33544000" />
     </task>
     <servers />
   </component>

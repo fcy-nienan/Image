@@ -23,7 +23,13 @@ public class TestNative {
         long t6 = System.currentTimeMillis();
         System.out.println(t6 - t5 + "ms");
 
-
+        long ttttt=0;
+        long tttt1 = System.currentTimeMillis();
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {//直接使用本地方法
+            ttttt = Double.doubleToLongBits(i);
+        }
+        long tttt2 = System.currentTimeMillis();
+        System.out.println(tttt2 - tttt1 + "ms");
 
 
         long total2=0;

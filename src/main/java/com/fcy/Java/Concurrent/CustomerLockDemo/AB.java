@@ -3,7 +3,7 @@ public class AB {
     public static void main(String[] args) {
         long t1 = System.currentTimeMillis();
 
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < 10000000; i++) {
             Thread.enumerate(new Thread[]{Thread.currentThread()});
         }
 
@@ -11,7 +11,7 @@ public class AB {
         System.out.println(t2 - t1 + "ms");
 
         long t3 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < 10000000; i++) {
             enumerate(new Thread[]{Thread.currentThread()});
         }
         long t4 = System.currentTimeMillis();

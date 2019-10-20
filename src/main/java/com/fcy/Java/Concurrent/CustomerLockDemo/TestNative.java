@@ -8,7 +8,7 @@ public class TestNative {
     public static void main(String args[]) throws InterruptedException {
         long total1=0;
         long t1 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {//直接使用本地方法
             total1+= Double.doubleToLongBits(i);
         }
         long t2 = System.currentTimeMillis();
@@ -16,7 +16,7 @@ public class TestNative {
 
         long total2=0;
         long t3 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {//外部调用本地方法
             total2 = doubleToLongBits(i);
         }
         long t4 = System.currentTimeMillis();
@@ -25,7 +25,7 @@ public class TestNative {
 
         long ttt=0;
         long ttt1 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {//外部调用本地方法
             ttt = doubleToLongBits(i);
         }
         long ttt2 = System.currentTimeMillis();
@@ -34,7 +34,7 @@ public class TestNative {
 
         long total3=0;
         long t5 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {//直接使用本地方法
             total2 = Double.doubleToLongBits(i);
         }
         long t6 = System.currentTimeMillis();

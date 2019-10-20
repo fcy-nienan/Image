@@ -14,6 +14,18 @@ public class TestNative {
         long t2 = System.currentTimeMillis();
         System.out.println(t2 - t1 + "ms");
 
+
+        long total3=0;
+        long t5 = System.currentTimeMillis();
+        for (int i = 0; i < Integer.MAX_VALUE; i++) {//直接使用本地方法
+            total3 = Double.doubleToLongBits(i);
+        }
+        long t6 = System.currentTimeMillis();
+        System.out.println(t6 - t5 + "ms");
+
+
+
+
         long total2=0;
         long t3 = System.currentTimeMillis();
         for (int i = 0; i < Integer.MAX_VALUE; i++) {//外部调用本地方法
@@ -32,13 +44,6 @@ public class TestNative {
         System.out.println(ttt2 - ttt1 + "ms");
 
 
-        long total3=0;
-        long t5 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {//直接使用本地方法
-            total2 = Double.doubleToLongBits(i);
-        }
-        long t6 = System.currentTimeMillis();
-        System.out.println(t6 - t5 + "ms");
 
 
 

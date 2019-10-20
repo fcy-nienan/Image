@@ -13,15 +13,15 @@ public class TestNative {
         }
         long t2 = System.currentTimeMillis();
         System.out.println(t2 - t1 + "ms");
-
-        long total2=0;
-        long t3 = System.currentTimeMillis();
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            total2 = Double.doubleToLongBits(i);
-        }
-        long t4 = System.currentTimeMillis();
-        System.out.println(t4 - t3 + "ms");
-        System.out.println(total1+total2);
+//
+//        long total2=0;
+//        long t3 = System.currentTimeMillis();
+//        for (int i = 0; i < Integer.MAX_VALUE; i++) {
+//            total2 = Double.doubleToLongBits(i);
+//        }
+//        long t4 = System.currentTimeMillis();
+//        System.out.println(t4 - t3 + "ms");
+//        System.out.println(total1+total2);
     }
     public static long doubleToLongBits(double value) {
         long result =Double.doubleToRawLongBits(value);

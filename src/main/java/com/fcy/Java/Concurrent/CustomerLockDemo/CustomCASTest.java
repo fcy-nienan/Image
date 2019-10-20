@@ -9,11 +9,18 @@ import java.util.concurrent.atomic.AtomicInteger;
 //如果Invalid先一步到来,那么当前CPU写入缓存行的时候发现缓存行已经失效了,那么会重新从内存中读取数据
 //暂时是这么理解的
 public class CustomCASTest{
+    private static final int threadCount=12;
+    private static final int count=1000000;
     public static void main(String args[]) throws InterruptedException {
-        int threadCount=24;
-        int count=10000000;
+        startAtomicTask();
+        startAtomicTask();
+        startAtomicTask();
+        startFcyTask();
+        startFcyTask();
+        startFcyTask();
+    }
+    private static void startAtomicTask() throws InterruptedException {
         long start,end;
-
         AtomicInteger atomicInteger=new AtomicInteger();
         CountDownLatch integerLatch=new CountDownLatch(threadCount);
         start=System.currentTimeMillis();
@@ -24,8 +31,9 @@ public class CustomCASTest{
         integerLatch.await();
         end=System.currentTimeMillis();
         System.out.println(atomicInteger.get()+"   AtomicInteger cost time:"+(end-start));
-
-
+    }
+    private static void startFcyTask()throws InterruptedException{
+        long start,end;
         FcyAtomicInteger fcyAtomicInteger=new FcyAtomicInteger();
         CountDownLatch fcyLatch=new CountDownLatch(threadCount);
         start=System.currentTimeMillis();
@@ -36,8 +44,7 @@ public class CustomCASTest{
         fcyLatch.await();
         end=System.currentTimeMillis();
         System.out.println(fcyAtomicInteger.get()+"   FcyAtomicInteger cost time:"+(end-start));
-
-
     }
+
 }
 

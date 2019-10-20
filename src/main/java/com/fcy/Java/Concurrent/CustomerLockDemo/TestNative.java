@@ -17,7 +17,7 @@ public class TestNative {
         long total2=0;
         long t3 = System.currentTimeMillis();
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            total2 = Double.doubleToLongBits(i);
+            total2 = doubleToLongBits(i);
         }
         long t4 = System.currentTimeMillis();
         System.out.println(t4 - t3 + "ms");

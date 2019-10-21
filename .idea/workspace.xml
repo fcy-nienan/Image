@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="034b40e1-9464-4d2e-881e-26cb47f63339" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jit.log" beforeDir="false" afterPath="$PROJECT_DIR$/jit.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/CustomCASTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/SynchronizedThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/fcy/Java/Concurrent/CustomerLockDemo/SynchronizedThread.java" afterDir="false" />
-    </list>
+    <list default="true" id="034b40e1-9464-4d2e-881e-26cb47f63339" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +76,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571679488423</updated>
-      <workItem from="1571679489953" duration="262000" />
+      <workItem from="1571679489953" duration="585000" />
     </task>
     <servers />
   </component>

@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 //暂时是这么理解的
 public class CustomCASTest{
     private static final int threadCount=12;
-    private static final int count=1000000;
+    private static final int count=10000000;
     public static void main(String args[]) throws InterruptedException {
         startAtomicTask();
         startAtomicTask();

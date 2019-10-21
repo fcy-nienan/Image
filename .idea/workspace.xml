@@ -76,7 +76,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="com.fcy.Java.Concurrent.CustomerLockDemo.CustomCASTest" />
       <module name="Image" />
-      <option name="VM_PARAMETERS" value="-Xcomp" />
+      <option name="VM_PARAMETERS" value="-XX:+UnlockDiagnosticVMOptions -XX:+PrintAssembly -XX:+LogCompilation -XX:LogFile=jit.log" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.fcy.Java.Concurrent.CustomerLockDemo.*" />
@@ -151,7 +151,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1571424486482</updated>
-      <workItem from="1571424487920" duration="38881000" />
+      <workItem from="1571424487920" duration="39177000" />
     </task>
     <servers />
   </component>

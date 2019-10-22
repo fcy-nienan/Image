@@ -13,11 +13,11 @@ public class CustomCASTest{
     private static final int count=10000000;
     public static void main(String args[]) throws InterruptedException {
         startAtomicTask();
-//        startAtomicTask();
-//        startAtomicTask();
+        startAtomicTask();
+        startAtomicTask();
         startFcyTask();
-//        startFcyTask();
-//        startFcyTask();
+        startFcyTask();
+        startFcyTask();
         startSynchronizedTask();
     }
     static class SynchronizedObject{

@@ -1,4 +1,4 @@
-package com.fcy.Util;
+package com.fcy.Util.CommonUtil;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;

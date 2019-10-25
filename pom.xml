@@ -164,7 +164,6 @@
         </dependency>
 
 
-
     </dependencies>
     <build>
         <finalName>comparison-data-project</finalName>

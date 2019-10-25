@@ -1,4 +1,4 @@
-package com.fcy.Util;
+package com.fcy.Util.CommonUtil;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

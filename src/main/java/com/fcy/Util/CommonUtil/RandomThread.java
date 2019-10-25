@@ -1,4 +1,4 @@
-package com.fcy.Util;
+package com.fcy.Util.CommonUtil;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;

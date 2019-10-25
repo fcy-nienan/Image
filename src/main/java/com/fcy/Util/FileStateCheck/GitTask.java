@@ -1,4 +1,4 @@
-package com.fcy;
+package com.fcy.Util.FileStateCheck;
 
 public class GitTask {
     public static void main(String args[]) {

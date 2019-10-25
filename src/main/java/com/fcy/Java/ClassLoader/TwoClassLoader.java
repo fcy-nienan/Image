@@ -1,6 +1,6 @@
 package com.fcy.Java.ClassLoader;
 
-import com.fcy.Util.IOUtil;
+import com.fcy.Util.CommonUtil.IOUtil;
 
 import java.io.*;
 import java.net.MalformedURLException;

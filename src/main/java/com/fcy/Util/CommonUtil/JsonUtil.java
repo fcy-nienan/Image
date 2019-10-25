@@ -1,4 +1,4 @@
-package com.fcy.Util;
+package com.fcy.Util.CommonUtil;
 import org.codehaus.jackson.map.ObjectMapper;
 public class JsonUtil {
     private static ObjectMapper mapper=new ObjectMapper();

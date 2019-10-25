@@ -1,4 +1,4 @@
-package com.fcy.Util;
+package com.fcy.Util.CommonUtil;
 
 import java.util.ArrayList;
 import java.util.List;

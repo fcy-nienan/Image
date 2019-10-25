@@ -1,4 +1,4 @@
-package com.fcy.Util;
+package com.fcy.Util.CommonUtil;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;

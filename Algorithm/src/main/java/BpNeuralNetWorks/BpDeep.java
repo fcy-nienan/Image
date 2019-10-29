@@ -1,4 +1,4 @@
-package com.fcy.Algorithm.BpNeuralNetWorks;
+package BpNeuralNetWorks;
 
 import java.util.Random;
 public class BpDeep{  

@@ -27,7 +27,7 @@ public class AioConnectHandler implements CompletionHandler<Void,AsynchronousSoc
  
     public void startRead(AsynchronousSocketChannel socket) { 
         ByteBuffer clientBuffer = ByteBuffer.allocate(1024); 
-        socket.read(clientBuffer, clientBuffer, new com.fcy.Net.Aio.client.AioReadHandler(socket));
+        socket.read(clientBuffer, clientBuffer, new AioReadHandler(socket));
         try { 
             
         } catch (Exception e) { 

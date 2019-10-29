@@ -1,4 +1,4 @@
-package com.fcy.Algorithm.BloomFilter;
+package BloomFilter;
 
 import java.util.BitSet;
 

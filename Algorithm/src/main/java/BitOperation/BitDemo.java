@@ -1,4 +1,4 @@
-package com.fcy.Algorithm.BitOperation;
+package BitOperation;
 
 import java.lang.reflect.Field;
 

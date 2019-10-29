@@ -1,4 +1,4 @@
-package com.fcy.Algorithm.BaseOperation;
+package BaseOperation;
 
 import java.util.Arrays;
 

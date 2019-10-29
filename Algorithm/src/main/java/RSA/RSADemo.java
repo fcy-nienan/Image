@@ -1,4 +1,4 @@
-package com.fcy.Algorithm.RSA;
+package RSA;
 
 import java.util.*;
 import java.math.BigInteger; 

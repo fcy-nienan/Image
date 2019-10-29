@@ -1,4 +1,4 @@
-package com.fcy.Net.Aio.client;
+package Aio.client;
 
 import java.util.concurrent.*;
 import java.nio.ByteBuffer;
@@ -27,7 +27,7 @@ public class AioConnectHandler implements CompletionHandler<Void,AsynchronousSoc
  
     public void startRead(AsynchronousSocketChannel socket) { 
         ByteBuffer clientBuffer = ByteBuffer.allocate(1024); 
-        socket.read(clientBuffer, clientBuffer, new AioReadHandler(socket)); 
+        socket.read(clientBuffer, clientBuffer, new com.fcy.Net.Aio.client.AioReadHandler(socket));
         try { 
             
         } catch (Exception e) { 

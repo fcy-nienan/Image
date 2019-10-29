@@ -1,4 +1,4 @@
-package com.fcy.Net.Aio.client;//package client;
+package Aio.client;//package client;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.StandardSocketOptions;

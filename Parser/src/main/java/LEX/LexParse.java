@@ -1,6 +1,6 @@
-package com.fcy.Parser.LEX;
-
 package LEX;
+
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;

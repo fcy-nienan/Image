@@ -1,5 +1,8 @@
 package Sort;
 
+import lombok.Data;
+
+@Data
 public class student implements Comparable<student>{
     private String username;
     private int age;

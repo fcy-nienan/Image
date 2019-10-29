@@ -1,4 +1,4 @@
-package com.fcy.Parser.LEX;
+package LEX;
 
 import java.util.ArrayList;
 import java.util.List;

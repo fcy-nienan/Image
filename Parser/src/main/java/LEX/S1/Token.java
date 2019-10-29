@@ -1,4 +1,4 @@
-package com.fcy.Parser.LEX.S1;
+package LEX.S1;
 
 /**
  * @descripiton:

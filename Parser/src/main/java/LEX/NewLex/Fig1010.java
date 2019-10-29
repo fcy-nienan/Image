@@ -1,4 +1,4 @@
-package com.fcy.Parser.LEX.NewLex;
+package LEX.NewLex;
 
 import java.io.File;
 import java.io.FileOutputStream;

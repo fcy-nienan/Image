@@ -1,4 +1,4 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 /*
 * 内网穿透
 *

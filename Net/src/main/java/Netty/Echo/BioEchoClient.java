@@ -1,4 +1,4 @@
-package com.fcy.Net.Netty.Echo;
+package Netty.Echo;
 
 import java.io.*;
 import java.net.InetSocketAddress;

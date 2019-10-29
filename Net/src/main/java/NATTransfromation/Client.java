@@ -1,10 +1,9 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 
 
 
 
 
-import org.apache.commons.io.IOUtils;
 
 import java.io.*;
 import java.net.*;

@@ -1,10 +1,9 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
 import lombok.Getter;
 import lombok.Setter;
-import org.apache.commons.io.IOUtils;
 
 import javax.naming.ldap.SortKey;
 import java.io.*;

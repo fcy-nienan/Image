@@ -1,4 +1,3 @@
-package com.fcy.Net;
 
 import java.io.*;
 import java.net.InetSocketAddress;

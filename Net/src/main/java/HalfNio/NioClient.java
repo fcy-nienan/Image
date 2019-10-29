@@ -1,4 +1,4 @@
-package com.fcy.Net.HalfNio;
+package HalfNio;
 
 import java.io.*;
 import java.net.Socket;

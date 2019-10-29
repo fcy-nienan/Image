@@ -1,4 +1,4 @@
-package com.fcy.Net.Netty.Echo;
+package Netty.Echo;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 

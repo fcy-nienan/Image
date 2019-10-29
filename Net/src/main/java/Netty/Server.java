@@ -1,4 +1,4 @@
-package com.fcy.Net.Netty;
+package Netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

@@ -1,4 +1,4 @@
-package com.fcy.BigData.Hadoop;
+package Hadoop;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;

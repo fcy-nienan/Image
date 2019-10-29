@@ -1,4 +1,4 @@
-package com.fcy.Net.Base;
+package Base;
 
 /**
  * @descripiton:

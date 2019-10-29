@@ -1,6 +1,5 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 
-import org.apache.poi.ss.formula.functions.T;
 
 import java.io.IOException;
 import java.net.ServerSocket;

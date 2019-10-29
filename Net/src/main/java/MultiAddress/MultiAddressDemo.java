@@ -1,4 +1,4 @@
-package com.fcy.Net.MultiAddress;
+package MultiAddress;
 
 import java.io.IOException;
 import java.net.InetAddress;

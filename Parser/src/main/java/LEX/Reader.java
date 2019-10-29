@@ -1,4 +1,4 @@
-package com.fcy.Parser.LEX;
+package LEX;
 
 import lombok.Getter;
 

@@ -1,4 +1,4 @@
-package com.fcy.Net.Nio;
+package Nio;
 
 import java.io.*;
 import java.nio.ByteBuffer;

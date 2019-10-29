@@ -1,4 +1,4 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 
 import java.io.File;
 import java.io.FileNotFoundException;

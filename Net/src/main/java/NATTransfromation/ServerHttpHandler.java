@@ -1,8 +1,7 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 
 import com.sun.net.httpserver.Headers;
 import com.sun.net.httpserver.HttpExchange;
-import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
 import java.io.InputStream;

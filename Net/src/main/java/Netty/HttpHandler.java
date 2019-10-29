@@ -1,4 +1,4 @@
-package com.fcy.Net.Netty;
+package Netty;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;

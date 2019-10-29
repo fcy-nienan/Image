@@ -1,4 +1,4 @@
-package com.fcy.Net.NATTransfromation;
+package NATTransfromation;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

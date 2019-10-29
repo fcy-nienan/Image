@@ -1,6 +1,5 @@
-package com.fcy.Net;
 
-import org.apache.commons.collections.CollectionUtils;
+
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;

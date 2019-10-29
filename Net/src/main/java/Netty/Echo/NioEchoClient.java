@@ -1,4 +1,4 @@
-package com.fcy.Net.Netty.Echo;
+package Netty.Echo;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;

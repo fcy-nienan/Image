@@ -8,7 +8,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>BigData</module>
         <module>Algorithm</module>
         <module>Net</module>
         <module>Parser</module>

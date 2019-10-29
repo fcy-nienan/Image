@@ -1,7 +1,7 @@
 package Concurrent.AQS.AQSDemo;
 
 import Concurrent.AQS.MyAQS.ReentrantLockNote;
-import com.fcy.Util.Log.log;
+import Log.log;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -11,7 +11,7 @@ import java.util.concurrent.locks.AbstractOwnableSynchronizer;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.LockSupport;
 
-import com.fcy.Util.Log.log;
+import Log.log;
 import sun.misc.Unsafe;
 public abstract class AQSNote
         extends AbstractOwnableSynchronizer

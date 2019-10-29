@@ -1,6 +1,6 @@
 package Concurrent.AQS.MyAQS;
 
-import com.fcy.Util.Log.log;
+import Log.log;
 
 import java.util.concurrent.*;
 

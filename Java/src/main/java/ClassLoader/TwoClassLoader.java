@@ -1,10 +1,10 @@
 package ClassLoader;
 
-import com.fcy.Util.CommonUtil.IOUtil;
 
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
+import CommonUtil.IOUtil;
 
 /**
  * @descripiton:

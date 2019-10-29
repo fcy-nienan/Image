@@ -12,7 +12,11 @@
     <artifactId>Java</artifactId>
 
     <dependencies>
-
+        <dependency>
+            <groupId>fcy</groupId>
+            <artifactId>Util</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

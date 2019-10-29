@@ -1,6 +1,6 @@
 package JDBC;
 
-import com.fcy.Util.Log.FcyLog;
+import Log.FcyLog;
 
 import java.io.Serializable;
 import java.lang.reflect.*;

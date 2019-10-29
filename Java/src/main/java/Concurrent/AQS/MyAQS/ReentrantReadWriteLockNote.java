@@ -5,7 +5,7 @@ package Concurrent.AQS.MyAQS;
  * @author: fcy
  * @date: 2018-07-27  22:58
  */
-import com.fcy.Util.Log.log;
+import Log.log;
 import sun.misc.Unsafe;
 
 import java.lang.reflect.Field;

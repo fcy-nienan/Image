@@ -65,6 +65,7 @@ public class BillionCount {
         }catch (Exception e){
             e.printStackTrace();
             log.error("insert data error!");
+
         }finally{
             try {
                 connection.close();

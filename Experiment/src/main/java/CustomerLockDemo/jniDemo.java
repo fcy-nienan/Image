@@ -1,4 +1,4 @@
-package Concurrent.CustomerLockDemo;
+package CustomerLockDemo;
 
 public class jniDemo{
     static{

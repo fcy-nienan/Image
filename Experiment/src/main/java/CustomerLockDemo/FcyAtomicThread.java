@@ -1,4 +1,4 @@
-package Concurrent.CustomerLockDemo;
+package CustomerLockDemo;
 
 import java.util.concurrent.CountDownLatch;
 

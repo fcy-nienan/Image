@@ -1,4 +1,4 @@
-package Concurrent.CustomerLockDemo;
+package CustomerLockDemo;
 
 public class TestDoubleNative {
     public static void main(String args[]) {

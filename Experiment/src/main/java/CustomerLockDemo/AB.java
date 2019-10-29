@@ -1,4 +1,4 @@
-package Concurrent.CustomerLockDemo;
+package CustomerLockDemo;
 public class AB {
     public static void main(String[] args) {
         long t1 = System.currentTimeMillis();

@@ -17,6 +17,7 @@
         <module>JAVA</module>
         <module>MiddleWare</module>
         <module>Experiment</module>
+        <module>Experiment</module>
     </modules>
     <dependencies>
         <dependency>

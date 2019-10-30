@@ -20,6 +20,7 @@ public class ClassProduce {
         MethodVisitor mv = cw.visitMethod(ACC_PUBLIC, "newFunc", "(Ljava/lang/String;)V", null, null);
         mv.visitInsn(Opcodes.RETURN);
         mv.visitEnd();
+
         // 获取生成的class文件对应的二进制流
         byte[] code = cw.toByteArray();
 

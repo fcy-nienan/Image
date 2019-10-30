@@ -1,4 +1,4 @@
-package com.fcy.Java.Concurrent.CustomerLockDemo;
+package CustomerLockDemo;
 
 import java.lang.reflect.Field;
 import sun.misc.Unsafe;

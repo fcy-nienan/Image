@@ -1,6 +1,4 @@
-package com.fcy.Java.Concurrent.CustomerLockDemo;
-
-import sun.misc.Unsafe;
+package CustomerLockDemo;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;

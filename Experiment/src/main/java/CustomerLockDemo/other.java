@@ -1,4 +1,4 @@
-package com.fcy.Java.Concurrent.CustomerLockDemo;
+package CustomerLockDemo;
 
 public class other {
     public static void main(String args[]) {

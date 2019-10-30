@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static Diff.DiffInfo.DiffType.*;
+import static Diff.ContentDifferentInfo.DiffType.*;
 
 public class FileDiff {
     private static Logger logger = Logger.getLogger(FileDiff.class.getName());
@@ -17,40 +17,52 @@ public class FileDiff {
         String src="E:\\a.txt";
         String dst="E:\\b.txt";
         System.out.println(hasDifferent(src,dst));
-        List<DiffInfo> infos=getDifferent(src,dst);
-        for (DiffInfo info : infos) {
+        List<ContentDifferentInfo> infos=getDifferent(src,dst);
+        for (ContentDifferentInfo info : infos) {
             System.out.println(info);
         }
     }
 
-    public static List<DiffInfo> getDifferent(String src,String dst) throws IOException {
-        List<DiffInfo> result=new ArrayList<>();
+    public static ContentDifferentInfo getByteDifferent(int line, byte[] srcByte, byte[] dstByte) throws UnsupportedEncodingException {
+        return getStringDifferent(line,new String(srcByte,"utf-8"),new String(dstByte,"utf-8"));
+    }
+
+    public static ContentDifferentInfo getStringDifferent(int line, String srcLine, String dstLine){
+        ContentDifferentInfo info=null;
+        if (srcLine!=null&&dstLine!=null&&!srcLine.equals(dstLine)){
+            info=new ContentDifferentInfo(line,srcLine,dstLine,CONTENTDIFF);
+        }else if (srcLine==null&&dstLine!=null){
+            info=new ContentDifferentInfo(line,srcLine,dstLine, DELETE);
+        }else if (dstLine==null&&srcLine!=null){
+            info=new ContentDifferentInfo(line,srcLine,dstLine, ADD);
+        }
+        return info;
+    }
+    public static List<ContentDifferentInfo> getDifferentReader(BufferedReader srcReader, BufferedReader dstReader) throws IOException {
+        List<ContentDifferentInfo> result=new ArrayList<>();
+        int line=1;
+        for (;;) {
+            String srcLine=srcReader.readLine();
+            String dstLine=dstReader.readLine();
+            ContentDifferentInfo info=getStringDifferent(line,srcLine,dstLine);
+            if (info!=null) {
+                result.add(info);
+            }
+
+            if (srcLine==null&&dstLine==null){
+                break;
+            }
+            line++;
+        }
+        return result;
+    }
+    public static List<ContentDifferentInfo> getDifferent(String src, String dst) throws IOException {
+        List<ContentDifferentInfo> result=new ArrayList<>();
 
         if (hasDifferent(src,dst)){
-            BufferedReader srcreader=IOUtil.getBufferedReader(src);
+            BufferedReader srcReader=IOUtil.getBufferedReader(src);
             BufferedReader dstReader=IOUtil.getBufferedReader(dst);
-            int line=1;
-            for (;;) {
-                String srcLine=srcreader.readLine();
-                String dstLine=dstReader.readLine();
-                DiffInfo info=null;
-                if (srcLine!=null&&dstLine!=null&&!srcLine.equals(dstLine)){
-                    info=new DiffInfo(line,srcLine,dstLine,CONTENTDIFF);
-                }else if (srcLine==null&&dst!=null){
-                    info=new DiffInfo(line,srcLine,dstLine, DELETE);
-                }else if (dstLine==null&&srcLine!=null){
-                    info=new DiffInfo(line,srcLine,dstLine, ADD);
-                }
-
-                if (info!=null) {
-                    result.add(info);
-                }
-
-                if (srcLine==null&&dstLine==null){
-                    break;
-                }
-                line++;
-            }
+            result=getDifferentReader(srcReader,dstReader);
         }
 
         return result;

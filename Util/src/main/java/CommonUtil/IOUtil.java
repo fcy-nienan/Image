@@ -20,8 +20,16 @@ public class IOUtil {
     public static BufferedReader getBufferedReader(String src) throws FileNotFoundException, UnsupportedEncodingException {
         return new BufferedReader(new InputStreamReader(new FileInputStream(src),"utf-8"));
     }
+    public static BufferedReader getBufferedReaderByByteArray(byte[] array) throws UnsupportedEncodingException {
+        return new BufferedReader(new InputStreamReader(new ByteArrayInputStream(array),"utf-8"));
+    }
     public static String readStringFromStream(InputStream inputStream) throws IOException {
         byte[] bytes=readByteFromStream(inputStream);
         return new String(bytes,"utf-8");
     }
+    public static String readStringFromSrc(String src) throws IOException {
+        byte[] bytes=readByteFromStream(new FileInputStream(src));
+        return new String(bytes,"utf-8");
+    }
+
 }

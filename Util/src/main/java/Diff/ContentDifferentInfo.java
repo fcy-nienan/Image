@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class DiffInfo {
+public class ContentDifferentInfo {
     private static final String ADDSTRING="新增";
     private static final String DELETESTRING="删除";
     private static final String CONTENTDIFFSTRING="内容不同";
@@ -18,7 +18,7 @@ public class DiffInfo {
     private String src;
     private String dst;
     private DiffType type;
-    private static Logger logger = Logger.getLogger(DiffInfo.class.getName());
+    private static Logger logger = Logger.getLogger(ContentDifferentInfo.class.getName());
     enum DiffType{
         ADD(0,ADDSTRING),DELETE(1,DELETESTRING),CONTENTDIFF(2,CONTENTDIFFSTRING);
         private int inddex;

@@ -1,8 +1,6 @@
 package CommonUtil;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 
 /**
  * @descripiton:
@@ -18,5 +16,12 @@ public class IOUtil {
             byteArrayOutputStream.write(bytes,0,c);
         }
         return byteArrayOutputStream.toByteArray();
+    }
+    public static BufferedReader getBufferedReader(String src) throws FileNotFoundException, UnsupportedEncodingException {
+        return new BufferedReader(new InputStreamReader(new FileInputStream(src),"utf-8"));
+    }
+    public static String readStringFromStream(InputStream inputStream) throws IOException {
+        byte[] bytes=readByteFromStream(inputStream);
+        return new String(bytes,"utf-8");
     }
 }

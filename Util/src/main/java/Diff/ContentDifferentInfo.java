@@ -11,24 +11,9 @@ import java.util.logging.Logger;
 @AllArgsConstructor
 @ToString
 public class ContentDifferentInfo {
-    private static final String ADDSTRING="新增";
-    private static final String DELETESTRING="删除";
-    private static final String CONTENTDIFFSTRING="内容不同";
     private int line;
     private String src;
     private String dst;
     private DiffType type;
     private static Logger logger = Logger.getLogger(ContentDifferentInfo.class.getName());
-    enum DiffType{
-        ADD(0,ADDSTRING),DELETE(1,DELETESTRING),CONTENTDIFF(2,CONTENTDIFFSTRING);
-        private int inddex;
-        private String description;
-        DiffType(int index,String description){
-            this.inddex=index;
-            this.description=description;
-        }
-        public String toString(){
-            return this.description;
-        }
-    }
 }

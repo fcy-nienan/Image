@@ -23,6 +23,9 @@ public class IOUtil {
     public static BufferedReader getBufferedReaderByByteArray(byte[] array) throws UnsupportedEncodingException {
         return new BufferedReader(new InputStreamReader(new ByteArrayInputStream(array),"utf-8"));
     }
+    public static BufferedReader getEmptyReader() throws UnsupportedEncodingException {
+        return new BufferedReader(new InputStreamReader(new ByteArrayInputStream("".getBytes()),"utf-8"));
+    }
     public static String readStringFromStream(InputStream inputStream) throws IOException {
         byte[] bytes=readByteFromStream(inputStream);
         return new String(bytes,"utf-8");

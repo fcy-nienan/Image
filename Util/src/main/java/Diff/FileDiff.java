@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import static Diff.ContentDifferentInfo.DiffType.*;
+import static Diff.DiffType.*;
 
 public class FileDiff {
     private static Logger logger = Logger.getLogger(FileDiff.class.getName());

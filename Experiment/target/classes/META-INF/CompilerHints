@@ -3,5 +3,5 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
-inline,CustomerLockDemo/TestNative.testNative
-inline,CustomerLockDemo/TestNative.testOuter
+inline,ReflectionTest/MainTest.invoke
+inline,ReflectionTest/MainTest.invoke1

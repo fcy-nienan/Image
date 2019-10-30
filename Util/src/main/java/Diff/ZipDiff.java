@@ -37,33 +37,7 @@ public class ZipDiff {
             if (srcEntry==null&&dstEntry==null){
                 break;
             }
-            BufferedReader srcReader=null,dstReader=null;
-            String srcName=null,dstName=null;
-            DiffType diffType=null;
-            if (srcEntry==null){
-                srcReader=IOUtil.getEmptyReader();
-                srcName="*****";
-                diffType=DiffType.ADD;
-            }else{
-                srcReader=IOUtil.getBufferedReaderByByteArray(srcEntry.getExtra());
-                srcName=srcEntry.getName();
-            }
-            if (dstEntry==null){
-                dstReader=IOUtil.getEmptyReader();
-                dstName="*****";
-                diffType=DiffType.DELETE;
-            }else{
-                dstReader=IOUtil.getBufferedReaderByByteArray(dstEntry.getExtra());
-                dstName=dstEntry.getName();
-            }
-            List<ContentDifferentInfo> differentReader = FileDiff.getDifferentReader(srcReader, dstReader);
-            if (differentReader!=null&&differentReader.size()>0){
-                diffType=DiffType.CONTENTDIFF;
-            }
-            if (diffType!=null) {
-                FileDifferentInfo info = new FileDifferentInfo(srcName, dstName, diffType,differentReader);
-                fileDifferentInfos.add(info);
-            }
+//            比较两个ZipEntry的不同
         }
         return fileDifferentInfos;
     }

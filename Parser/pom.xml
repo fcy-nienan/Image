@@ -11,5 +11,8 @@
 
     <artifactId>Parser</artifactId>
 
+    <dependencies>
+
+    </dependencies>
 
 </project>

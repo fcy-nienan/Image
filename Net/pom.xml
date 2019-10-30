@@ -11,5 +11,14 @@
 
     <artifactId>Net</artifactId>
 
+    <dependencies>
+        <!--Netty-->
+        <dependency>
+            <groupId>io.netty</groupId>
+            <artifactId>netty-all</artifactId>
+            <version>4.1.29.Final</version>
+        </dependency>
+
+    </dependencies>
 
 </project>

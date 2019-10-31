@@ -1,24 +1,33 @@
 package Diff;
 
+import Common.ContentDifferentInfo;
+import Common.DiffType;
+import Common.FileDifferentInfo;
 import CommonUtil.IOUtil;
-import com.sun.org.apache.bcel.internal.generic.IF_ACMPEQ;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.logging.Logger;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 public class ZipDiff {
+    private static Logger logger = Logger.getLogger(FileDiff.class.getName());
     public static void main(String args[]) throws IOException {
-        String src="D:\\startup.zip";
-        String dst="D:\\startup1.zip";
+        String src="E:\\sample.war";
+        String dst="E:\\sample1.war";
         List<FileDifferentInfo> contentDifferentInfos = diffZip(src, dst);
         for (FileDifferentInfo contentDifferentInfo : contentDifferentInfos) {
             System.out.println(contentDifferentInfo);
         }
+    }
+    public static void disSpecific(DiffType type,List<FileDifferentInfo> infos){
+
     }
     public static List<FileDifferentInfo> diffZip(String src, String dst) throws IOException {
         List<FileDifferentInfo> fileDifferentInfos =new ArrayList<>();
@@ -37,17 +46,34 @@ public class ZipDiff {
             if (srcEntry==null&&dstEntry==null){
                 break;
             }
-//            比较两个ZipEntry的不同
+            DiffType fileDiffType=null;
+            BufferedInputStream srcStream=null,dstStream=null;
+            String srcName="*****",dstName="*****";
+            if (srcEntry==null){
+                fileDiffType=DiffType.DELETE_FILE;
+            }else{
+                srcStream=new BufferedInputStream(srcZip.getInputStream(srcEntry));
+                srcName= srcEntry.getName();
+            }
+            if (dstEntry==null){
+                fileDiffType=DiffType.ADD_FILE;
+            }else{
+                dstStream=new BufferedInputStream(dstZip.getInputStream(dstEntry));
+                dstName=dstEntry.getName();
+            }
+            logger.info("srcName:"+srcName+"--dstName:"+dstName);
+            logger.info("srcStream:"+srcStream+"--dstStream:"+dstStream);
+            if (srcStream!=null&&dstStream!=null){
+                List<ContentDifferentInfo> different = FileDiff.getDifferent(srcStream, dstStream);
+                if (different.size()>0){
+                    fileDiffType=DiffType.NOT_EQUAL_FILE;
+                }
+                if (fileDiffType!=null) {
+                    FileDifferentInfo info = new FileDifferentInfo(srcName, dstName, fileDiffType, different);
+                    fileDifferentInfos.add(info);
+                }
+            }
         }
         return fileDifferentInfos;
-    }
-    public static List<ContentDifferentInfo> getZipEntryDifferent(ZipEntry src, ZipEntry dst) throws IOException {
-        List<ContentDifferentInfo> infos=new ArrayList<>();
-        if (src!=null&&dst!=null) {
-            BufferedReader srcReader = IOUtil.getBufferedReaderByByteArray(src.getExtra());
-            BufferedReader dstReader = IOUtil.getBufferedReaderByByteArray(dst.getExtra());
-            infos=FileDiff.getDifferentReader(srcReader,dstReader);
-        }
-        return infos;
     }
 }

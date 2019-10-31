@@ -8,6 +8,7 @@ import java.io.*;
  * @date: 2019-05-05  23:34
  */
 public class IOUtil {
+    private static final String lineSeperator=System.getProperty("line.separator");
     public static byte[] readByteFromStream(InputStream inputStream) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
         int c;
@@ -17,22 +18,26 @@ public class IOUtil {
         }
         return byteArrayOutputStream.toByteArray();
     }
+    public static BufferedReader getBufferedReaderByStream(InputStream stream) throws UnsupportedEncodingException {
+        return new BufferedReader(new InputStreamReader(stream,"utf-8"));
+    }
     public static BufferedReader getBufferedReader(String src) throws FileNotFoundException, UnsupportedEncodingException {
-        return new BufferedReader(new InputStreamReader(new FileInputStream(src),"utf-8"));
+        return getBufferedReaderByStream(new FileInputStream(src));
     }
     public static BufferedReader getBufferedReaderByByteArray(byte[] array) throws UnsupportedEncodingException {
-        return new BufferedReader(new InputStreamReader(new ByteArrayInputStream(array),"utf-8"));
+        return getBufferedReaderByStream(new ByteArrayInputStream(array));
     }
     public static BufferedReader getEmptyReader() throws UnsupportedEncodingException {
-        return new BufferedReader(new InputStreamReader(new ByteArrayInputStream("".getBytes()),"utf-8"));
+        return getBufferedReaderByStream(new ByteArrayInputStream("".getBytes()));
     }
     public static String readStringFromStream(InputStream inputStream) throws IOException {
-        byte[] bytes=readByteFromStream(inputStream);
-        return new String(bytes,"utf-8");
+        return new String(readByteFromStream(inputStream),"utf-8");
     }
     public static String readStringFromSrc(String src) throws IOException {
-        byte[] bytes=readByteFromStream(new FileInputStream(src));
-        return new String(bytes,"utf-8");
+        return new String(readByteFromStream(new FileInputStream(src)),"utf-8");
+    }
+    public static String getLineSeparator(){
+        return lineSeperator;
     }
 
 }

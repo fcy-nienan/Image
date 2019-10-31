@@ -19,8 +19,8 @@ import java.util.zip.ZipFile;
 public class ZipDiff {
     private static Logger logger = Logger.getLogger(FileDiff.class.getName());
     public static void main(String args[]) throws IOException {
-        String src="E:\\sample.war";
-        String dst="E:\\sample1.war";
+        String src="D:\\startup.zip";
+        String dst="D:\\startup1.zip";
         List<FileDifferentInfo> contentDifferentInfos = diffZip(src, dst);
         for (FileDifferentInfo fileDifferentInfo : getFileDifferent(DiffType.NOT_EQUAL_CONTENT, contentDifferentInfos)) {
             System.out.println(fileDifferentInfo);

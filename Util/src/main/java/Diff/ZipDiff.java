@@ -22,12 +22,24 @@ public class ZipDiff {
         String src="E:\\sample.war";
         String dst="E:\\sample1.war";
         List<FileDifferentInfo> contentDifferentInfos = diffZip(src, dst);
-        for (FileDifferentInfo contentDifferentInfo : contentDifferentInfos) {
-            System.out.println(contentDifferentInfo);
+        for (FileDifferentInfo fileDifferentInfo : getFileDifferent(DiffType.NOT_EQUAL_CONTENT, contentDifferentInfos)) {
+            System.out.println(fileDifferentInfo);
         }
     }
-    public static void disSpecific(DiffType type,List<FileDifferentInfo> infos){
-
+    public static List<FileDifferentInfo> getFileDifferent(DiffType type,List<FileDifferentInfo> infos){
+        for (FileDifferentInfo info : infos) {
+            info.setDifferentInfos(getSpecific(type,info.getDifferentInfos()));
+        }
+        return infos;
+    }
+    public static List<ContentDifferentInfo> getSpecific(DiffType type,List<ContentDifferentInfo> infos){
+        List<ContentDifferentInfo> result=new ArrayList<>();
+        for (ContentDifferentInfo info : infos) {
+            if (info.getType().equals(type)){
+                result.add(info);
+            }
+        }
+        return result;
     }
     public static List<FileDifferentInfo> diffZip(String src, String dst) throws IOException {
         List<FileDifferentInfo> fileDifferentInfos =new ArrayList<>();

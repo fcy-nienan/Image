@@ -24,11 +24,14 @@ public class FourReference {
         Object o=new Object();
         ReferenceQueue queue=new ReferenceQueue();
         WeakReference reference=new WeakReference(o,queue);
-        o=null;
-        System.gc();
-        Thread.sleep(4000);
-        System.out.println(o);
-        System.out.println(reference.get());
+        while (true){
+            if (reference.get()!=null){
+                System.out.println("object has in memory");
+            }else{
+                System.out.println("object has been collected!");
+            }
+            Thread.sleep(2000);
+        }
 
     }
 

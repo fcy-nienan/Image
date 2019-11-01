@@ -51,7 +51,8 @@ public class BillionCount {
         }
     }
     public static void insertData(int count){
-        String sql="insert into ttt values(?)";
+//        String sql="insert into fcy values(?)";
+        String sql="";
         Connection connection=ConnectionSource.getConnection();
         try {
             connection.setAutoCommit(false);
@@ -64,7 +65,6 @@ public class BillionCount {
             connection.commit();
         }catch (Exception e){
             e.printStackTrace();
-            log.error("insert data error!");
 
         }finally{
             try {

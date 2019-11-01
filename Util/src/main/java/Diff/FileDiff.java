@@ -15,7 +15,10 @@ public class FileDiff {
     private static Logger logger = Logger.getLogger(FileDiff.class.getName());
 
     public static void main(String args[]) throws Exception {
-
+        System.out.println(File.separator);
+        System.out.println(File.separatorChar);
+        System.out.println(File.pathSeparator);
+        System.out.println(File.pathSeparatorChar);
     }
 
     private static ContentDifferentInfo getByteDifferent(int line, byte[] srcByte, byte[] dstByte) throws UnsupportedEncodingException {

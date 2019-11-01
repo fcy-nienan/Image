@@ -21,16 +21,18 @@ import java.lang.ref.WeakReference;
  */
 public class FourReference {
     public static void main(String[] args) throws InterruptedException {
-        Object o=new Object();
+        Student student=new Student("fcy",11.2f);
         ReferenceQueue queue=new ReferenceQueue();
-        WeakReference reference=new WeakReference(o,queue);
+        WeakReference<Student> reference=new WeakReference<Student>(student);
+        int i=0;
         while (true){
             if (reference.get()!=null){
-                System.out.println("object has in memory");
+                i++;
+                System.out.println("object has in memory and live "+i+" loop!");
             }else{
                 System.out.println("object has been collected!");
+                break;
             }
-            Thread.sleep(2000);
         }
 
     }

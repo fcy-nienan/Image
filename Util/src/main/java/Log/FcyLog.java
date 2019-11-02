@@ -1,5 +1,7 @@
 package Log;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * @descripiton:
  * 关于日志
@@ -11,6 +13,7 @@ package Log;
  * @author: fcy
  * @date: 2019-03-09  18:27
  */
+@Slf4j
 public class FcyLog {
     private int level=0;
     private Class clazz;

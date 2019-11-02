@@ -23,13 +23,17 @@
             <artifactId>commons-logging</artifactId>
             <version>1.0.4</version>
         </dependency>
-
-
         <!--lombok注解-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.14.4</version>
+        </dependency>
+        <!--slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
         </dependency>
         <!--MySql-->
         <dependency>
@@ -55,9 +59,6 @@
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
         </dependency>
-
-
-
         <!--Guava-->
         <dependency>
             <groupId>com.google.guava</groupId>
@@ -66,17 +67,19 @@
         </dependency>
         <!-- https://mvnrepository.com/artifact/org.ow2.asm/asm -->
         <!-- https://mvnrepository.com/artifact/org.ow2.asm/asm-all -->
+        <!--ASM-->
         <dependency>
             <groupId>org.ow2.asm</groupId>
             <artifactId>asm-all</artifactId>
             <version>5.0.4</version>
         </dependency>
-
+        <!--查看对象布局-->
         <dependency>
             <groupId>org.openjdk.jol</groupId>
             <artifactId>jol-core</artifactId>
             <version>0.9</version>
         </dependency>
+
 
         <!--基准测试-->
         <dependency>

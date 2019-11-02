@@ -27,7 +27,6 @@ public class FourReference {
         int i=0;
         while (true){
             if (reference.get()!=null){
-                i++;
                 System.out.println("object has in memory and live "+i+" loop!");
             }else{
                 System.out.println("object has been collected!");

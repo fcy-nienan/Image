@@ -19,12 +19,10 @@ public class checkReferenceQueueThread extends Thread{
     @Override
     public void run () {
         int i=0;
-        Reference old=null;
         while (true){
             i++;
             Reference reference=queue.poll();
             if (reference!=null){
-                old=reference;
                 log.info("reference is not null and count {} and reference enqueued!",i);
                 if (reference.isEnqueued()){
                     log.info("reference has enqueued!");
@@ -35,6 +33,5 @@ public class checkReferenceQueueThread extends Thread{
                 }
             }
         }
-        log.info("the reference is null?{}",old);
     }
 }

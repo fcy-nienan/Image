@@ -1,5 +1,6 @@
 package Reference;
 
+import ThreadUtil.OOMTestThread;
 import ThreadUtil.TMS;
 import lombok.extern.slf4j.Slf4j;
 
@@ -19,6 +20,16 @@ import java.util.List;
 *
 * 另外如果要使得该虚引用入队列,必须先将其包含的对象置为null
 * 如果不置为null,下面的结果是显示该对象永远也不会被回收
+*
+* ReferenceQueue的相关方法
+* Reference poll()返回进入队列的引用
+* Reference remove()等待进入队列的元素并移除，该方法会阻塞知道元素入队列
+* Reference remove(long time)加了超时时间
+* Reference的方法
+* Object get()方法体是直接返回null
+* boolean enqueued() 将本引用入队列
+* boolean isEnqueued()返回与之关联的队列是否是空队列，如果没有与之关联的队列则一直返回false
+* void clear()调用该方法不会造成该对象入队列
 * */
 @Slf4j
 public class PhantomReferenceDemo {
@@ -32,16 +43,18 @@ public class PhantomReferenceDemo {
         PhantomReference phantomReference=new PhantomReference(object,queue);
         checkReferenceQueueThread thread=new checkReferenceQueueThread(queue);
         thread.start();
-        TMS.sleep(5000);
         object=null;
+//        OOMTestThread oomTestThread=new OOMTestThread();
+//        oomTestThread.start();
         while (true){
             try {
-                list.add(new byte[1024*100]);
+                list.add(new byte[1024 * 100]);
                 TMS.sleep(1000);
-            }catch (Error e){
+            }catch (Exception e){
+                e.printStackTrace();
+            }catch (Error error){
 
             }
         }
-
     }
 }

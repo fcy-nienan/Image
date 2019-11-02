@@ -25,11 +25,12 @@ public class FourReference {
         ReferenceQueue queue=new ReferenceQueue();
         WeakReference<Student> reference=new WeakReference<Student>(student);
         int i=0;
+        long start=System.currentTimeMillis();
         while (true){
             if (reference.get()!=null){
                 i++;
                 if (i==119000){
-                    Thread.sleep(1000*60*60);
+                    Thread.sleep(1000*60*60*100);
                 }
                 System.out.println("object has in memory and live "+i+" loop!");
             }else{

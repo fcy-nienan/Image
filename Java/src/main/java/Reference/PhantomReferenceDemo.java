@@ -44,6 +44,7 @@ public class PhantomReferenceDemo {
         checkReferenceQueueThread thread=new checkReferenceQueueThread(queue);
         thread.start();
         object=null;
+//        莫名其妙,将while循环中的代码方入另一个线程这个幽灵引用就不入队列,将其放在主线程就入队列
 //        OOMTestThread oomTestThread=new OOMTestThread();
 //        oomTestThread.start();
         while (true){

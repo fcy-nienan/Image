@@ -3,6 +3,7 @@ package Reference;
 import lombok.extern.slf4j.Slf4j;
 
 import java.lang.ref.PhantomReference;
+import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 @Slf4j
 public class PhantomReferenceDemo {
@@ -13,6 +14,7 @@ public class PhantomReferenceDemo {
         ReferencedObject object=new ReferencedObject();
         ReferenceQueue queue=new ReferenceQueue();
         PhantomReference phantomReference=new PhantomReference(object,queue);
+        System.out.println(queue.poll());
         while (true){
             System.out.println(phantomReference.isEnqueued());
             log.info(String.valueOf(phantomReference.enqueue()));

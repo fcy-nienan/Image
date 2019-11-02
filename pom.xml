@@ -18,11 +18,6 @@
     </modules>
 
     <dependencies>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.0.4</version>
-        </dependency>
         <!--lombok注解-->
         <dependency>
             <groupId>org.projectlombok</groupId>

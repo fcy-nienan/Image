@@ -1,6 +1,9 @@
 package Reference;
 
 
+import Log.log;
+import lombok.extern.slf4j.Slf4j;
+
 import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 
@@ -19,22 +22,25 @@ import java.lang.ref.WeakReference;
  *
  *
  */
+@Slf4j
 public class WeakReferenceDemo {
     public static void main(String[] args) throws InterruptedException {
         ReferenceQueue queue=new ReferenceQueue();
         Student student=new Student("fcy",11.2f);
-        WeakReference<Student> reference=new WeakReference<Student>(student);
+        WeakReference<Student> reference=new WeakReference<Student>(student,queue);
         int i=0;
         long start=System.currentTimeMillis();
         while (true){
             if (reference.get()!=null){
                 i++;
                 if (i==119000){
-                    Thread.sleep(1000*60*60*100);
+                    Thread.sleep(1000*6);
                 }
-                System.out.println("object has in memory and live "+i+" loop!");
+                log.info(String.valueOf(queue.poll()==null));
+                log.info("object has in memory and live {} loop!",i);
             }else{
-                System.out.println("object has been collected!");
+                log.info("reference queue 's object is {}",queue.poll().get());
+                log.info("object has been collected!");
                 break;
             }
         }

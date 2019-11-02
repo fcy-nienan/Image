@@ -19,10 +19,10 @@ import java.lang.ref.WeakReference;
  *
  *
  */
-public class FourReference {
+public class WeakReferenceDemo {
     public static void main(String[] args) throws InterruptedException {
-        Student student=new Student("fcy",11.2f);
         ReferenceQueue queue=new ReferenceQueue();
+        Student student=new Student("fcy",11.2f);
         WeakReference<Student> reference=new WeakReference<Student>(student);
         int i=0;
         long start=System.currentTimeMillis();

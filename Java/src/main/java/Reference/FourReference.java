@@ -27,6 +27,10 @@ public class FourReference {
         int i=0;
         while (true){
             if (reference.get()!=null){
+                i++;
+                if (i==119000){
+                    Thread.sleep(1000*60*60);
+                }
                 System.out.println("object has in memory and live "+i+" loop!");
             }else{
                 System.out.println("object has been collected!");

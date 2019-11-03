@@ -7,8 +7,28 @@ import java.io.*;
  * @author: fcy
  * @date: 2019-05-05  23:34
  */
-public class IOUtil {
+public class IOUtil{
     private static final String lineSeperator=System.getProperty("line.separator");
+    public static void disPlayStream(InputStream inputStream,String charset) throws IOException {
+        BufferedReader reader=getBufferedReaderByStream(inputStream);
+        String msg=null;
+        while ((msg=reader.readLine())!=null){
+            System.out.println(msg);
+        }
+        closeStream(reader);
+    }
+    public static void disPlayStream(InputStream inputStream) throws IOException {
+        disPlayStream(inputStream,"utf-8");
+    }
+    public static void closeStream(Closeable closeable){
+        if (closeable!=null){
+            try {
+                closeable.close();
+            } catch (IOException e) {
+                closeable=null;
+            }
+        }
+    }
     public static byte[] readByteFromStream(InputStream inputStream) throws IOException {
         ByteArrayOutputStream byteArrayOutputStream=new ByteArrayOutputStream();
         int c;
@@ -18,8 +38,11 @@ public class IOUtil {
         }
         return byteArrayOutputStream.toByteArray();
     }
+    public static BufferedReader getBufferedReaderByStream(InputStream stream,String charset) throws UnsupportedEncodingException {
+        return new BufferedReader(new InputStreamReader(stream,charset));
+    }
     public static BufferedReader getBufferedReaderByStream(InputStream stream) throws UnsupportedEncodingException {
-        return new BufferedReader(new InputStreamReader(stream,"utf-8"));
+        return getBufferedReaderByStream(stream,"utf-8");
     }
     public static BufferedReader getBufferedReader(String src) throws FileNotFoundException, UnsupportedEncodingException {
         return getBufferedReaderByStream(new FileInputStream(src));

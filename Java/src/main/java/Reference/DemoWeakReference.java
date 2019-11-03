@@ -26,8 +26,8 @@ import java.lang.ref.WeakReference;
 public class DemoWeakReference {
     public static void main(String[] args) throws InterruptedException {
         ReferenceQueue queue=new ReferenceQueue();
-        Student student=new Student("fcy",11.2f);
-        WeakReference<Student> reference=new WeakReference<Student>(student,queue);
+        ReferencedObject object=new ReferencedObject();
+        WeakReference reference=new WeakReference(object,queue);
         checkReferenceQueueThread thread=new checkReferenceQueueThread(queue);
         thread.start();
 //        int i=0;

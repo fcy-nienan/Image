@@ -32,7 +32,7 @@ import java.util.List;
 * void clear()调用该方法不会造成该对象入队列
 * */
 @Slf4j
-public class PhantomReferenceDemo {
+public class DemoPhantomReference {
     private static final List<Object> list=new ArrayList<>();
     public static void main (String args[]) throws InterruptedException {
         execute();

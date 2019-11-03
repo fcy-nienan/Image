@@ -23,7 +23,7 @@ import java.lang.ref.WeakReference;
  *
  */
 @Slf4j
-public class WeakReferenceDemo {
+public class DemoWeakReference {
     public static void main(String[] args) throws InterruptedException {
         ReferenceQueue queue=new ReferenceQueue();
         Student student=new Student("fcy",11.2f);

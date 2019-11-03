@@ -1,3 +1,4 @@
+@BenchmarkMode
 Throughput: 整体吞吐量，例如“1秒内可以执行多少次调用”。
 AverageTime: 调用的平均时间，例如“每次调用平均耗时xxx毫秒”。
 SampleTime: 随机取样，最后输出取样结果的分布，例如“99%的调用在xxx毫秒以内，99.99%的调用在xxx毫秒以内”

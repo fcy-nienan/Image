@@ -29,9 +29,6 @@ public class Ref {
         System.out.println("survivor");
     }
     public static void main(String args[]) throws InterruptedException {
-        BlockingQueue qeue;
-        ArrayList list;
-
         Object object=new Object();
         ReferenceQueue queue=new ReferenceQueue();
         Map<Object,Object> map=new HashMap<>();

@@ -10,18 +10,20 @@ public class SetAllPath {
         String allBinPath="D:\\ScheduledTask\\AllBInPath";
         BufferedReader reader= IOUtil.getBufferedReader(allBinPath);
         StringBuilder builder=new StringBuilder();
-        builder.append("setx PATH \"%PATH%;");
         String msg=null;
         while ((msg=reader.readLine())!=null){
+            builder.append("cmd /c ");
+            builder.append("setx PATH \"%PATH%;");
             builder.append(msg);
             builder.append(File.pathSeparator);
+            builder.append("\"");
+            System.out.println(builder.toString());
+            Process process=Runtime.getRuntime().exec(builder.toString());
+//            IOUtil.disPlayStream(process.getInputStream(),"gb2312");
+            process.waitFor();
+            process.destroy();
+            builder.setLength(0);
         }
-        builder.append("\"");
-        System.out.println(builder.toString());
-        String cmd="cmd /c "+builder.toString();
-        Process process=Runtime.getRuntime().exec(cmd);
-        IOUtil.disPlayStream(process.getInputStream(),"gb2312");
-        process.waitFor();
-        process.destroy();
+
     }
 }

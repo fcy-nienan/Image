@@ -21,7 +21,7 @@ public class Gzip {
             gzip.write(str.getBytes(encoding));
             gzip.close();
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
         return out.toByteArray();
     }
@@ -39,7 +39,7 @@ public class Gzip {
                 out.write(buffer, 0, n);
             }
         } catch (IOException e) {
-
+            e.printStackTrace();
         }
 
         return out.toByteArray();

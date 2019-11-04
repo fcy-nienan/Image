@@ -1,6 +1,7 @@
 package CommonUtil;
 
 import java.io.*;
+import java.nio.charset.Charset;
 
 /**
  * @descripiton:
@@ -8,6 +9,7 @@ import java.io.*;
  * @date: 2019-05-05  23:34
  */
 public class IOUtil{
+    private static String charset=SystemUtil.getFileEncoding();
     private static final String lineSeperator=System.getProperty("line.separator");
     public static void disPlayStream(InputStream inputStream,String charset) throws IOException {
         BufferedReader reader=getBufferedReaderByStream(inputStream);
@@ -18,7 +20,7 @@ public class IOUtil{
         closeStream(reader);
     }
     public static void disPlayStream(InputStream inputStream) throws IOException {
-        disPlayStream(inputStream,"utf-8");
+        disPlayStream(inputStream,charset);
     }
     public static void closeStream(Closeable closeable){
         if (closeable!=null){
@@ -42,7 +44,7 @@ public class IOUtil{
         return new BufferedReader(new InputStreamReader(stream,charset));
     }
     public static BufferedReader getBufferedReaderByStream(InputStream stream) throws UnsupportedEncodingException {
-        return getBufferedReaderByStream(stream,"utf-8");
+        return getBufferedReaderByStream(stream,SystemUtil.getFileEncoding());
     }
     public static BufferedReader getBufferedReader(String src) throws FileNotFoundException, UnsupportedEncodingException {
         return getBufferedReaderByStream(new FileInputStream(src));
@@ -54,13 +56,25 @@ public class IOUtil{
         return getBufferedReaderByStream(new ByteArrayInputStream("".getBytes()));
     }
     public static String readStringFromStream(InputStream inputStream) throws IOException {
-        return new String(readByteFromStream(inputStream),"utf-8");
+        return new String(readByteFromStream(inputStream),charset);
     }
     public static String readStringFromSrc(String src) throws IOException {
-        return new String(readByteFromStream(new FileInputStream(src)),"utf-8");
+        return new String(readByteFromStream(new FileInputStream(src)),charset);
     }
     public static String getLineSeparator(){
         return lineSeperator;
+    }
+    public static BufferedWriter getBufferedWriterByStream(OutputStream outputStream,String charset) throws UnsupportedEncodingException {
+        return new BufferedWriter(new OutputStreamWriter(outputStream,charset));
+    }
+    public static BufferedWriter getBufferedWriterByStream(OutputStream outputStream) throws UnsupportedEncodingException {
+        return getBufferedWriterByStream(outputStream, charset);
+    }
+    public static BufferedWriter getBufferedWriterByString(String path,String charset) throws FileNotFoundException, UnsupportedEncodingException {
+        return getBufferedWriterByStream(new FileOutputStream(path),charset);
+    }
+    public static BufferedWriter getBufferedWriterByString(String path) throws FileNotFoundException, UnsupportedEncodingException {
+        return getBufferedWriterByStream(new FileOutputStream(path),charset);
     }
 
 }

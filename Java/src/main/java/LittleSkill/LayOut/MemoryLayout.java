@@ -3,6 +3,10 @@ package LittleSkill.LayOut;
 import org.openjdk.jol.info.ClassLayout;
 import org.openjdk.jol.vm.VM;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
  * @descripiton:
  * @author: fcy
@@ -37,6 +41,16 @@ public class MemoryLayout{
     public static void main(String[] args){
         System.out.println(VM.current().details());
         System.out.println(ClassLayout.parseClass(MemoryObject.class).toPrintable());
+        disIntegerAllSize();
+    }
+    static void disIntegerAllSize(){
+        List<Integer> list=new ArrayList<>();
+        for (int i=0;i<10000;i++){
+            list.add(new Integer(i));
+        }
+        Scanner scanner=new Scanner(System.in);
+        scanner.nextLine();
+        System.out.println("application is running");
     }
 
 }

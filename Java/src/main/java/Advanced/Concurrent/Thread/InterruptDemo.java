@@ -7,6 +7,7 @@ public class InterruptDemo {
         testT1();
     }
     public static void testT(){
+        System.identityHashCode(new Object());
         T t=new T();
         t.start();
         System.out.println("Main:before:"+t.isInterrupted());

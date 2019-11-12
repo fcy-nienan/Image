@@ -4,6 +4,7 @@ import CommonUtil.IOUtil;
 
 import java.io.*;
 import java.nio.channels.FileLock;
+import java.nio.file.Files;
 
 public class OhterFileLockWrite {
     public static void main (String args[]) throws IOException {
@@ -16,6 +17,7 @@ public class OhterFileLockWrite {
             randomAccessFile.write(i+65);
         }
         randomAccessFile.close();
+
 
         IOUtil.disPlayStream(new FileInputStream(file));
     }

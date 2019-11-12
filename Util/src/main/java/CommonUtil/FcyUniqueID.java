@@ -5,6 +5,9 @@ import ThreadUtil.TMS;
 import ThreadUtil.TP;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashSet;
@@ -17,15 +20,15 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 @Slf4j
 public class FcyUniqueID {
-    public static void main(String[] args) {
-        System.out.println(26*26*10*10);
-        FcyUniqueID uniqueID=new FcyUniqueID();
-        for (int i=0;i<100000;i++){
-//            TMS.sleep(new Random().nextInt(4)*1000);
-            UniqueID uniqueID1 = uniqueID.computeUUID("fcy", 8);
-//            log.info("count {} id {}",i,uniqueID1.getId());
-        }
-        System.out.println(uniqueID.size());
+    public static void main(String[] args) throws FileNotFoundException {
+//        System.out.println(26*26*10*10);
+//        FcyUniqueID uniqueID=new FcyUniqueID();
+//        for (int i=0;i<100000;i++){
+////            TMS.sleep(new Random().nextInt(4)*1000);
+//            UniqueID uniqueID1 = uniqueID.computeUUID("fcy", 8);
+////            log.info("count {} id {}",i,uniqueID1.getId());
+//        }
+//        System.out.println(uniqueID.size());
     }
     private static final String split="-";
     private static Set<String> allocatedID=new HashSet();

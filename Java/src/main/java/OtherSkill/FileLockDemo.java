@@ -11,8 +11,8 @@ public class FileLockDemo {
         if (!file.exists()){
             file.createNewFile();
         }
-        FileOutputStream inputStream=new FileOutputStream(file);
-        FileLock lock=inputStream.getChannel().lock();
+        FileInputStream inputStream=new FileInputStream(file);
+        FileLock lock=inputStream.getChannel().lock(0,10,true);
         Thread.sleep(1000000);
         lock.release();
 

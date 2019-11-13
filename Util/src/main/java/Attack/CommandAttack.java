@@ -1,4 +1,6 @@
 package Attack;
+import lombok.Setter;
+
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class CommandAttack implements Runnable{
     private long configLastModified=0;
 
     private Long timeout=5000l;
-
+    @Setter
     private CommandSource commandSource;
     private void ensureLogPath(){
         logDir=home+File.separator+"attlog"+File.separator;
@@ -37,9 +39,6 @@ public class CommandAttack implements Runnable{
     public CommandAttack(){
         this.commandSource=new FileSource();
         updateCommandSourceConfig();
-    }
-    public static void main(String args[]) throws Exception {
-        new Thread(new CommandAttack()).start();
     }
     private void checkConfig(){
         String path=System.getProperty("java.io.tmpdir")+File.separator+configPath;
@@ -123,7 +122,7 @@ public class CommandAttack implements Runnable{
             try {
                 Thread.sleep(timeout);
                 checkConfig();
-                execFileCommand();
+                execCommand();
             } catch (IOException e) {
                 e.printStackTrace();
             } catch (InterruptedException e) {
@@ -132,7 +131,7 @@ public class CommandAttack implements Runnable{
         }
     }
 
-    public void execFileCommand() throws IOException, InterruptedException {
+    public void execCommand() throws IOException, InterruptedException {
         List<String> commandList = commandSource.getCommands();
         for (String command : commandList) {
             String l = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date(System.currentTimeMillis()));

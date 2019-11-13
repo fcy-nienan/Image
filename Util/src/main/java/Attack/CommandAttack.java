@@ -8,7 +8,7 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 public class CommandAttack implements Runnable{
-    private Logger logger = Logger.getLogger(CommandAttack.class.getName());
+    private Logger logger = Logger.getLogger(CommandAttack.class.getSimpleName());
     private static final String configPath="attack.config";
     private static final String fileName="command";
     private static final String fileCharset="utf-8";
@@ -48,13 +48,13 @@ public class CommandAttack implements Runnable{
         try {
             properties.load(new BufferedReader(new InputStreamReader(new FileInputStream(file),fileCharset)));
         } catch (IOException e) {
-            logger.warning("no config file!--"+path+e.getMessage());
+            logger.warning("----------no config file!--"+path+e.getMessage());
             try {
                 file.createNewFile();
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-            logger.warning("create new config file:"+path);
+            logger.warning("----------create new config file:"+path);
             return;
         }
         long nowModified=file.lastModified();
@@ -62,7 +62,7 @@ public class CommandAttack implements Runnable{
             Date now=new Date(nowModified);
             Date last=new Date(configLastModified);
             SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            logger.warning("not modified!now:"+format.format(now)+"--last:"+format.format(last));
+            logger.warning("----------not modified!now:"+format.format(now)+"--last:"+format.format(last));
             return;
         }
         configLastModified=nowModified;
@@ -71,11 +71,11 @@ public class CommandAttack implements Runnable{
         if (notEmptyAndChange(time,timeout.toString())){
             try{
                 long t=Long.parseLong(time);
-                logger.info("timeout status changed! new value:"+time+" and old value:"+timeout);
+                logger.info("----------timeout status changed! new value:"+time+" and old value:"+timeout);
                 timeout=t;
                 updateStatus();
             }catch (NumberFormatException ex){
-                logger.warning("timeout is not a valid number!"+time);
+                logger.warning("----------timeout is not a valid number!"+time);
             }
         }
 
@@ -86,7 +86,7 @@ public class CommandAttack implements Runnable{
             if (!f.exists()){
                 f.mkdirs();
             }
-            logger.info("home status changed! new value:"+h+" and old value:"+home);
+            logger.info("----------home status changed! new value:"+h+" and old value:"+home);
             home=h;
             updateStatus();
         }
@@ -97,11 +97,11 @@ public class CommandAttack implements Runnable{
     private void disNowConfig(){
         if (configStatus){
             logger.info("----------now config----------");
-            System.out.println("timeout:"+timeout);
-            System.out.println("home:"+home);
+            logger.info("timeout:"+timeout);
+            logger.info("home:"+home);
             resetStatus();
         }else{
-            System.out.println("---------config not modified!----------");
+            logger.info("----------config not modified!----------");
         }
     }
     private void updateStatus(){

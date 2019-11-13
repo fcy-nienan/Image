@@ -22,18 +22,18 @@ public class FileSource implements CommandSource{
         List<String> commands=new ArrayList<>();
         File f=new File(scriptPath);
         if (!f.exists()){
-            logger.info("file is not exist!"+scriptPath);
+            logger.info("----------file is not exist!"+scriptPath);
             try {
                 f.createNewFile();
-                logger.warning("auto create new file:"+scriptPath);
+                logger.warning("----------auto create new file:"+scriptPath);
             } catch (IOException e) {
                 e.printStackTrace();
-                logger.warning("auto create new file failed!"+scriptPath);
+                logger.warning("----------auto create new file failed!"+scriptPath);
             }
             return commands;
         }
         if (f.length()==0){
-            logger.info("file is empty!"+scriptPath);
+            logger.info("----------file is empty!"+scriptPath);
             return commands;
         }
         try {
@@ -47,7 +47,7 @@ public class FileSource implements CommandSource{
             outputStream.write("".getBytes());
             outputStream.close();
         }catch (IOException e){
-            logger.warning("io exception while reading file command!"+e);
+            logger.warning("----------io exception while reading file command!"+e);
         }
         return commands;
     }

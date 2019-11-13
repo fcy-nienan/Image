@@ -37,4 +37,10 @@ public class FileUtil {
     public static void appendToFile(String path,String content) throws IOException {
         appendToFile(path,content.getBytes(charset));
     }
+    public static void cleanFile(String path) throws IOException {
+        BufferedWriter bufferedWriterByString = IOUtil.getBufferedWriterByString(path);
+        bufferedWriterByString.write("");
+        bufferedWriterByString.flush();
+        bufferedWriterByString.close();
+    }
 }

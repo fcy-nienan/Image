@@ -1,5 +1,6 @@
 package DynamicLoader;
 
+import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
@@ -18,30 +19,33 @@ import java.util.Properties;
 @Slf4j
 public class DBConfig {
     @Config
+    @Getter
     private volatile String url;
     @Config
+    @Getter
     private volatile String username;
     @Config
+    @Getter
     private volatile String password;
     @Config
+    @Getter
     private volatile String driverName;
     private boolean started;
     private String path;
     private Thread thread;
     private long lastModified;
-    public static void main (String[] args) throws IOException, InterruptedException {
-        String path="D:\\command";
-        DBConfig config=new DBConfig(path);
-        config.load();
-        config.start();
-        while (true){
-            Thread.sleep(5000);
-            config.start();
-            Thread.sleep(5000);
-            config.stop();
+    private static DBConfig config;
+    public static DBConfig getInstance(String path){
+        if (config==null){
+            synchronized (DBConfig.class){
+                if (config==null) {
+                    config = new DBConfig(path);
+                }
+            }
         }
+        return config;
     }
-    public DBConfig(String path){
+    private DBConfig(String path){
         this.path=path;
     }
     private File preCheck(String path){
@@ -128,7 +132,7 @@ public class DBConfig {
             }
         }
     }
-    class updateThread implements Runnable{
+    private class updateThread implements Runnable{
         @Setter
         private long timeout=2000;
         @Override

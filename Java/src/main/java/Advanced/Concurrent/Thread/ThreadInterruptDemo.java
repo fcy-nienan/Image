@@ -55,6 +55,7 @@ public class ThreadInterruptDemo {
 //        以上两个方法都调用了private native boolean isInterrupted(boolean ClearInterrupted);
 //        本地方法，参数标识是否清除中断状态
 //        t.interrupt();//置中断状态为true
+        Thread.interrupted();
         Thread t1=new Thread(()->{
             Thread ttt=Thread.currentThread();
             ttt.isInterrupted();

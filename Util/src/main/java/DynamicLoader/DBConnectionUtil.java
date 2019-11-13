@@ -8,20 +8,31 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 @Slf4j
-public class DBConnection {
-    private static String configPath;
-    private static DBConfig dbConfig=DBConfig.getInstance(configPath);
-    private static ThreadLocal<Connection> connectionThreadLocal=ThreadLocal.withInitial(DBConnection::create);
-    public static void config(String path) throws IOException {
+public class DBConnectionUtil {
+    private String configPath;
+    private DBConfig dbConfig;
+    public void config(String path) throws IOException {
         configPath=path;
-        dbConfig=DBConfig.getInstance(configPath);
+        dbConfig=new DBConfig(path);
         dbConfig.load();
+    }
+    public void configAndStart(String configPath) throws IOException {
+        config(configPath);
+        start();
+    }
+    public void start(){
         dbConfig.start();
     }
-    public static Connection getConnection(){
+    public Connection getConnection(){
         return connectionThreadLocal.get();
     }
-    private static Connection create (){
+    private ThreadLocal<Connection> connectionThreadLocal=new ThreadLocal<Connection>(){
+        @Override
+        protected Connection initialValue () {
+            return create();
+        }
+    };
+    private Connection create (){
         Connection connection=null;
         try{
             Class.forName(dbConfig.getDriverName());
@@ -35,4 +46,5 @@ public class DBConnection {
         }
         return connection;
     }
+
 }

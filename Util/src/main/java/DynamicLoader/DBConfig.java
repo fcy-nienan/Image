@@ -34,18 +34,7 @@ public class DBConfig {
     private String path;
     private Thread thread;
     private long lastModified;
-    private static DBConfig config;
-    public static DBConfig getInstance(String path){
-        if (config==null){
-            synchronized (DBConfig.class){
-                if (config==null) {
-                    config = new DBConfig(path);
-                }
-            }
-        }
-        return config;
-    }
-    private DBConfig(String path){
+    public DBConfig(String path){
         this.path=path;
     }
     private File preCheck(String path){

@@ -1,5 +1,6 @@
 package DynamicLoader;
 
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.File;
@@ -16,16 +17,20 @@ import java.util.Properties;
 * */
 @Slf4j
 public class DBConfig {
-    private String url;
-    private String username;
-    private String password;
-    private String driverName;
-
+    @Config
+    private volatile String url;
+    @Config
+    private volatile String username;
+    @Config
+    private volatile String password;
+    @Config
+    private volatile String driverName;
+    private boolean started;
+    private String path;
+    private Thread thread;
     public static void main (String[] args) {
-        Field[] declaredFields = DBConfig.class.getDeclaredFields();
-        for (Field declaredField : declaredFields) {
-            System.out.println(declaredField.getName());
-        }
+        DBConfig config=new DBConfig();
+        config.load("");
     }
     private File preCheck(String path){
         File file=new File(path);
@@ -39,12 +44,32 @@ public class DBConfig {
         }
         return file;
     }
+    public synchronized void start(){
+        if (started){
+            log.warn("background thread has started!");
+            return;
+        }
+        thread=new Thread(new updateThread());
+        thread.start();
+    }
+    public synchronized void stop(){
+        if (!started){
+            log.warn("background thread has not started!");
+            return;
+        }
+        thread.interrupt();
+    }
     public void load(String path) throws IOException {
         File file = preCheck(path);
         Properties properties=new Properties();
         properties.load(new FileInputStream(file));
         Field[] declaredFields = this.getClass().getDeclaredFields();
         for (Field declaredField : declaredFields) {
+            Config annotation = declaredField.getAnnotation(Config.class);
+            if (annotation==null){
+                log.warn(declaredField.getName()+" no have config");
+                continue;
+            }
             declaredField.setAccessible(true);
             String name=declaredField.getName();
             String property = properties.getProperty(name);
@@ -57,10 +82,21 @@ public class DBConfig {
             }
         }
     }
-    static class updateThread implements Runnable{
+    class updateThread implements Runnable{
+        @Setter
+        private long timeout;
         @Override
         public void run () {
-
+            while (!Thread.currentThread().isInterrupted()){
+                try {
+                    Thread.sleep(timeout);
+                    load(path);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 }

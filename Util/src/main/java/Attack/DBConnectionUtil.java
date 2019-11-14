@@ -1,12 +1,11 @@
-package DynamicLoader;
+package Attack;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
+
 @Slf4j
 public class DBConnectionUtil {
     private String configPath;

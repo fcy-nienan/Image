@@ -38,6 +38,7 @@ public class ClassLoaderTask implements Runnable {
     private void log(String msg){
         log.info("----------"+msg+"----------");
     }
+    private void log(String msg,String object){log.info("----------"+msg+"----------",object);}
     private void startAction(){
         log("start class loader task!");
         thread=new Thread(this);
@@ -63,6 +64,7 @@ public class ClassLoaderTask implements Runnable {
                 Method[] declaredMethods = aClass.getDeclaredMethods();
                 for (Method declaredMethod : declaredMethods) {
                     try {
+                        log("execute method:"+declaredMethod.getName());
                         declaredMethod.invoke(o);
                     } catch (InvocationTargetException e) {
                         log("invoke method failed:"+declaredMethod.getName());
@@ -89,14 +91,17 @@ public class ClassLoaderTask implements Runnable {
             }
         }
     }
+//    need
     private List<Class<?>> loadClass(){
         List<Class<?>> list=new ArrayList<>();
         File[] files=new File(home).listFiles();
         for (File file : files) {
             if (file.getName().endsWith(".class")){
                 try {
-                    Class clazz=classLoader.findClass(file.getName());
+                    String regular=file.getName().replace(home,"").replace(".class","");
+                    Class clazz=classLoader.findClass(regular);
                     list.add(clazz);
+                    log("load class {} success!",file.getName());
                 } catch (ClassNotFoundException e) {
                     log("load class failed:"+file.getName());
                     e.printStackTrace();

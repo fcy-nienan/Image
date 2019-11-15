@@ -22,7 +22,7 @@ public class FcyClassLoader extends ClassLoader {
     }
 
     private byte[] loadClassFromFile(String fileName)  {
-        String shortName=fileName.replace(".",File.separator);
+        String shortName=fileName.replace(".",File.separator)+".class";
         String path=home+File.separator+shortName;
         ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
         byte[] buffer=new byte[1024];

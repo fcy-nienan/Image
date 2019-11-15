@@ -16,7 +16,7 @@ public class FcyClassLoader extends ClassLoader {
     }
     @Override
     public Class findClass(String name) throws ClassNotFoundException {
-        byte[] b = new byte[0];
+        byte[] b = null;
         b = loadClassFromFile(name);
         return defineClass(name, b, 0, b.length);
     }

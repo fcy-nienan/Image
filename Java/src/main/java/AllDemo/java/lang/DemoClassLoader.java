@@ -3,13 +3,29 @@ package AllDemo.java.lang;
 import sun.misc.Launcher;
 import sun.misc.URLClassPath;
 
+import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.sql.Driver;
 
 public class DemoClassLoader {
     public static void main (String args[]) throws InterruptedException {
-        disPath();
-        Thread.sleep(3000000);
+        Object o;
+        Driver driver;
+//        disPath();
+//        Thread.sleep(3000000);
+        dis();
+    }
+    static class t implements Runnable{
+        @Override
+        public void run () {
+            System.out.println(this.getClass().getClassLoader());
+        }
+    }
+    public static void dis(){
+        Thread t=new Thread(new t());
+        t.start();
+        System.out.println(File.class.getClassLoader());
     }
     public static void disPath(){
         System.out.println("----------bootstrap class loader path----------");

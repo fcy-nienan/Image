@@ -7,12 +7,37 @@ import java.io.*;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 public class FcyClassLoader extends ClassLoader {
     private String home;
     public FcyClassLoader(String home){
         this.home=home;
+    }
+
+    public static void main (String[] args) throws ClassNotFoundException {
+        FcyClassLoader classLoader=new FcyClassLoader("D:\\classes\\");
+        Class<?> aClass = classLoader.loadClass(classLoader.home);
+    }
+    private List<Class<?>> loadClass(ClassLoader classLoader,String src){
+        List<Class<?>> list=new ArrayList<>();
+        File[] files=new File(src).listFiles();
+        for (File file : files) {
+            if (file.isFile()) {
+                if (file.getName().endsWith(".class")) {
+                    try {
+                        String regular = file.getName().replace(home, "").replace(".class", "");
+                        Class clazz = classLoader.loadClass(regular);
+                        list.add(clazz);
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                        continue;
+                    }
+                }
+            }
+        }
+        return list;
     }
     @Override
     public Class findClass(String name) throws ClassNotFoundException {

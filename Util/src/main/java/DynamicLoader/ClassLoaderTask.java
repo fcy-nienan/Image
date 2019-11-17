@@ -19,7 +19,6 @@ public class ClassLoaderTask implements Runnable {
     private Thread thread;
     public ClassLoaderTask(String home){
         this.home=home;
-        this.classLoader=new FcyClassLoader(home);
     }
     public synchronized void start(){
         if (started){
@@ -69,7 +68,7 @@ public class ClassLoaderTask implements Runnable {
                     try {
                         log("execute method:"+declaredMethod.getName());
                         declaredMethod.invoke(o);
-                    } catch (InvocationTargetException e) {
+                    } catch (Exception e) {
                         log("invoke method failed:"+declaredMethod.getName());
                         e.printStackTrace();
                     }
@@ -102,6 +101,7 @@ public class ClassLoaderTask implements Runnable {
         log("start load class in {}!",src);
         List<Class<?>> list=new ArrayList<>();
         File[] files=new File(src).listFiles();
+        classLoader=new FcyClassLoader(src);
         for (File file : files) {
             if (file.isFile()) {
                 if (file.getName().endsWith(".class")) {

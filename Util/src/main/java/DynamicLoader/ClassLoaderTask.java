@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 public class ClassLoaderTask implements Runnable {
     private FcyClassLoader classLoader;
-    private long timeout=5000;
+    private long timeout=0;
     private volatile String home;
     private boolean started;
     private Thread thread;
@@ -41,7 +41,7 @@ public class ClassLoaderTask implements Runnable {
     private void log(String msg,String object){log.info("----------"+msg+"----------",object);}
     private void startAction(){
         log("start class loader task!");
-        thread=new Thread(this);
+        thread=new Thread(this,"class loader task");
         thread.start();
     }
     private void compileFile(String src){
@@ -128,7 +128,7 @@ public class ClassLoaderTask implements Runnable {
                 compileFile(path);
                 List<Class<?>> list = loadClass(path);
                 executeAction(list);
-                clearDirectory(path);
+//                clearDirectory(path);
                 log("-------------------");
                 log("-------------------");
                 Thread.sleep(timeout);

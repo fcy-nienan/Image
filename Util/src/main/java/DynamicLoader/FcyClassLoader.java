@@ -18,26 +18,8 @@ public class FcyClassLoader extends ClassLoader {
 
     public static void main (String[] args) throws ClassNotFoundException {
         FcyClassLoader classLoader=new FcyClassLoader("D:\\classes\\");
-        Class<?> aClass = classLoader.loadClass(classLoader.home);
-    }
-    private List<Class<?>> loadClass(ClassLoader classLoader,String src){
-        List<Class<?>> list=new ArrayList<>();
-        File[] files=new File(src).listFiles();
-        for (File file : files) {
-            if (file.isFile()) {
-                if (file.getName().endsWith(".class")) {
-                    try {
-                        String regular = file.getName().replace(home, "").replace(".class", "");
-                        Class clazz = classLoader.loadClass(regular);
-                        list.add(clazz);
-                    } catch (ClassNotFoundException e) {
-                        e.printStackTrace();
-                        continue;
-                    }
-                }
-            }
-        }
-        return list;
+        Class<?> aClass = classLoader.loadClass("NewTask");
+
     }
     @Override
     public Class findClass(String name) throws ClassNotFoundException {

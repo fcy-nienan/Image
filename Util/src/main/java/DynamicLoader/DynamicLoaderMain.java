@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 public class DynamicLoaderMain {
     public static void main(String args[]) throws Exception {
+        Thread.sleep(20000);
         String home="D:\\classes";
         ClassLoaderTask task=new ClassLoaderTask(home);
         task.start();

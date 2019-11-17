@@ -34,6 +34,7 @@ public class ClassLoaderTask implements Runnable {
         }
         log("stop class loader task!");
         thread.interrupt();
+        started=false;
     }
     private void log(String msg){
         log.info("----------"+msg+"----------");
@@ -44,13 +45,15 @@ public class ClassLoaderTask implements Runnable {
         thread=new Thread(this);
         thread.start();
     }
-    private void compileFile(){
-        File[] files=new File(home).listFiles();
+    private void compileFile(String src){
+        File[] files=new File(src).listFiles();
         for (File file : files) {
-            if (file.getName().endsWith("java")){
+            if (file.isDirectory()){
+                compileFile(file.getAbsolutePath());
+            }else if (file.isFile()&&file.getName().endsWith(".java")){
                 try {
                     CompileFile.compile(file.getAbsolutePath());
-                } catch (Exception e) {
+                } catch (FileNotFoundException e) {
                     log("compile file failed :"+file.getAbsolutePath());
                     e.printStackTrace();
                 }
@@ -92,21 +95,25 @@ public class ClassLoaderTask implements Runnable {
         }
     }
 //    need
-    private List<Class<?>> loadClass(){
+    private List<Class<?>> loadClass(String src){
         List<Class<?>> list=new ArrayList<>();
-        File[] files=new File(home).listFiles();
+        File[] files=new File(src).listFiles();
         for (File file : files) {
-            if (file.getName().endsWith(".class")){
-                try {
-                    String regular=file.getName().replace(home,"").replace(".class","");
-                    Class clazz=classLoader.findClass(regular);
-                    list.add(clazz);
-                    log("load class {} success!",file.getName());
-                } catch (ClassNotFoundException e) {
-                    log("load class failed:"+file.getName());
-                    e.printStackTrace();
-                    continue;
+            if (file.isFile()) {
+                if (file.getName().endsWith(".class")) {
+                    try {
+                        String regular = file.getName().replace(home, "").replace(".class", "");
+                        Class clazz = classLoader.findClass(regular);
+                        list.add(clazz);
+                        log("load class {} success!", file.getName());
+                    } catch (ClassNotFoundException e) {
+                        log("load class failed:" + file.getName());
+                        e.printStackTrace();
+                        continue;
+                    }
                 }
+            }else{
+                list.addAll(loadClass(file.getAbsolutePath()));
             }
         }
         return list;
@@ -116,8 +123,8 @@ public class ClassLoaderTask implements Runnable {
         while (!Thread.currentThread().isInterrupted()){
             try {
                 Thread.sleep(timeout);
-                compileFile();
-                List<Class<?>> list = loadClass();
+                compileFile(home);
+                List<Class<?>> list = loadClass(home);
                 executeAction(list);
                 clearDirectory();
             } catch (InterruptedException e) {

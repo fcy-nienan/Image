@@ -107,7 +107,7 @@ public class ClassLoaderTask implements Runnable {
                 if (file.getName().endsWith(".class")) {
                     try {
                         String regular = file.getName().replace(home, "").replace(".class", "");
-                        Class clazz = classLoader.findClass(regular);
+                        Class clazz = classLoader.loadClass(regular);
                         list.add(clazz);
                         log("load class {} success!", file.getName());
                     } catch (ClassNotFoundException e) {

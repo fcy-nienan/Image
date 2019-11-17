@@ -15,12 +15,6 @@ public class FcyClassLoader extends ClassLoader {
     public FcyClassLoader(String home){
         this.home=home;
     }
-
-    public static void main (String[] args) throws ClassNotFoundException {
-        FcyClassLoader classLoader=new FcyClassLoader("D:\\classes\\");
-        Class<?> aClass = classLoader.loadClass("NewTask");
-
-    }
     @Override
     public Class findClass(String name) throws ClassNotFoundException {
         byte[] b = null;

@@ -46,11 +46,10 @@ public class ClassLoaderTask implements Runnable {
         thread.start();
     }
     private void compileFile(String src){
+        log("start compile dir all file {}!",src);
         File[] files=new File(src).listFiles();
         for (File file : files) {
-            if (file.isDirectory()){
-                compileFile(file.getAbsolutePath());
-            }else if (file.isFile()&&file.getName().endsWith(".java")){
+            if (file.isFile()&&file.getName().endsWith(".java")){
                 try {
                     CompileFile.compile(file.getAbsolutePath());
                 } catch (FileNotFoundException e) {
@@ -61,6 +60,7 @@ public class ClassLoaderTask implements Runnable {
         }
     }
     private void executeAction(List<Class<?>> list){
+        log("start execute all method ! size {} !",String.valueOf(list.size()));
         for (Class<?> aClass : list) {
             try {
                 Object o=aClass.newInstance();
@@ -82,22 +82,24 @@ public class ClassLoaderTask implements Runnable {
         }
     }
     private void clearDirectory(String path){
+        log("start clean {} directory",path);
         File file=new File(path);
         File[] files = file.listFiles();
         for (File file1 : files) {
-            if (file1.isDirectory()){
-                clearDirectory(file1.getAbsolutePath());
-            }else if (file1.isFile()&&(file1.getName().endsWith(".java")||file1.getName().endsWith(".class"))){
+            if (file1.isFile()&&(file1.getName().endsWith(".java")||file1.getName().endsWith(".class"))){
                 boolean delete = file1.delete();
                 if (!delete){
                     log("delete file failure!"+file1.getName());
                     file1.renameTo(new File(file1.getAbsolutePath()+"bak"));
+                }else{
+                    log("delete file success {} !",file1.getName());
                 }
             }
         }
     }
 //    need
     private List<Class<?>> loadClass(String src){
+        log("start load class in {}!",src);
         List<Class<?>> list=new ArrayList<>();
         File[] files=new File(src).listFiles();
         for (File file : files) {
@@ -114,8 +116,6 @@ public class ClassLoaderTask implements Runnable {
                         continue;
                     }
                 }
-            }else{
-                list.addAll(loadClass(file.getAbsolutePath()));
             }
         }
         return list;
@@ -125,11 +125,20 @@ public class ClassLoaderTask implements Runnable {
         while (!Thread.currentThread().isInterrupted()){
             try {
                 String path=home;
-                Thread.sleep(timeout);
                 compileFile(path);
                 List<Class<?>> list = loadClass(path);
                 executeAction(list);
                 clearDirectory(path);
+                System.out.printf("%8d",1);
+                System.out.printf("%5d",3);
+                System.out.println();
+                log.info("%8d",1234);
+                System.out.println();
+                System.out.println("123456789012345678");
+
+                log("----------");
+                log("----------");
+                Thread.sleep(timeout);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

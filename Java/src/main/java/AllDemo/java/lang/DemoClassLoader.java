@@ -15,13 +15,16 @@ import java.sql.Driver;
 //An object can be created from a class in ClassLoaderC and then passed to a thread owned by ClassLoaderD.
 //In this case the object needs to use Thread.currentThread().getContextClassLoader() directly
 //if it wants to load resources that are not available on its own classloader
+
+/*
 * 在一个线程中加载类时使用的是当前类的类加载器还是线程上下文类加载器？
 * 当前类的类加载器
 *
 * 关于线程上下文加载器
 * 首先需要记住的是双亲委托模型只代表ClassLoader类中的loadClass这一段代码，只有调用了这段代码才代表使用了双亲委托模型
-* 而在加载Driver接口的时候使用的是
-*
+* 而在加载Driver接口的时候使用的是当前类的类加载器是BootStrap加载器,该加载器是无法加载在AppSystem类加载器下的类文件的
+* 所以只能通过Thread拿到另一个加载器去加载类路径，比如AppSystemClassLoader类加载器，
+* 然后通过loadClass的代码向上一直委托到Bootstrap类加载器，都加载不到，然后向下委派直到AppSystemClassLoader自己去加载
 * */
 public class DemoClassLoader {
     public static void main (String args[]) throws InterruptedException {

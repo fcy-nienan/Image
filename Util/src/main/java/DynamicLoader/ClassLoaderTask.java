@@ -14,7 +14,7 @@ import java.util.List;
 public class ClassLoaderTask implements Runnable {
     private FcyClassLoader classLoader;
     private long timeout=5000;
-    private String home;
+    private volatile String home;
     private boolean started;
     private Thread thread;
     public ClassLoaderTask(String home){
@@ -81,11 +81,13 @@ public class ClassLoaderTask implements Runnable {
             }
         }
     }
-    private void clearDirectory(){
-        File file=new File(home);
+    private void clearDirectory(String path){
+        File file=new File(path);
         File[] files = file.listFiles();
         for (File file1 : files) {
-            if (file1.getName().endsWith(".java")||file1.getName().endsWith(".class")){
+            if (file1.isDirectory()){
+                clearDirectory(file1.getAbsolutePath());
+            }else if (file1.isFile()&&(file1.getName().endsWith(".java")||file1.getName().endsWith(".class"))){
                 boolean delete = file1.delete();
                 if (!delete){
                     log("delete file failure!"+file1.getName());
@@ -122,13 +124,14 @@ public class ClassLoaderTask implements Runnable {
     public void run() {
         while (!Thread.currentThread().isInterrupted()){
             try {
+                String path=home;
                 Thread.sleep(timeout);
-                compileFile(home);
-                List<Class<?>> list = loadClass(home);
+                compileFile(path);
+                List<Class<?>> list = loadClass(path);
                 executeAction(list);
-                clearDirectory();
+                clearDirectory(path);
             } catch (InterruptedException e) {
-                break;
+                e.printStackTrace();
             }
         }
     }

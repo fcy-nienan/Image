@@ -1,5 +1,6 @@
 package AllDemo.java.lang;
 
+import DynamicLoader.FcyClassLoader;
 import sun.misc.Launcher;
 import sun.misc.URLClassPath;
 
@@ -7,10 +8,25 @@ import java.io.File;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.sql.Driver;
-
+//Each class will use its own classloader to load other classes.
+//So if ClassA.class references ClassB.class
+//then ClassB needs to be on the classpath of the classloader of ClassA, or its parents.
+//The thread context classloader is the current classloader for the current thread.
+//An object can be created from a class in ClassLoaderC and then passed to a thread owned by ClassLoaderD.
+//In this case the object needs to use Thread.currentThread().getContextClassLoader() directly
+//if it wants to load resources that are not available on its own classloader
+* 在一个线程中加载类时使用的是当前类的类加载器还是线程上下文类加载器？
+* 当前类的类加载器
+*
+* 关于线程上下文加载器
+* 首先需要记住的是双亲委托模型只代表ClassLoader类中的loadClass这一段代码，只有调用了这段代码才代表使用了双亲委托模型
+* 而在加载Driver接口的时候使用的是
+*
+* */
 public class DemoClassLoader {
     public static void main (String args[]) throws InterruptedException {
         Object o;
+        ClassLoader loader;
         Driver driver;
 //        disPath();
 //        Thread.sleep(3000000);
@@ -24,6 +40,7 @@ public class DemoClassLoader {
     }
     public static void dis(){
         Thread t=new Thread(new t());
+        t.setContextClassLoader(new FcyClassLoader("D:\\classes\\"));
         t.start();
         System.out.println(File.class.getClassLoader());
     }

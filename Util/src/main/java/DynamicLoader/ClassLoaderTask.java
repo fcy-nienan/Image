@@ -129,15 +129,8 @@ public class ClassLoaderTask implements Runnable {
                 List<Class<?>> list = loadClass(path);
                 executeAction(list);
                 clearDirectory(path);
-                System.out.printf("%8d",1);
-                System.out.printf("%5d",3);
-                System.out.println();
-                log.info("%8d",1234);
-                System.out.println();
-                System.out.println("123456789012345678");
-
-                log("----------");
-                log("----------");
+                log("-------------------");
+                log("-------------------");
                 Thread.sleep(timeout);
             } catch (InterruptedException e) {
                 e.printStackTrace();

@@ -2,6 +2,7 @@ package AllDemo.java.io;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.FileChannel.MapMode;
@@ -15,6 +16,11 @@ public class DemoMMap {
         FileInputStream fileInputStream=new FileInputStream(file);
         FileChannel channel = fileInputStream.getChannel();
         MappedByteBuffer map = channel.map(MapMode.READ_ONLY, 0, 1000);
-        
+        byte[] bytes=new byte[1000];
+        ByteBuffer buffer = map.get(bytes);
+        for (byte aByte : bytes) {
+            System.out.println(aByte);
+        }
+
     }
 }

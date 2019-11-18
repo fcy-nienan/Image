@@ -14,6 +14,7 @@ public class DemoMMap {
         File file=new File("D:\\command");
         FileInputStream fileInputStream=new FileInputStream(file);
         FileChannel channel = fileInputStream.getChannel();
-        channel.map(MapMode.READ_ONLY,0,1000);
+        MappedByteBuffer map = channel.map(MapMode.READ_ONLY, 0, 1000);
+        
     }
 }

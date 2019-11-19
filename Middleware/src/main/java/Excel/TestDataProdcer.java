@@ -23,6 +23,7 @@ public class TestDataProdcer {
     public static void main(String args[]) throws Exception {
         long z=1;
         long k=1;
+
         System.out.println(k<<32);
         System.out.println(Integer.MAX_VALUE);
         System.out.println((k<<32)/1024/1024/1024);

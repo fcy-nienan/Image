@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.Properties;
 
 public class SystemInfo {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, InterruptedException {
         Runtime run = Runtime.getRuntime();
         System.out.println("            运行时环境Runtime            ");
         System.out.println("空闲内存"+run.freeMemory()+"byte");
@@ -37,5 +37,9 @@ public class SystemInfo {
         Properties systemies=System.getProperties();
         systemies.list(System.out);
         System.out.println(SystemTray.isSupported());
+//        byte[] bytes=new byte[1024*1024*100];
+        Thread.sleep(100000);
+//        System.out.println(bytes.length);
+
     }
 }

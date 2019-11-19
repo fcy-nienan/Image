@@ -16,7 +16,17 @@ import java.util.BitSet;
 * */
 public class DemoOperate {
     public static void main (String args[]) {
+        String str="11111111111111";
+        System.out.println();
         BitSet set=new BitSet();
+    }
+    public int StringToBinary(String str){
+        int i=0;
+        char[] chars=str.toCharArray();
+        for (char aChar : chars) {
+            if (aChar=='1'){
 
+            }
+        }
     }
 }

@@ -8,3 +8,6 @@ inline,ClearBuilderTest/ClearBuilder.remove
 inline,ClearBuilderTest/ClearBuilder.setLength
 inline,ReflectionTest/MainTest.invoke
 inline,ReflectionTest/MainTest.invoke1
+inline,TestString/TestStringContact.testAdd
+inline,TestString/TestStringContact.testBuilder
+inline,TestString/TestStringContact.testConcat

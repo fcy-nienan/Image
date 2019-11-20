@@ -1,5 +1,7 @@
 package AllDemo.java.io;
 
+import sun.nio.ch.DirectBuffer;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.RandomAccessFile;
@@ -18,6 +20,7 @@ public class DemoMMap {
         FileChannel channel = fileInputStream.getChannel();
         RandomAccessFile accessFile=new RandomAccessFile("D:\\","rw");
         MappedByteBuffer map = channel.map(MapMode.READ_ONLY, 0, 1000);
+        DirectBuffer buffer1;
         byte[] bytes=new byte[1000];
         ByteBuffer buffer = map.get(bytes);
         for (byte aByte : bytes) {

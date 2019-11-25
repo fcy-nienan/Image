@@ -9,8 +9,6 @@ public class Computer implements Runnable{
     private Hardware[] hardwares;
     private Memory[] memories;
     private Net[] nets;
-    private Process process;
-    private ProcessInvokeAgent invokeAgent;
     private ThreadPoolExecutor executor=new ThreadPoolExecutor(20,30,0, TimeUnit.SECONDS,new LinkedBlockingQueue<>());
     private static Logger logger = Logger.getLogger(Computer.class.getName());
 
@@ -25,12 +23,10 @@ public class Computer implements Runnable{
         for (Net net : nets) {
             executor.submit(net);
         }
-        executor.submit(invokeAgent);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        executor.submit(process);
     }
 }

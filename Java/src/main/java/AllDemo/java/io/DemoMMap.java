@@ -16,6 +16,7 @@ public class DemoMMap {
 
     public static void main(String args[]) throws Exception {
         File file=new File("D:\\command");
+        "command".split(",");
         FileInputStream fileInputStream=new FileInputStream(file);
         FileChannel channel = fileInputStream.getChannel();
         RandomAccessFile accessFile=new RandomAccessFile("D:\\","rw");

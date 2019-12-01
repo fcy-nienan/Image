@@ -8,12 +8,8 @@ object threeSum {
   }
   def threeSum(nums: Array[Int]): List[List[Int]] = {
     var map:Map[Int,String]=Map()
-    for (i <- 0 until nums.length;j<- i+1 until nums.length){
-      var t=0-nums(i)-nums(j)
-      map+=t->(i+","+j)
-    }
-    var t:List[List[Int]]=List()
-    for(i<-0 until nums.length){
+    var list:List[List[Int]]=List()
+    for (i <- 0 until nums.length-2;j<- i+1 until nums.length){
       if (map.contains(nums(i))&&map(nums(i)).indexOf(i+"")==(-1)){
         var x:List[Int]=List()
         x=x.::(nums(i))
@@ -21,10 +17,13 @@ object threeSum {
         for(j<-strings){
           x=x.::(nums(j.toInt))
         }
-        t=t.::(x)
+        list=list.::(x)
+        println(list)
         map=map.removed(nums(i))
       }
+      var t=0-nums(i)-nums(j)
+      map+=t->(i+","+j)
     }
-    t
+    list
   }
 }

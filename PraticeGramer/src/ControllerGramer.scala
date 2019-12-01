@@ -44,6 +44,26 @@ object ControllerGramer {
     var y=Array(2,3,4,5,6)
     var x=Array(3)(3)
     z.concat(y)
-    
+    var map=Map()
+    var map1=Map("1"->"2","2"->"3")
+    var map2:Map[String,String]= Map[String,String]();
+    map1+="3"->"4"
+
+
+  }
+  trait a{
+
+  }
+  class z extends x with a {
+
+  }
+  class x{
+
+  }
+  trait y{
+
+  }
+  class t extends y with z{
+
   }
 }

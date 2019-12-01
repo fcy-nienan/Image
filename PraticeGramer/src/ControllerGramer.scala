@@ -35,4 +35,15 @@ object ControllerGramer {
       println(i)
     }
   }
+  def DemoCollection():Unit={
+    var array:Array[String]=new Array[String](10);
+    println(array(1))
+    println(array(2))
+    println(array.length)
+    var z=Array(1,2,3,4)
+    var y=Array(2,3,4,5,6)
+    var x=Array(3)(3)
+    z.concat(y)
+    
+  }
 }

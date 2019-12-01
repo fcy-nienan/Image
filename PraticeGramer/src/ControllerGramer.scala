@@ -63,7 +63,7 @@ object ControllerGramer {
   trait y{
 
   }
-  class t extends y with z{
+  class t extends z with y{
 
   }
 }

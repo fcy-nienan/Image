@@ -46,7 +46,6 @@ object ControllerGramer {
     list1=list1.updated(1,10)//更新第一个为10
     println(list1)//List(2,10,2,3)
     list1=list1:+3
-    list1=list1+:4
-    list1.::3
+    list1=list1.::(3)
   }
 }

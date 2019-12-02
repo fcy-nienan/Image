@@ -9,8 +9,6 @@ object twoSum {
       var reduce=target-nums(i)
       var index=map.get(reduce)
       if (map.contains(reduce)){
-        result=result.appended(map.get(reduce))
-        result=result.appended(nums(i))
         return result.toArray
       }
       map+=(nums(i)->i)

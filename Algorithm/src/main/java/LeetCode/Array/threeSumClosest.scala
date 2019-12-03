@@ -1,12 +1,18 @@
 package LeetCode.Array
 
-import scala.util.Sorting
+import java.util.Collections
 
+import scala.util.Sorting
+import Array._
 object threeSumClosest {
   def main(args: Array[String]): Unit = {
     var t=List(-1,2,1,-4)
-    var min=threeSumClosest(Array(-4,-1,1,2),1)
-    println(min)
+    var arr=range(0,1000,1);
+    var list1=arr.toList
+
+    var s=System.currentTimeMillis();
+    quickSort(t)
+
   }
   def threeSumClosest(nums:Array[Int],target:Int):Int={
     if (nums.length==0)return 0

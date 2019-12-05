@@ -3,6 +3,9 @@ package Simulating;
 import Simulating.PureMode.IP;
 import Simulating.PureMode.Request;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
@@ -39,6 +42,12 @@ public class Net implements Runnable{
 
     @Override
     public void run() {
+
+    }
+
+    public static void main(String[] args) {
+        Map<Thread, StackTraceElement[]> allStackTraces = Thread.getAllStackTraces();
+        Thread.currentThread().getStackTrace();
 
     }
 }

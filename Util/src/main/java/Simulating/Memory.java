@@ -15,7 +15,6 @@ public class Memory implements Runnable{
     @Override
     public void run() {
         logger.info(startMsg);
-
     }
     public Object put(Object key,Object value){
         return memory.put(key, value);

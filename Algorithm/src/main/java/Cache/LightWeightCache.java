@@ -1,5 +1,6 @@
 package Cache;
 
+import java.io.FileInputStream;
 import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Consumer;
@@ -31,21 +32,25 @@ public class LightWeightCache<K,E extends K> {
         }
     }
     public static void main(String args[]) throws Exception {
-        List list=new ArrayList();
-        for (int i=0;i<1200000;i++){
-            list.add(i);
-        }
-        Collections.shuffle(list);
-        long s=System.currentTimeMillis();
-        System.out.println("start :"+s);
-        list.forEach(e->sum+=(int)e);
-        System.out.println("cost time:"+(System.currentTimeMillis()-s));
-        Spliterator spliterator = list.spliterator();
-        s=System.currentTimeMillis();
-        parallel(spliterator);
-        System.out.println("cost time:"+(System.currentTimeMillis()-s));
-        Thread.sleep(10000);
-        System.out.println(sum);
+//        FileInputStream inputStream;
+//        List list=new ArrayList();
+//        List list1 = list.subList(0, 10);
+//
+//
+//        for (int i=0;i<1200000;i++){
+//            list.add(i);
+//        }
+//        Collections.shuffle(list);
+//        long s=System.currentTimeMillis();
+//        System.out.println("start :"+s);
+//        list.forEach(e->sum+=(int)e);
+//        System.out.println("cost time:"+(System.currentTimeMillis()-s));
+//        Spliterator spliterator = list.spliterator();
+//        s=System.currentTimeMillis();
+//        parallel(spliterator);
+//        System.out.println("cost time:"+(System.currentTimeMillis()-s));
+//        Thread.sleep(10000);
+//        System.out.println(sum);
     }
     public static class calculate extends Thread{
         private static AtomicInteger integer=new AtomicInteger(0);

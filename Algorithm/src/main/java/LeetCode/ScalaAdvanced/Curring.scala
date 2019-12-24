@@ -11,10 +11,14 @@ package LeetCode.ScalaAdvanced;
 object Curring {
   def main(args: Array[String]): Unit = {
     println(add(1,2))
-    println(add2(1)(2)(3))
+    println(add2(1)(2))
+    println(add2(1))
   }
   def add(x:Int,y:Int):Int=x+y
-  def add2(x:Int)=(b:Int)=>x+b
+  def add2(x:Int)=(b:Int)=>{
+    println(b)
+    x+b
+  }
   def add3(x:Int):Int=>Int=(b:Int)=>x+b
   def test(x:Int,y:String):String=>List[String]=(y:String)=>List(y)
 }

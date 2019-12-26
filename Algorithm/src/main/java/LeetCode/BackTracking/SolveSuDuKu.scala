@@ -4,8 +4,6 @@ object SolveSuDuKu {
   def main(args: Array[String]): Unit = {
 
   }
-<<<<<<< HEAD
-=======
   def solveSudoku(board: Array[Array[Char]]): Unit = {
 
   }
@@ -36,5 +34,4 @@ object SolveSuDuKu {
     }
     true
   }
->>>>>>> tmp
 }

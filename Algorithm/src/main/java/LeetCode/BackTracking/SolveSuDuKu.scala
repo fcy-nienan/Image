@@ -24,6 +24,7 @@ object SolveSuDuKu {
         single(x,y,current+1,board)
       }
     }
+    true
   }
   def isValid(i:Int,j:Int,board:Array[Array[Char]]):Boolean={
     var current=board(i)(j)

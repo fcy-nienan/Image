@@ -2,7 +2,13 @@ package LeetCode.BackTracking
 
 object SolveSuDuKu {
   def main(args: Array[String]): Unit = {
-
+    var t=new t(1)
+    println(t)
+    var arr=Array(1,2,3)
+    arr.filter(line=>line>1)
+  }
+  case class t(x:Int){
+    var y=10
   }
   def solveSudoku(board: Array[Array[Char]]): Unit = {
 

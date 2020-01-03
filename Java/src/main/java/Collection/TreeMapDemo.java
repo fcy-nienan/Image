@@ -8,6 +8,9 @@ import java.util.*;
 
 public class TreeMapDemo {
     public static void main(String[] args) {
+        HashSet set;
+        ArrayList list;
+
 //        testComparableTreeMap();
         testCompartorTreeMap();
     }

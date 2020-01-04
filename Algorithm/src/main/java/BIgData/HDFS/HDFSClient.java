@@ -14,10 +14,13 @@ public class HDFSClient {
         conf.set("fs.defaultFS", "hdfs://192.168.198.1:9000");
         FileSystem fs = FileSystem.get(conf);
         long length = fs.getLength(new Path("txt"));
+        fs.mkdirs(new Path("/user/input"));
+        fs.mkdirs(new Path("/user/output"));
+        FileStatus[] fileStatuses = fs.listStatus(new Path("/user"));
+        for (FileStatus fileStatus : fileStatuses) {
+            System.out.println(fileStatus.getPath());
+        }
         Path dstPath=new Path(dst);
-        BlockLocation[] fileBlockLocations = fs.getFileBlockLocations(dstPath,0,length);
-
-        System.out.println(fileBlockLocations);
 //        // 打开一个输出流
 //        FSDataOutputStream outputStream = fs.create(dstPath);
 //        outputStream.write(1);

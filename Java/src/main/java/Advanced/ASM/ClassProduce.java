@@ -4,12 +4,12 @@ import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.MethodVisitor;
 import jdk.internal.org.objectweb.asm.Opcodes;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.FileOutputStream;
 import java.util.logging.Logger;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.ACC_PUBLIC;
-
 public class ClassProduce {
     private static Logger logger = Logger.getLogger(ClassProduce.class.getName());
 

@@ -56,7 +56,6 @@ public class WordCount {
         job.setCombinerClass(IntSumReducer.class);
         Shuffle shuffle;
         ShuffleScheduler scheduler;
-
         job.setReducerClass(IntSumReducer.class);
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);

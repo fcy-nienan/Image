@@ -9,10 +9,13 @@ import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
+import org.apache.hadoop.mapreduce.Partitioner;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.mapreduce.lib.partition.HashPartitioner;
+import org.apache.hadoop.mapreduce.task.reduce.Shuffle;
+import org.apache.hadoop.mapreduce.task.reduce.ShuffleScheduler;
 
 public class WordCount {
 
@@ -51,6 +54,8 @@ public class WordCount {
         job.setJarByClass(WordCount.class);
         job.setMapperClass(TokenizerMapper.class);
         job.setCombinerClass(IntSumReducer.class);
+        Shuffle shuffle;
+        ShuffleScheduler scheduler;
 
         job.setReducerClass(IntSumReducer.class);
         job.setOutputKeyClass(Text.class);

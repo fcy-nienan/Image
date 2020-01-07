@@ -18,6 +18,8 @@ public class FcyReader {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        fileInputStream.getFD().sync();
+        fileInputStream.getFD().valid();
         channel = fileInputStream.getChannel();
     }
     public byte[] getResult(int startIndex,int endIndex) throws IOException {

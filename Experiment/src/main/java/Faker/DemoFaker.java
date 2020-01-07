@@ -27,7 +27,7 @@ public class DemoFaker {
         System.out.println(name);
     }
     private static void makeDataForWordCount() throws FileNotFoundException, UnsupportedEncodingException {
-        int count=100000000;
+        int count=10000000;
         String fileFullPath="D:\\data.txt";
         List<String> list = getList(count);
         Collections.shuffle(list);

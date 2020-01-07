@@ -37,7 +37,7 @@ public class DemoFaker {
         File file=new File(fileFullPath);
         if (file.exists()){
             file.delete();
-            log.warn("file is existed adn delete it !");
+            log.warn("file is existed and delete it !");
         }
         try {
             file.createNewFile();

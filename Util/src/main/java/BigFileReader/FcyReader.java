@@ -8,8 +8,6 @@ import java.nio.channels.FileChannel;
 
 public class FcyReader {
     private String fileName;
-    private int startIndex;
-    private int endIndex;
     private FileChannel channel;
     private MappedByteBuffer mappedByteBuffer;
     public FcyReader(String fileName){
@@ -33,6 +31,5 @@ public class FcyReader {
         FcyReader reader=new FcyReader("D:\\data.txt");
         byte[] result = reader.getResult(0, 100);
         System.out.println(new String(result,0,result.length));
-
     }
 }

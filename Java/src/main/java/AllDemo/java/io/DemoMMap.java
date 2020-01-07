@@ -1,5 +1,6 @@
 package AllDemo.java.io;
 
+import com.google.common.base.Stopwatch;
 import sun.nio.ch.DirectBuffer;
 
 import java.io.File;
@@ -15,18 +16,20 @@ public class DemoMMap {
     private static Logger logger = Logger.getLogger(DemoMMap.class.getName());
 
     public static void main(String args[]) throws Exception {
+        Stopwatch sw=new Stopwatch();
         File file=new File("D:\\command");
-        "command".split(",");
+        file.createNewFile();
         FileInputStream fileInputStream=new FileInputStream(file);
         FileChannel channel = fileInputStream.getChannel();
-        RandomAccessFile accessFile=new RandomAccessFile("D:\\","rw");
-        MappedByteBuffer map = channel.map(MapMode.READ_ONLY, 0, 1000);
-        DirectBuffer buffer1;
+        sw.start();
+        MappedByteBuffer map = channel.map(MapMode.READ_WRITE, 0, 1000);
         byte[] bytes=new byte[1000];
         ByteBuffer buffer = map.get(bytes);
         for (byte aByte : bytes) {
             System.out.println(aByte);
         }
+        sw.stop();
+        System.out.println(sw.toString());
 
     }
 }

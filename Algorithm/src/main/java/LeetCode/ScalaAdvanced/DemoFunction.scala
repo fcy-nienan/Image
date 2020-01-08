@@ -10,6 +10,7 @@ object DemoFunction {
     val sc = new SparkContext(conf) //创建SparkContext对象，通过传入SparkConf实例来定制Spark运行的具体参数和配置信息
     //文件的路径，最小并行度（根据机器数量来决定）
     //val lines:RDD[String]= sc.textFile("F://spark//spark-1.6.2-bin-hadoop2.6//README.md", 1)    //读取本地文件，并设置Partition = 1
+    val rdd1=sc.textFile("D:\\12306.txt",10);
     val rdd=sc.parallelize(Array(1,2,3,4,5,6,7,8,9,10))
     def mapFun(iter:Iterator[Int]):Iterator[Int]={
       println("map partitions")

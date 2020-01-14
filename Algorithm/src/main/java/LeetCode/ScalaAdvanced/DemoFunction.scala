@@ -4,8 +4,15 @@ import org.apache.hadoop.mapreduce.task.reduce.Shuffle
 import org.apache.spark.rdd.MapPartitionsRDD
 import org.apache.spark.{Partition, SparkConf, SparkContext, TaskContext}
 
+import scala.collection.mutable
+
+
 object DemoFunction {
   def main(args: Array[String]): Unit = {
+    val set=new mutable.HashSet[String]
+    set+="df"
+
+
     val conf = new SparkConf()
     conf.setAppName("wordCountLocal") //设置应用程序的名称，在程序运行的监控界面可以看到名称
     conf.setMaster("local") //此时程序在本地运行，无需安装Spark的任何集群

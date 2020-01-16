@@ -1,0 +1,8 @@
+JMH S 28 TestString.TestStringContact S 58 TestString.generated.TestStringContact_testBuilder_jmhTest S 11 testBuilder S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 29 ClearBuilderTest.ClearBuilder S 57 ClearBuilderTest.generated.ClearBuilder_newObject_jmhTest S 9 newObject S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 23 ReflectionTest.MainTest S 48 ReflectionTest.generated.MainTest_invoke_jmhTest S 6 invoke S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 28 TestString.TestStringContact S 57 TestString.generated.TestStringContact_testConcat_jmhTest S 10 testConcat S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 28 TestString.TestStringContact S 54 TestString.generated.TestStringContact_testAdd_jmhTest S 7 testAdd S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 23 ReflectionTest.MainTest S 49 ReflectionTest.generated.MainTest_invoke1_jmhTest S 7 invoke1 S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 29 ClearBuilderTest.ClearBuilder S 54 ClearBuilderTest.generated.ClearBuilder_remove_jmhTest S 6 remove S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
+JMH S 29 ClearBuilderTest.ClearBuilder S 57 ClearBuilderTest.generated.ClearBuilder_setLength_jmhTest S 9 setLength S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 

@@ -1,14 +1,23 @@
 package LeetCode.ScalaAdvanced
 
+<<<<<<< HEAD
 import org.apache.hadoop.mapreduce.task.reduce.Shuffle
 import org.apache.spark.rdd.MapPartitionsRDD
 import org.apache.spark.{Partition, SparkConf, SparkContext, TaskContext}
 
 import scala.collection.mutable
 
+=======
+import java.net.InetAddress
+
+import org.apache.spark.{SparkConf, SparkContext}
+>>>>>>> tmp
+
+import scala.xml.Null
 
 object DemoFunction {
   def main(args: Array[String]): Unit = {
+<<<<<<< HEAD
     val conf = new SparkConf()
     conf.setAppName("wordCountLocal") //设置应用程序的名称，在程序运行的监控界面可以看到名称
     conf.setMaster("local") //此时程序在本地运行，无需安装Spark的任何集群
@@ -22,4 +31,22 @@ object DemoFunction {
   }
 
 
+=======
+//    val conf = new SparkConf()
+//    conf.setAppName("wordCountLocal")
+//    conf.setMaster("local")
+//    val sc = new SparkContext(conf)
+//    var rdd=sc.parallelize(Array(1,2,3,4,5,6,7,8,9,10),5)
+//    rdd.mapWith(e=>e*10)((a,e)=>a+e).collect().foreach(println)
+//    sc.stop() //注意一定要将SparkContext的对象停止，因为SparkContext运行时会创建很多的对象
+//
+  }
+  def compute(base:Int):Int={
+    var sum=0
+    for (i<-0 to 100000){
+      sum=sum+1
+    }
+    sum+base
+  }
+>>>>>>> tmp
 }

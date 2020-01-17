@@ -20,6 +20,7 @@ object DemoCollection {
   def main(args:Array[String]):Unit={
     var list:List[Int]=List(1,2,3,4,5);
     val ints = list.toSeq
+    list=1 :: list
 
     println(ints)
 

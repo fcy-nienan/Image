@@ -14,9 +14,9 @@ package object Join {
     def update(x:Int,v:Field)=fields(x)=v
     def length=fields.length
     def +(A:Row): Row ={
-      val result=Array[Field]()
-      System.arraycopy(result,0,this.fields,0,length)
-      System.arraycopy(result,length,A.getFields(),0,A.length)
+      val result=new Array[Field](length+A.length)
+      System.arraycopy(this.fields,0,result,0,length)
+      System.arraycopy(A.getFields(),0,result,0,A.length)
       new Row(result)
     }
 
@@ -39,7 +39,7 @@ package object Join {
     override def toString: String = {
       val builder=new StringBuilder
       for(value <- 0 until length){
-        builder.append(value+System.getProperty("line.separator"))
+        builder.append(this(value)+System.getProperty("line.separator"))
       }
       builder.toString()
     }
@@ -80,6 +80,7 @@ package object Join {
     for (i <- 0 until numField){
       t=createField(schema(i)) :: t
     }
+    t=t.reverse
     val row=new Row(t.toArray)
     printf("schema is : %s and numField is %d and create row: %s \r\n",schema,numField,row)
     row
@@ -89,7 +90,9 @@ package object Join {
     for (i <- 0 to numRow){
       t=createRow(schema,numField) :: t
     }
-    new Table(tabName,t.toArray)
+    val table=new Table(tabName,t.toArray)
+    printf("tableName is %s and schema is %s and table data is \r\n%s \r\n",tabName,schema,table)
+    table
   }
 
   def createID(bound:Int):String={

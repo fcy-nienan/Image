@@ -1,6 +1,6 @@
 package LeetCode.BackTracking
 
-import scala.collection.mutable.ListBuffer
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 //endsWith
 //indexOf
 //interest
@@ -18,11 +18,12 @@ import scala.collection.mutable.ListBuffer
 //toBuffer
 object DemoCollection {
   def main(args:Array[String]):Unit={
-    var list:List[Int]=List(1,2,3,4,5);
-    val ints = list.toSeq
-    list=1 :: list
-
-    println(ints)
+    val t=List[String]
+    val arrayBuffer=new ArrayBuffer[String]();
+    val listBuffer=new ListBuffer[String]();
+    listBuffer+"sdf"
+    println(listBuffer+"lkj")
+    println(listBuffer)
 
   }
   def display(list:List[Int]):Unit={

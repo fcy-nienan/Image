@@ -7,10 +7,10 @@ object DemoJoin {
     val schemaB=schemaA
     val tableA=createTable("tableA",schemaA,3,4)
     val tableB=createTable("tableB",schemaB,3,4)
-    println(tableA)
-    println(tableB)
+    printf("tableA data:\r\n%s",tableA)
+    printf("tableB data:\r\n%s",tableB)
     val innerJoin=new InnerJoin
     val result=innerJoin.join(tableA,tableB)
-    println(result.toString)
+    printf("join result : \r\n%s",result.toString)
   }
 }

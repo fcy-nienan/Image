@@ -14,6 +14,10 @@ import scala.xml.Null
 
 object DemoFunction {
   def main(args: Array[String]): Unit = {
+    val buf=new scala.collection.mutable.ArrayBuffer[Int]()
+    buf+=3
+  }
+  def spark():Unit={
     val conf = new SparkConf()
     conf.setAppName("wordCountLocal") //设置应用程序的名称，在程序运行的监控界面可以看到名称
     conf.setMaster("local") //此时程序在本地运行，无需安装Spark的任何集群

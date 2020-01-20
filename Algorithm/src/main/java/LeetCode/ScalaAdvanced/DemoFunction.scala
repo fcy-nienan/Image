@@ -14,36 +14,44 @@ import scala.xml.Null
 
 object DemoFunction {
   def main(args: Array[String]): Unit = {
-    val buf=new scala.collection.mutable.ArrayBuffer[Int]()
-    buf+=3
+    stringOutput()
   }
   def spark():Unit={
     val conf = new SparkConf()
-    conf.setAppName("wordCountLocal") //设置应用程序的名称，在程序运行的监控界面可以看到名称
-    conf.setMaster("local") //此时程序在本地运行，无需安装Spark的任何集群
-    val sc = new SparkContext(conf) //创建SparkContext对象，通过传入SparkConf实例来定制Spark运行的具体参数和配置信息
-    //文件的路径，最小并行度（根据机器数量来决定）
-    //val lines:RDD[String]= sc.textFile("F://spark//spark-1.6.2-bin-hadoop2.6//README.md", 1)    //读取本地文件，并设置Partition = 1
+    conf.setAppName("wordCountLocal")
+    conf.setMaster("local")
+    val sc = new SparkContext(conf)
     val rdd1=sc.parallelize(1 to 10,3)
     val l = rdd1.map(e => (e, 1)).reduceByKey((e1, e2) => e1 + e2).count()
-    println(l)
-    sc.stop() //注意一定要将SparkContext的对象停止，因为SparkContext运行时会创建很多的对象
+    sc.stop()
   }
-
-
-//    val conf = new SparkConf()
-//    conf.setAppName("wordCountLocal")
-//    conf.setMaster("local")
-//    val sc = new SparkContext(conf)
-//    var rdd=sc.parallelize(Array(1,2,3,4,5,6,7,8,9,10),5)
-//    rdd.mapWith(e=>e*10)((a,e)=>a+e).collect().foreach(println)
-//    sc.stop() //注意一定要将SparkContext的对象停止，因为SparkContext运行时会创建很多的对象
-//
-  def compute(base:Int):Int={
-    var sum=0
-    for (i<-0 to 100000){
-      sum=sum+1
-    }
-    sum+base
+  def stringOutput():Unit={
+    //三个引号会输出其包含的所有内容(空格和table等)
+    //在每行前面加一个'|'会左对齐
+    //每行前面这个'|'可以定制,通过stripMargin方法
+    val str=
+      """
+        hello world
+        new line
+        a new line
+        fcy
+      """.stripMargin
+    val str1=
+      """
+        |hello world
+        |new line
+        |a new line
+        |fcy
+      """.stripMargin
+    val str2=
+      """
+        #hello world
+        #new line
+        #a new line
+        #fcy
+      """.stripMargin('#')
+    println(str)
+    println(str1)
+    println(str2)
   }
 }

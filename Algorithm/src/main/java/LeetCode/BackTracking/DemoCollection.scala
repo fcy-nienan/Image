@@ -18,12 +18,7 @@ import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 //toBuffer
 object DemoCollection {
   def main(args:Array[String]):Unit={
-    val t=List[String]
-    val arrayBuffer=new ArrayBuffer[String]();
-    val listBuffer=new ListBuffer[String]();
-    listBuffer+"sdf"
-    println(listBuffer+"lkj")
-    println(listBuffer)
+
 
   }
   def display(list:List[Int]):Unit={

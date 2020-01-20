@@ -1,6 +1,9 @@
 import scala.util.Random
 
 package object Join {
+  def getEmptyRow(): Row ={
+    new Row(Array(new Field("id","NULL")))
+  }
   class Field(name:String,value:String){
 
     @Override
@@ -16,7 +19,7 @@ package object Join {
     def +(A:Row): Row ={
       val result=new Array[Field](length+A.length)
       System.arraycopy(this.fields,0,result,0,length)
-      System.arraycopy(A.getFields(),0,result,0,A.length)
+      System.arraycopy(A.getFields(),0,result,length,A.length)
       new Row(result)
     }
 
@@ -67,12 +70,12 @@ package object Join {
 
   def createField(fieldName:String):Field={
     val value:String=fieldName match {
-      case "id" => createID(5)
+      case "id" => createID(20)
       case "username" => createName
       case "password" => createPassword
       case "address" => createAddress
     }
-    printf("fieldName is : %s and create field value: %s \r\n",fieldName,value)
+//    printf("fieldName is : %s and create field value: %s \r\n",fieldName,value)
     new Field(fieldName,value)
   }
   def createRow(schema:Schema,numField:Int):Row={
@@ -82,7 +85,7 @@ package object Join {
     }
     t=t.reverse
     val row=new Row(t.toArray)
-    printf("schema is : %s and numField is %d and create row: %s \r\n",schema,numField,row)
+//    printf("schema is : %s and numField is %d and create row: %s \r\n",schema,numField,row)
     row
   }
   def createTable(tabName:String,schema:Schema,numRow:Int,numField:Int):Table={
@@ -91,7 +94,7 @@ package object Join {
       t=createRow(schema,numField) :: t
     }
     val table=new Table(tabName,t.toArray)
-    printf("tableName is %s and schema is %s and table data is \r\n%s \r\n",tabName,schema,table)
+//    printf("tableName is %s and schema is %s and table data is \r\n%s \r\n",tabName,schema,table)
     table
   }
 

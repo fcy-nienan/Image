@@ -20,10 +20,7 @@ public class DemoMMap {
     public static void main(String args[]) throws Exception {
         Stopwatch sw=new Stopwatch();
         File file=new File("D:\\command");
-<<<<<<< HEAD
         file.createNewFile();
-=======
->>>>>>> tmp
         FileInputStream fileInputStream=new FileInputStream(file);
         FileChannel channel = fileInputStream.getChannel();
         sw.start();

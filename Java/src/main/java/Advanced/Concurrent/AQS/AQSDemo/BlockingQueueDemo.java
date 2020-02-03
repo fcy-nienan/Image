@@ -1,5 +1,6 @@
 package Advanced.Concurrent.AQS.AQSDemo;
 
+import java.util.Comparator;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.ConcurrentHashMap;
@@ -21,6 +22,7 @@ import java.util.concurrent.ConcurrentHashMap;
 * */
 public class BlockingQueueDemo {
     public static void main(String[] args) throws InterruptedException {
+        Comparator comparator;
         testBlockingQueue();
     }
     public static void testBlockingQueue() throws InterruptedException {

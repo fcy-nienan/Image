@@ -4,13 +4,10 @@ import jdk.internal.org.objectweb.asm.ClassReader;
 import jdk.internal.org.objectweb.asm.ClassWriter;
 import jdk.internal.org.objectweb.asm.MethodVisitor;
 import jdk.internal.org.objectweb.asm.Opcodes;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.configuration2.io.DefaultFileSystem;
 
 import java.io.*;
 import java.io.FileOutputStream;
 import java.lang.reflect.Field;
-import java.nio.file.FileSystem;
 import java.util.logging.Logger;
 
 import static jdk.internal.org.objectweb.asm.Opcodes.ACC_PUBLIC;

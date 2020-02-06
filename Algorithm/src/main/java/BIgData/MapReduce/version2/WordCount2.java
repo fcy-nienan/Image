@@ -26,9 +26,9 @@ import org.apache.hadoop.util.StringUtils;
 public class WordCount2 {
 
     public static class TokenizerMapper
-            extends Mapper<Object, Text, Text, IntWritable>{
+            extends Mapper<Object, Text, Text, IntWritable> {
 
-        static enum CountersEnum { INPUT_WORDS }
+        static enum CountersEnum {INPUT_WORDS}
 
         private final static IntWritable one = new IntWritable(1);
         private Text word = new Text();
@@ -87,7 +87,7 @@ public class WordCount2 {
     }
 
     public static class IntSumReducer
-            extends Reducer<Text,IntWritable,Text,IntWritable> {
+            extends Reducer<Text, IntWritable, Text, IntWritable> {
         private IntWritable result = new IntWritable();
 
         public void reduce(Text key, Iterable<IntWritable> values,
@@ -119,7 +119,7 @@ public class WordCount2 {
         job.setOutputValueClass(IntWritable.class);
 
         List<String> otherArgs = new ArrayList<String>();
-        for (int i=0; i < remainingArgs.length; ++i) {
+        for (int i = 0; i < remainingArgs.length; ++i) {
             if ("-skip".equals(remainingArgs[i])) {
                 job.addCacheFile(new Path(remainingArgs[++i]).toUri());
                 job.getConfiguration().setBoolean("wordcount.skip.patterns", true);

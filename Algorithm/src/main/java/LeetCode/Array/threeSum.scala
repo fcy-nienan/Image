@@ -53,7 +53,7 @@ object threeSum {
         nums(low)=tmp
       }
       while(low<high&&nums(low)<=key){
-        low+=1
+        low=low.+(1)
       }
       if (nums(low)>=key){
         var tmp=nums(high)

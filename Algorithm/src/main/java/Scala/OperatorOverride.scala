@@ -29,3 +29,8 @@ class fcyApply[T](array:Array[T]){
     println(fcy(4))
   }
 }
+class t{
+  var x=0
+//  def x:Int
+//  def y:Int
+}

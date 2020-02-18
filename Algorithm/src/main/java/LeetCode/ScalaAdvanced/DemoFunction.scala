@@ -9,24 +9,28 @@ import java.net.InetAddress
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-import scala.collection.mutable.ArrayBuffer
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 import scala.xml.Null
 
 object DemoFunction {
   def main(args: Array[String]): Unit = {
-    spark()
-//    ListDemo()
+    //    spark()
+    //    ListDemo()
+    //    ArrayDemo()
+    var k = Map[Int, Int]
+
   }
   def ListDemo():Unit={
-    val t=ArrayBuffer(1,2,3,4,5);
-    t += 3
-    t.+=(3)
-    println(t)
+    var list=ListBuffer(1,2,3,4,5)
+    list+=3
+    list :+ 3
 
+    println(list)
+  }
+  def ArrayDemo():Unit={
+    val x=Array(1,2,3,4,5)
+    println(x.indices)
 
-    val x=List(1,2,3,5)
-    println(x.tail)
-    println(x.head)
   }
   def spark():Unit={
     val conf = new SparkConf()

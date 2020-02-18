@@ -9,6 +9,9 @@ public class Parenthesis {
     private static int count=0;
     private static int backCount=0;
     public static void main(String args[]) throws Exception {
+
+    }
+    public static void Parenthesis(){
         int parenthesis=10;
 
         List<String> result=new ArrayList<>();

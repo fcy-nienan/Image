@@ -17,7 +17,6 @@ object DemoFunction {
     //    spark()
     //    ListDemo()
     //    ArrayDemo()
-    var k = Map[Int, Int]
 
   }
   def ListDemo():Unit={

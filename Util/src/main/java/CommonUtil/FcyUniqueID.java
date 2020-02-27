@@ -1,23 +1,18 @@
 package CommonUtil;
 
-import File.FileUtil;
-import ThreadUtil.TMS;
 import ThreadUtil.TP;
 import lombok.extern.slf4j.Slf4j;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
+
 @Slf4j
 public class FcyUniqueID {
     public static void main(String[] args) throws FileNotFoundException {

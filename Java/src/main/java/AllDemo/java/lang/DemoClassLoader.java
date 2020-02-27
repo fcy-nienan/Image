@@ -1,6 +1,6 @@
 package AllDemo.java.lang;
 
-import DynamicLoader.FcyClassLoader;
+import MiniComponent.DynamicLoader.FcyClassLoader;
 import sun.misc.Launcher;
 import sun.misc.URLClassPath;
 

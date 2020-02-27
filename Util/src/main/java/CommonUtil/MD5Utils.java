@@ -6,7 +6,7 @@ import java.security.NoSuchAlgorithmException;
 
 public class MD5Utils {
 	/**
-	 * Md5加密
+	 * Md5
 	 */
 	public static String md5(String plainText) {
 		byte[] secretBytes = null;

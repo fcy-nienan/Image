@@ -52,4 +52,10 @@ public class LinkUtil {
     public static LinkNode swapPairs(LinkNode node,int x){
 
     }
+
+    public static void main(String[] args) {
+        Thread t=new Thread(()->{
+            System.out.println("sdf");
+        });
+    }
 }

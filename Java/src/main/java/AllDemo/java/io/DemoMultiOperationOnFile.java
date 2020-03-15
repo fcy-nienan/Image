@@ -21,7 +21,7 @@ public class DemoMultiOperationOnFile {
         while (true){
             Thread.sleep(30);
             System.out.println("main thread:"+file.getFilePointer());
-            file.write(48);
+            file.write(48);                                                                                                                                    
         }
     }
     @AllArgsConstructor

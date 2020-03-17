@@ -14,7 +14,7 @@ import scala.xml.Null
 
 object DemoFunction {
   def main(args: Array[String]): Unit = {
-    //    spark()
+        spark()
     //    ListDemo()
     //    ArrayDemo()
 

@@ -14,8 +14,8 @@ public class FileFInd {
         long end;
 
         List<File> allRoot=getAllRoot();
-        String filename="index.html";
-        File file=new File("G:\\");
+        String filename="pom.xml";
+        File file=new File("D:\\");
         ForkJoinPool pool=new ForkJoinPool();
         CountTask countTask=new CountTask(file,filename);
         pool.invoke(countTask);
@@ -25,7 +25,6 @@ public class FileFInd {
 //            System.out.println("Grammer:"+pool.getQueuedTaskCount());
 //            System.out.println("Running:"+pool.getRunningThreadCount());
 //        }while(!countTask.isDone());
-        countTask.join();
         List<String> allFile=countTask.get();
 
         end=System.currentTimeMillis();
@@ -56,18 +55,13 @@ public class FileFInd {
             if(files!=null&&files.length!=0){
                 for(File s:files){
                     if(s.isDirectory()){
-//                    System.out.println("分割任务:"+s.getName());
                         CountTask countTask=new CountTask(s,filename);
-//                        countTask.fork();
                         invokeAll(countTask);
                         List<String> temp=countTask.join();
                         result.addAll(temp);
                     }else{
-//                    System.out.println("file:"+s.getName()+"    filename:"+filename);
-//                    System.out.println(s.getName().equals(filename));
                         if(s.getName().equals(filename)) {
                             String rs = s.getAbsolutePath();
-//                            System.out.println("filename-------------------------------------"+rs);
                             result.add(rs);
                         }
                     }

@@ -1,13 +1,22 @@
 package Advanced.Concurrent.Thread;
 
 import java.util.TreeMap;
-
+/*
+* 线程中断的三个方法
+* 内部有一个flag
+* 返回中断标志
+* Thread.currentThread().isInterrupted();
+* 返回中断标志并清除
+* Thread.interrupted();
+* 设置该线程的中断标志
+* Thread.currentThread().interrupt();
+* */
 public class InterruptDemo {
     public static void main(String[] args)throws Exception {
+
         testT1();
     }
     public static void testT(){
-        Class o;
         System.identityHashCode(new Object());
         T t=new T();
         t.start();

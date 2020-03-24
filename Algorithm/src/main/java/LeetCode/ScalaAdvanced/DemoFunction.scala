@@ -7,6 +7,7 @@ import org.apache.spark.{Partition, SparkConf, SparkContext, TaskContext}
 import scala.collection.mutable
 import java.net.InetAddress
 
+import org.apache.spark.sql.SQLContext
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
@@ -36,12 +37,12 @@ object DemoFunction {
     conf.setAppName("wordCountLocal")
     conf.setMaster("local")
     val sc = new SparkContext(conf)
-    val rdd1=sc.parallelize(1 to 10,3)
-    val l = rdd1.map(e => (e, 1)).reduceByKey((e1, e2) => e1 + e2).count()
-    println(l)
-    while (true) {
-      Thread.sleep(4000)
-    }
+    sc.textFile("/tmp",3)
+    println(sc.defaultMinPartitions)
+    val sql=new SQLContext(sc)
+    sql.read
+    sql.read
+
     sc.stop()
   }
   def stringOutput():Unit={

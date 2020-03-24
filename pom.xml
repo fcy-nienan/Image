@@ -10,7 +10,6 @@
     <modules>
         <module>Algorithm</module>
         <module>Net</module>
-        <module>Parser</module>
         <module>Util</module>
         <module>JAVA</module>
         <module>MiddleWare</module>

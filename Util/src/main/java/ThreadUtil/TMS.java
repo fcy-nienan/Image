@@ -8,4 +8,22 @@ public class TMS {
             e.printStackTrace();
         }
     }
+
+    public static void main(String[] args) {
+        Thread t=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                while (true){
+                    sleep(1000);
+                }
+            }
+        });
+        t.start();
+        while (true){
+            System.out.println(t.isInterrupted());
+            t.interrupt();
+            System.out.println(t.isInterrupted());
+            sleep(1000);
+        }
+    }
 }

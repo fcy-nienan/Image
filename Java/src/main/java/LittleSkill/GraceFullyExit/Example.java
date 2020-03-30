@@ -9,6 +9,16 @@ import java.io.IOException;
  * @author: fcy
  * @date: 2018-11-10  21:34
  */
+/*
+*
+When does the JVM shut down?
+The JVM shuts down when:
+user presses ctrl+c on the command prompt
+System.exit(int) method is invoked
+user logoff
+user shutdown etc.
+*
+* */
 public class Example {
     public static void main(String[] args) throws InterruptedException, IOException {
         invokeShutdownHook();

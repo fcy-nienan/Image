@@ -58,6 +58,7 @@ public class ThreadFactoryMain {
     }
     public static void testReentryLock()throws Exception{
         ReentrantLock reentrantLock=new ReentrantLock();
+         reentrantLock.tryLock();
         Condition condition=reentrantLock.newCondition();
         Thread t1=new Thread(()->{
             for(int i=0;i<100000;i++){

@@ -7,14 +7,14 @@ import java.util.concurrent.TimeUnit;
 
 public class ExchangeDemo {
     public static void main(String[] args) throws InterruptedException {
-        Thread t;
         Exchanger<String> exchanger=new Exchanger<>();
         ThreadPoolExecutor executor=new ThreadPoolExecutor(10,20,0, TimeUnit.MILLISECONDS,new LinkedBlockingQueue<>());
         ThreadA a=new ThreadA(exchanger,"Hello AA");
         ThreadA b=new ThreadA(exchanger,"Hello BB");
         executor.submit(a);
-        executor.submit(b);
         Thread.sleep(1000);
+//        executor.submit(b);
+
         a.dis();
         b.dis();
     }

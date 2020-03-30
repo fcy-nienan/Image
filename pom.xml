@@ -53,7 +53,12 @@
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.13</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>7.0.55</version>
+            <scope>compile</scope>
+        </dependency>
         <!--Dom4j-->
         <dependency>
             <groupId>dom4j</groupId>

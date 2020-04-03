@@ -1,17 +1,33 @@
 package Scala
 
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+
 object fp {
   def main(args: Array[String]): Unit = {
-    val array=Array();
-    val list=List(1,3,5,7,9);
-    val set=Set();
-    val map=Map();
-
-    println(list.drop(1))
-    println(list.filter(_ > 3))
-    println(list.take(3))
-    (1 to 100).map(e=>)
-
-
+    val intToInt = closure()
+    println(intToInt(1))
+    println(intToInt(2))
+    var x=List(1,2,3,4)
+    println(x.aggregate((1, 1))((x, y) => (x._1 + y, x._2 + 1), ((x, y) => (x._1 + y._1, x._2 + 1))))
+  }
+  def closure():(Int)=>Int={
+    var factory=1
+    val x=(x:Int)=>{
+      factory+=1
+      x*factory
+    }
+    x
+  }
+  def k(a:Int)(b:Int)(c:Int):String=a+b+c.toString
+  def g(a: Int)(b: Int): Int = a + b
+  def k(a:Int)(b:Int):Int={
+    a+b
+  }
+  def add(x:Int):Int=>Int=>Int={
+    (y:Int)=>{
+      (z:Int)=>{
+        x+y+z
+      }
+    }
   }
 }

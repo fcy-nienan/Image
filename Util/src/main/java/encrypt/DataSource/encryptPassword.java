@@ -5,7 +5,9 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Base64;
+import java.util.Date;
 
 /*
  * Author:fcy
@@ -47,5 +49,12 @@ public class encryptPassword implements encrypt{
         System.out.println(s);
         String s1 = encryptPassword.decryptPassword(s);
         System.out.println(s1);
+        System.out.println(new Date().getYear()+1900);
+        String[] array=new String[]{"1","2","3"};
+        System.out.println(Arrays.toString(array));
+        String str="birthday|#||#|123";
+        for (String s2 : str.split("\\|#\\|")) {
+            System.out.println("D"+s2);
+        }
     }
 }

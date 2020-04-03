@@ -10,7 +10,7 @@ object fp {
     println(list.drop(1))
     println(list.filter(_ > 3))
     println(list.take(3))
-    (1 to 100).map(e=>)
+
 
 
   }

@@ -11,6 +11,16 @@ import java.nio.charset.Charset;
 public class IOUtil{
     private static String charset=SystemUtil.getFileEncoding();
     private static final String lineSeperator=System.getProperty("line.separator");
+    public static void appendToFile(String path,byte[] content) throws IOException {
+        File file= new File(path);
+        if (!file.exists()){
+            file.createNewFile();
+        }
+        RandomAccessFile randomAccessFile=new RandomAccessFile(file,"rw");
+        randomAccessFile.seek(randomAccessFile.length());
+        randomAccessFile.write(content);
+        randomAccessFile.close();
+    }
     public static void disPlayStream(InputStream inputStream,String charset) throws IOException {
         BufferedReader reader=getBufferedReaderByStream(inputStream);
         String msg=null;

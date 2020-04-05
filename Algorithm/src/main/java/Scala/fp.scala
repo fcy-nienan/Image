@@ -4,11 +4,15 @@ import scala.collection.mutable.{ArrayBuffer, ListBuffer}
 
 object fp {
   def main(args: Array[String]): Unit = {
-    val intToInt = closure()
-    println(intToInt(1))
-    println(intToInt(2))
-    var x=List(1,2,3,4)
-    println(x.aggregate((1, 1))((x, y) => (x._1 + y, x._2 + 1), ((x, y) => (x._1 + y._1, x._2 + 1))))
+    map()
+
+  }
+  def map():Unit={
+    var x=Range(1,10,1).toList
+    var y=Range(100,0,-1).toList
+    println(x.combinations(2).toList)
+    println(Range(1,4,1).toList.permutations)
+
   }
   def closure():(Int)=>Int={
     var factory=1

@@ -11,8 +11,11 @@ import java.nio.charset.Charset;
 import java.util.*;
 @Slf4j
 public class DemoFaker {
-    public static void main (String args[]) throws FileNotFoundException, UnsupportedEncodingException {
-        makeDataForWordCount();
+    private static void faker(){
+        Map<String,String> map=new LinkedHashMap<>();
+        Faker faker=new Faker(Locale.CHINA);
+        map.put("name",faker.name().name());
+
     }
     private static void DemoFaker(){
         Faker faker = new Faker(Locale.CHINA);

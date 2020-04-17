@@ -1,18 +1,28 @@
 package Scala
 
 import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.util.Random
 
 object fp {
   def main(args: Array[String]): Unit = {
-    val array=Array();
-    val list=List(1,3,5,7,9);
-    val set=Set();
-    val map=Map();
+    val a:List[Int] = List(1, 2, 3)
+    val b:List[Int] = List(1, 2, 3)
+    a.eq(b)
+    println(a eq b)
+    a.isEmpty
 
-    println(list.drop(1))
-    println(list.filter(_ > 3))
-    println(list.take(3))
-
+  }
+  def x(x:Int)=x match{
+    case 12=>12
+    case 14=>12
+  }
+  def quickSort(list:List[Int]):List[Int]={
+    if (list.isEmpty) list else quickSort(list.drop(1).filter(_<list.head)):::list.head::quickSort(list.drop(1).filter(_>list.head))
+  }
+  def sum(x:Int):Int={
+    if (x==0)return 0
+    else if (x==1)return 1;
+    else sum(x-1)+x
   }
   def map():Unit={
     var x=Range(1,10,1).toList

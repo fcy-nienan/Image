@@ -20,11 +20,12 @@ public class Reader {
     private StringBuilder strToken=new StringBuilder();
     private int index=0;
     RandomAccessFile randomAccessFile;
-    static final String fileName="H:\\Thread1.txt";
+    static final String fileName="F:\\Thread.txt";
     public void init(String name){
         try {
             randomAccessFile=new RandomAccessFile(name,"rw");
         } catch (FileNotFoundException e) {
+            e.printStackTrace();
             System.out.println("File Not Found!");
         }
     }

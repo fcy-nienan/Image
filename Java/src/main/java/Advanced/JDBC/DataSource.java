@@ -3,11 +3,12 @@ package Advanced.JDBC;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Enumeration;
 import java.util.Properties;
+import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @descripiton:
@@ -46,7 +47,7 @@ public class DataSource {
 
     private void loadFile(String name) throws IOException {
         pro=new Properties();
-        InputStream is =getClass().getResourceAsStream(name);
+        InputStream is =getClass().getResourceAsStream("/"+name);
         try {
             pro.load(is);
         } catch (IOException e) {
@@ -122,9 +123,33 @@ public class DataSource {
             return null;
         }
     }
-    public static void main(String[] args) throws IOException {
-        System.out.println(DataSource.class.getPackage().getName());
-        URL url=DataSource.class.getProtectionDomain().getCodeSource().getLocation();
-        System.out.println(url.getPath());
+    public static void main(String[] args) throws Exception {
+        ThreadPoolExecutor executor=new ThreadPoolExecutor(300,400,60, TimeUnit.SECONDS,new ArrayBlockingQueue(10));
+        for (int i=0;i<1;i++){
+            executor.submit(new Runnable() {
+                @Override
+                public void run(){
+                    try {
+                        DataSource dataSource = new DataSource();
+                        Connection connection = dataSource.getConnection();
+                        connection.setAutoCommit(false);
+                        String sql = "insert into user values(0,?,?)";
+                        PreparedStatement statement = connection.prepareStatement(sql);
+                        for(int i=0;i<10000;i++) {
+                            statement.setString(1,"username:"+i);
+                            statement.setString(2,"password:"+i);
+                            int i1 = statement.executeUpdate();
+                            System.out.printf("insert %d rows!\r\n",i1);
+                        }
+                        connection.commit();
+                        System.out.println(Thread.currentThread().getName()+":execute:"+1000);
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            });
+        }
+        executor.shutdown();
+
     }
 }

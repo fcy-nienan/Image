@@ -5,6 +5,7 @@ import redis.clients.jedis.*;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.UUID;
 
 /**
  * @descripiton:
@@ -112,6 +113,60 @@ public class RedisUtil {
 
         }else{
             throw new UnsupportedOperationException("Operation is InValid!");
+        }
+    }
+    private Jedis jedis= pool.getResource();
+    private ThreadLocal<String> local=new ThreadLocal<>();
+    private ThreadLocal<Integer> integerThreadLocal=new ThreadLocal<>();//解决锁重入
+    private ThreadLocal<Thread> extension=new ThreadLocal<>();
+    //程序运行    开发集成    业务 (阻塞和非阻塞(自旋))
+    public boolean lock1(){
+        String s1 = local.get();
+        if (s1==null) {
+            String s = UUID.randomUUID().toString();
+            local.set(s);//锁和当前线程挂钩,避免其他线程调用unlock1方法
+            String lock = jedis.set(s + "lock", "1", "", "", 30);
+            integerThreadLocal.set(integerThreadLocal.get() == null ? 1 : integerThreadLocal.get() + 1);
+            //锁设置了30秒,但如果业务方法是30秒以上呢?所以锁需要续命
+            Thread t = new Thread(() -> {
+                while (true) {
+                    try {
+                        Thread.sleep(10000);
+                        jedis.set(s + "lock", "1", "", "", 10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        break;
+                    }
+                }
+            });
+            t.start();
+            extension.set(t);
+        }else{
+            integerThreadLocal.set(integerThreadLocal.get()==null?1:integerThreadLocal.get()+1);
+            return true;
+        }
+        return true;
+    }
+    public void unlock1(){
+        String s = local.get();
+        if (s!=null) {
+            int integer = integerThreadLocal.get();
+            if (integer>1) {
+                integerThreadLocal.set(integer-1);
+            }else if(integer==1){
+                jedis.del(s+"lock");
+                integerThreadLocal.set(0);
+                extension.get().interrupt();
+            }
+        }
+    }
+    public void test(){
+        lock1();
+        try{
+
+            //如果在try中直接退出了那么锁就会得不到释放,所以锁需要有一个超时时间
+        }finally {
+            unlock1();
         }
     }
 }

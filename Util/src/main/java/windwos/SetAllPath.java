@@ -8,7 +8,7 @@ public class SetAllPath {
 
     public static void main (String args[]) throws IOException, InterruptedException {
         String allBinPath="D:\\ScheduledTask\\AllBInPath";
-        BufferedReader reader= IOUtil.getBufferedReader(allBinPath);
+        BufferedReader reader= IOUtil.BufferedReader(allBinPath);
         StringBuilder builder=new StringBuilder();
         String msg=null;
         while ((msg=reader.readLine())!=null){

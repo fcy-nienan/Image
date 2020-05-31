@@ -2,26 +2,60 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>Image</artifactId>
-        <groupId>fcy</groupId>
-        <version>1.0-SNAPSHOT</version>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <artifactId>Util</artifactId>
 
+    <groupId>fcy</groupId>
+    <artifactId>Util</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
     <dependencies>
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.48</version>
-        </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
             <version>1.12</version>
         </dependency>
-    </dependencies>
 
+        <!--lombok注解-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.14.4</version>
+        </dependency>
+        <!--slf4j-->
+        <!--日志接口定义-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
+        <!--日志接口实现-->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>7.0.55</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <distributionManagement>
+<!--        <repository>-->
+<!--            &lt;!&ndash;id的名字可以任意取，但是在setting文件中的属性<server>的ID与这里一致&ndash;&gt;-->
+<!--            <id>releases</id>-->
+<!--            &lt;!&ndash;指向仓库类型为host(宿主仓库）的储存类型为Release的仓库&ndash;&gt;-->
+<!--            <url>http://localhost:8081/nexus/repository/fcy-release/</url>-->
+<!--        </repository>-->
+        <snapshotRepository>
+            <id>snapshots</id>
+            <!--指向仓库类型为host(宿主仓库）的储存类型为Snapshot的仓库-->
+<!--            <url>http://localhost:8081/nexus/repository/fcy-snapshot/</url>-->
+            <url>http://120.79.158.25:8096/nexus/repository/fcy-snapshot/</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

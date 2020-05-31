@@ -10,7 +10,7 @@ public class DemoGroupBy {
     public static void main(String args[]) throws Exception {
         Table table = TableOps.getTable(5, 5);
         displayTable(table);
-        TableOps.groupBy(table,1);
+        TableOps.groupBy(table,2);
 
     }
     private static void displayTable(Table table){

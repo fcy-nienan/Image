@@ -7,9 +7,6 @@ import java.util.zip.GZIPInputStream;
 import java.util.zip.GZIPOutputStream;
 
 public class Gzip {
-    public static void main(String[] args) {
-
-    }
     public static byte[] compress(String str, String encoding) {
         if (str == null || str.length() == 0) {
             return null;

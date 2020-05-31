@@ -3,10 +3,8 @@ package CommonUtil;
 import java.util.Random;
 
 public class StringUtil {
-    public static void main (String args[]) {
-        for (int i=0;i<10;i++){
-            System.out.println(getRandomString(10,true));
-        }
+    public static boolean isNotBlank(String s){
+        return "".equals(s);
     }
     public static String getRandomNumber(int len){
         Random random=new Random();

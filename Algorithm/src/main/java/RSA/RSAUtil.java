@@ -95,8 +95,9 @@ public class RSAUtil {
 		//System.out.println(toByte("nienan"));
 		//RSA();
 		RSAUtil.generateKeyPair();
+		String x=RSAUtil.encrypt("username");
 		System.out.println(RSAUtil.encrypt("username"));
-		System.out.println(RSAUtil.decrypt("password"));
+		System.out.println(RSAUtil.decrypt(x));
 	}
 	public static Integer StringToInt(String str){
 		int result=0;

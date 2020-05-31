@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-public class DecimalUtil {
+public class BitUtil {
     public static void main (String args[]) throws IOException {
         int i=11111;
         byte[] bytes=null;
@@ -86,6 +86,22 @@ public class DecimalUtil {
                 (bytes[2]&0xff<<8)|
                 (bytes[3]&0xff);
     }
+    private static byte[] i2b(int i){
+        byte[] bytes=new byte[4];
+        bytes[0]=(byte)((i>>24)&0xff);
+        bytes[1]=(byte)((i>>16)&0xff);
+        bytes[2]=(byte)((i>>8)&0xff);
+        bytes[3]=(byte)(i&0xff);
+        return bytes;
+    }
+    private static int b2i(byte[] bytes){
+
+        int i=(bytes[0]&0xff)<<24;
+        i+=(bytes[1]&0xff)<<24;
+        i+=(bytes[2]&0xff)<<8;
+        i+=(bytes[3]&0xff);
+        return i;
+    }
     private static byte[] intToBytesLittle(int i){
         byte[] bytes=new byte[4];
         bytes[3]=(byte)(i>>>24&0xff);
@@ -101,5 +117,22 @@ public class DecimalUtil {
         bytes[2]=(byte)(i>>>8&0xff);
         bytes[3]=(byte)(i&0xff);
         return bytes;
+    }
+    public static int setOne(int i,int index){
+        return i|(1<<index);
+    }
+    public static int cleanZero(int i,int index){
+        return i&~(1<<index);
+    }
+    public static int StringToBinary(String str){
+        int r=0;
+        char[] chars=str.toCharArray();
+        for (int i=0;i<chars.length;i++) {
+            char aChar=chars[i];
+            if (aChar=='1'){
+                r|=(1<<i);
+            }
+        }
+        return r;
     }
 }

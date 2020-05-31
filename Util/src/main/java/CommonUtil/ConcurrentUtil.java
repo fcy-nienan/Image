@@ -1,5 +1,7 @@
 package CommonUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -10,6 +12,7 @@ import java.util.concurrent.*;
  * @author: fcy
  * @date: 2018-11-18  20:44
  */
+@Slf4j
 public class ConcurrentUtil {
     private static final long FutureResultSleep=3000;
     public static void main(String[] args) {
@@ -50,9 +53,13 @@ public class ConcurrentUtil {
                     try{
                         for(int i=0;i<futureList.size();i++){
                             Future future=futureList.get(i);
+                            if (future.isCancelled()){
+                                size++;
+                                continue;
+                            }
                             if (future.isDone()&&!future.isCancelled()){
                                 Object tmpR=future.get();
-                                System.out.println("One Thread Finished!---Result:"+future.get());
+                                log.info("finished and result is %d !",tmpR);
                                 size++;
                                 result.add(tmpR);
                                 futureList.remove(future);
@@ -66,8 +73,7 @@ public class ConcurrentUtil {
                     if (size>=real)
                         break;
                 }
-                System.out.println("All Thread is Finished!--ThreadCount:"+size);
-                System.out.println("Total Result:"+result);
+                log.info("All Thread is Finished!--ThreadCount: %d ",size);
                 return result;
             }
         };

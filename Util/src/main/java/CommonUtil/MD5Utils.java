@@ -5,9 +5,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MD5Utils {
-	/**
-	 * Md5
-	 */
 	public static String md5(String plainText) {
 		byte[] secretBytes = null;
 		try {
@@ -21,18 +18,5 @@ public class MD5Utils {
 			md5code = "0" + md5code;
 		}
 		return md5code;
-	}
-	
-	public static void main(String[] args) {
-		String p1=md5("nienan19970219");
-		String p2=md5("NIENAN19970219");
-		String p3=md5("nienan19970229");
-		System.out.println(p1);
-		System.out.println(p2);
-		System.out.println(p3);
-		System.out.println(p1.equals(p2));
-		System.out.println(p1.equals(p3));
-		System.out.println(md5("nienan19970219"));
-		System.out.println(md5("1"));
 	}
 }

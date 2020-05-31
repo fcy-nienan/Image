@@ -13,7 +13,7 @@ public class ConnectionSource {
         String host="127.0.0.1";
         String username="root";
         String password="838502";
-        String database="sso";
+        String database="fcy";
         String drivername="com.mysql.jdbc.Driver";
         String url="jdbc:mysql://"+host+":3306"+"/"+database+"?"+"useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false";
         Connection connection=null;

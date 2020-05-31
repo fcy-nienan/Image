@@ -19,8 +19,8 @@ public class ClearBuilder {
         new Runner(options).run();
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
-    public static void remove(){
+    @BenchmarkMode(Mode.Throughput)
+    public static void delete(){
         StringBuilder builder=new StringBuilder();
         for (int i=0;i<10000;i++){
             builder.append(StringUtil.getRandomString(10,true));
@@ -28,7 +28,7 @@ public class ClearBuilder {
         builder.delete(0,builder.length());
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.Throughput)
     public static void setLength(){
         StringBuilder builder=new StringBuilder();
         for (int i=0;i<10000;i++){
@@ -37,12 +37,17 @@ public class ClearBuilder {
         builder.setLength(0);
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.Throughput)
     public static void newObject(){
         StringBuilder builder=new StringBuilder();
         for (int i=0;i<10000;i++){
             builder.append(StringUtil.getRandomString(10,true));
         }
-        builder=new StringBuilder();
+        builder=null;
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans-3.0.xsd" default-autowire="byName">
+
+    <bean id="user" class="com.fcy.Demo.Bean.User" init-method="initMethod">
+        <constructor-arg name="username" value="Hello! My name is Java"/>
+        <constructor-arg name="password" value="1234556"/>
+    </bean>
+    <alias name="user" alias="User"/>
+    <bean id="beanFactoryPostProcess"
+          class="com.fcy.Demo.PostProcess.CustomerBeanFactoryPostProcess"
+          lazy-init="false"
+    >
+    </bean>
+    <bean id="beanPostProcess"
+          class="com.fcy.Demo.PostProcess.CustomerBeanPostProcess"
+          lazy-init="false"
+          ></bean>
+</beans>

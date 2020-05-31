@@ -3,7 +3,11 @@ package CustomerLockDemo;
 import sun.misc.DoubleConsts;
 
 import java.io.File;
-
+/*
+* 当JVM发现某个方法或代码块运行特别频繁的时候，
+* 就会认为这是“热点代码”（Hot Spot Code)。然后JIT会把部分“热点代码”编译成本地机器相关的机器码，
+* 并进行优化，然后再把编译后的机器码缓存起来，以备下次使用。
+* */
 public class TestNative {
     public static void main(String args[]) throws InterruptedException {
         testNative();
@@ -34,7 +38,7 @@ public class TestNative {
         long ttt2 = System.currentTimeMillis();
         System.out.println(ttt2 - ttt1 + "ms");
     }
-    public static long doubleToLongBits(double value) {
+    private static long doubleToLongBits(double value) {
         long result =Double.doubleToRawLongBits(value);
         if ( ((result & DoubleConsts.EXP_BIT_MASK) ==
                 DoubleConsts.EXP_BIT_MASK) &&

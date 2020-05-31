@@ -13,20 +13,21 @@ import java.util.Random;
 import java.util.logging.Logger;
 
 import static org.openjdk.jmh.annotations.Mode.AverageTime;
+import static org.openjdk.jmh.annotations.Mode.Throughput;
 
 public class MainTest {
     private static MethodBody body=new MethodBody();
     private static Logger logger = Logger.getLogger(MainTest.class.getName());
     @Benchmark
-    @BenchmarkMode(AverageTime)
-    public String invoke() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
+    @BenchmarkMode(Throughput)
+    public String reflectInvoke() throws InvocationTargetException, IllegalAccessException, NoSuchMethodException {
         Method clazz=MethodBody.class.getDeclaredMethod("computeUUID");
         Object result=clazz.invoke(body);
         return (String) result;
     }
     @Benchmark
-    @BenchmarkMode(AverageTime)
-    public String invoke1(){
+    @BenchmarkMode(Throughput)
+    public String normalInvoke(){
         return body.computeUUID();
     }
     public static void main(String args[]) throws Exception {

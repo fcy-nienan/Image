@@ -22,7 +22,7 @@ public class TestStringContact {
         new Runner(options).run();
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.Throughput)
     public static void testAdd(){
         String s="";
         for(int i=0;i<10000;i++){
@@ -30,7 +30,7 @@ public class TestStringContact {
         }
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.Throughput)
     public static void testConcat(){
         String s="";
         for(int i=0;i<10000;i++){
@@ -38,16 +38,11 @@ public class TestStringContact {
         }
     }
     @Benchmark
-    @BenchmarkMode(Mode.AverageTime)
+    @BenchmarkMode(Mode.Throughput)
     public static void testBuilder(){
         StringBuilder builder=new StringBuilder();
         for(int i=0;i<10000;i++){
             builder.append(i);
         }
-    }
-    public static void testContact(){
-
-
-
     }
 }

@@ -16,6 +16,7 @@
         <module>Experiment</module>
         <module>spring</module>
         <module>WebDemo</module>
+        <module>pratice</module>
     </modules>
 
     <dependencies>

@@ -1,9 +1,7 @@
-package com.fcy.Demo.PostProcess;
+package com.spring.PostProcess;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-
-import java.util.logging.Logger;
 
 public class CustomerBeanPostProcess implements BeanPostProcessor {
 

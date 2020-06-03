@@ -15,6 +15,7 @@
         <module>MiddleWare</module>
         <module>Experiment</module>
         <module>spring</module>
+        <module>WebDemo</module>
     </modules>
 
     <dependencies>

@@ -1,6 +1,4 @@
-package com.fcy.Demo.Bean;
-
-import java.util.logging.Logger;
+package com.spring.Bean;
 
 public class User {
     private String username;

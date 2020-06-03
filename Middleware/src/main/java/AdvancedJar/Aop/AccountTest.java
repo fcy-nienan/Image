@@ -8,6 +8,7 @@ public class AccountTest {
 
     private Account account;
     public static void main(String[] args) {
+
     }
     @Test
     public  void testTemplate() {

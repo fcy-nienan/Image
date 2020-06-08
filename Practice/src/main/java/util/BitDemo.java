@@ -1,4 +1,4 @@
-package skill;
+package util;
 
 import java.lang.reflect.Field;
 

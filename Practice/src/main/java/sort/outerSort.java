@@ -41,9 +41,9 @@ public class outerSort extends AbstractSort {
         instance.cost("prepareFile");
         SplitFile.splitFile(file, splitPath, splitLine);
         instance.cost("splitFile");
-        SortFile.sortAllFile(splitPath,LINE_COUNT,100, SortFile.TaskNumThreshold);
+        SortFile.sortAllFile(splitPath,LINE_COUNT,1, SortFile.TaskNumThreshold);
         instance.cost("sortAllFile");
-        Rename.cpDirAndRename(orderPath,mergePath,20);
+        Rename.cpDirAndRename(orderPath,mergePath,1);
         instance.cost("cpDirAndRename");
         MergeFile.mergeFile(mergePath,0,0);
         instance.cost("mergeAllFile");
@@ -111,7 +111,12 @@ public class outerSort extends AbstractSort {
             String[] split = msg.split(",");
             int[] intArr=new int[split.length];
             for (int i = 0; i < split.length; i++) {
-                intArr[i]=Integer.parseInt(split[i]);
+                try {
+                    intArr[i] = Integer.parseInt(split[i]);
+                }catch (Exception e){
+                    System.out.println(msg);
+                    System.exit(0);
+                }
             }
             return intArr;
         }
@@ -309,8 +314,8 @@ public class outerSort extends AbstractSort {
         public static void mergeTwoFile(String onePath,String twoPath,String mergedFilePath,int level,int id)throws Exception{
             File file1=new File(onePath);
             File file2=new File(twoPath);
-            MergedBufferedReader one=new MergedBufferedReader(IOUtil.BufferedReader(file1,40960000));
-            MergedBufferedReader two=new MergedBufferedReader(IOUtil.BufferedReader(file2,40960000));
+            MergedBufferedReader one=new MergedBufferedReader(IOUtil.BufferedReader(file1,40960));
+            MergedBufferedReader two=new MergedBufferedReader(IOUtil.BufferedReader(file2,40960));
             String mergeFileName= Rename.getMergeFileName(level,id);
             BufferedWriter writer=IOUtil.BufferedWriter(mergedFilePath+mergeFileName);
             int[] temp=new int[(int) LINE_COUNT];
@@ -410,7 +415,7 @@ public class outerSort extends AbstractSort {
 //        每个线程处理平均任务数量+1 ,最后一个线程处理剩下很少的个数
 //        第二种  100/9=11   0-11 11-22 22-33 33-44 44-55 55-66 66-77 77-88 88-100
 //        前八个线程处理9个,最后一个线程处理最后所有的
-//        如果数组大小3   线程数量9   此时不应该开启过多线程   需要设置一个阈值  规定每个线程最少处理10个文件的排序
+//        如果数组大小3   线程数量9   此时不应该开启过多线程   设置一个阈值  规定每个线程最少处理10个文件的排序
 //        选择第一种  因为第二种可能存在最后一个任务处理将近两倍的任务数量
         public static void sortAllFile(String path,int lineCount,int threadNum,int threshold) throws Exception {
             log.info("----------------------------------------------------------------------------------------------");
@@ -537,6 +542,9 @@ public class outerSort extends AbstractSort {
 
 
     public static class PrepareFile{
+        public static void PrepareFile(int numCount) throws IOException {
+            PrepareFile(file,Integer.MAX_VALUE,numCount,LINE_COUNT);
+        }
         //造数据
         public static void PrepareFile(String path,int maxValue,int numCount,int lineCount) throws IOException {
             log.info("----------------------------------------------------------------------------------------------");

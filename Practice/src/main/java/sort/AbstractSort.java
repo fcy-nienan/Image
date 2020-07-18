@@ -10,6 +10,7 @@ public abstract class AbstractSort {
     protected List<String> disOrderList=new ArrayList();
     protected List<String> sequenceList=new ArrayList();
     protected List<String> reserveList=new ArrayList();
+    protected List<String> allEqualList=new ArrayList<>();
     protected List<int[]> sortedList=new ArrayList<>();
     protected List<int[]> srcList=new ArrayList<>();
     protected List<Integer> arrayType=new ArrayList<>();
@@ -28,7 +29,7 @@ public abstract class AbstractSort {
     public void execute(){
         long start=System.nanoTime();
         long mstart=System.currentTimeMillis();
-        int sequenceOrder=0,reserveOrder=0,disOrder=0,sortCount=this.sortCount,arrayLen=this.arrayLen;
+        int sequenceOrder=0,reserveOrder=0,disOrder=0,allEqualOrder=0,sortCount=this.sortCount,arrayLen=this.arrayLen;
         for(int i=0;i<sortCount;i++) {
             int[] array = sortUtil.produceArray(arrayLen);
             srcList.add(Arrays.copyOf(array,array.length));
@@ -51,13 +52,16 @@ public abstract class AbstractSort {
             } else if (orderType == 1) {
                 sequenceOrder++;
                 sequenceList.add(Arrays.toString(array));
+            }else if (orderType==2){
+                allEqualOrder++;
+                allEqualList.add(Arrays.toString(array));
             } else {
                 reserveOrder++;
                 reserveList.add(Arrays.toString(array));
             }
         }
 
-        System.out.printf("array len: %s --  total count: %s --  sequence order: %s --  reserve order: %s  --  disorder: %s  \r\n",arrayLen,sortCount,sequenceOrder,reserveOrder,disOrder);
+        System.out.printf("array len: %s --  total count: %s --  sequence order: %s -- allEqual order: %s -- reserve order: %s  --  disorder: %s  \r\n",arrayLen,sortCount,sequenceOrder,allEqualOrder,reserveOrder,disOrder);
         System.out.printf("cost time: %s nano  %s  million \r\n",(end-start),(mend-mstart));
         for (int i = 0; i < arrayType.size(); i++) {
             if (arrayType.get(i)==0){

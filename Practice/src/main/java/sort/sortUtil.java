@@ -12,7 +12,7 @@ public class sortUtil {
         array[j]=tmp;
     }
     //    判断一个数组是否有序?
-//    返回值:-1逆序  0无序   1 正序
+//    返回值:-1逆序  0无序   1 正序  2 全等
 //    这个判断数组是否有序的程序更加合理
 //    首先是断言数组不为空,其次是如果数组是正序的或者逆序的那么是必须遍历数组所有成员的
 //    但如果数组是无序的那么就只要发现数组前面的顺序和后面的顺序不相同就返回0,省去了遍历剩余的元素
@@ -23,7 +23,7 @@ public class sortUtil {
         if (array.length<2)return 1;
         int prev=array[0];
         boolean allEqual=true;
-        int b=array[0]<array[array.length-1]?1:-1;
+        int b=array[0]<array[array.length-1]?1:-1;//这一步可以多取几个样本
 
         if (b==1){//或许是正序
             for (int i=1;i<array.length;i++){
@@ -41,7 +41,7 @@ public class sortUtil {
                     allEqual=false;
                 }
             }
-            if (allEqual)return 1;
+            if (allEqual)return 2;
             return b;
         }
 

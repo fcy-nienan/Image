@@ -11,7 +11,13 @@ public class LinkUtil {
         }
         System.out.print("null\r\n");
     }
-
+    public static int lengthRecursive(ListNode head,int current){
+        if (head==null)return current;
+        return lengthRecursive(head.next, current + 1);
+    }
+    public static int lengthRecursive(ListNode head){
+        return lengthRecursive(head,0);
+    }
     public static int length(ListNode head){
         ListNode p=head;
         int len=0;

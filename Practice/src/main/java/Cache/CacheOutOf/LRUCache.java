@@ -6,6 +6,7 @@ import java.util.LinkedList;
 import java.util.logging.Logger;
 
 public class LRUCache {
+    //维护插入顺序
     private LinkedList<Entry> linkedList=new LinkedList();
     private HashMap<String,Entry> map=new HashMap();
     private int capacity;

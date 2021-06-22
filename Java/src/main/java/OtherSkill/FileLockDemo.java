@@ -2,9 +2,11 @@ package OtherSkill;
 
 import java.io.*;
 import java.nio.channels.FileLock;
+import java.util.concurrent.ThreadPoolExecutor;
 
 public class FileLockDemo {
     public static void main (String args[]) throws IOException, InterruptedException {
+        ThreadPoolExecutor executor;
         String home=System.getProperty("user.home");
         String path=home+File.separator+"command";
         File file=new File(path);

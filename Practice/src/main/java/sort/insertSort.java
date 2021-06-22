@@ -11,6 +11,17 @@ public class insertSort extends AbstractSort {
         insertSort.execute();
         ListUtil.disListLen(insertSort.disOrderList,5);
     }
+    public static void insertDesc(int[] array){
+        for (int i=1;i<array.length;i++){
+            int temp=array[i];
+            int j=i-1;
+            while (j>=0&&temp>array[j]){
+                array[j+1]=array[j];
+                j--;
+            }
+            array[j+1]=temp;
+        }
+    }
     public static void insertSort(int[] array){
         for(int i=1;i<array.length;i++){
             int tmp=array[i];
@@ -25,6 +36,6 @@ public class insertSort extends AbstractSort {
 
     @Override
     protected void sort(int[] array) {
-        insertSort(array);
+        insertDesc(array);
     }
 }

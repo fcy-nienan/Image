@@ -13,8 +13,8 @@ import java.util.Scanner;
 public class S1 {
     public static void main(String[] args) throws FileNotFoundException {
         boolean debug=false;
-        Scanner inFile=new Scanner(new File("G:\\test.s"));
-        PrintWriter outFile=new PrintWriter("G:\\test.a");
+        Scanner inFile=new Scanner(new File("E:\\test.txt"));
+        PrintWriter outFile=new PrintWriter("E:\\test.a");
 
         outFile.println("; from S1 compiler written by ...");
 

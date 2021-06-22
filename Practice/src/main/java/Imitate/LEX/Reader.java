@@ -56,6 +56,7 @@ public class Reader {
     public void concat(){
         strToken.append((char)c);
     }
+    //后退一步
     public void retract(){
         try {
             randomAccessFile.seek(--index);

@@ -1,11 +1,19 @@
 package stack;
 
+import java.io.File;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class simplifyPath {
     public static void main(String args[]) throws Exception {
-        System.out.println(simplifyPath("/a//b////c/d//././/.."));
+        System.out.println(simplifyPath("/a/b/../c/./d"));
+        System.out.println(simplifyPath("/a/b/../c/./d"));
+
+
+
     }
     public static String simplifyPathII(String path){
         return Paths.get(path).normalize().toString();
@@ -36,15 +44,6 @@ public class simplifyPath {
         }
         builder.deleteCharAt(builder.length()-1);
 
-//        List<String> list=new ArrayList<>();
-//        while (!stack.empty()){
-//            list.add(stack.pop());
-//        }
-//        for(int i=list.size()-1;i>=0;i--){
-//            builder.append(list.get(i));
-//            builder.append("/");
-//        }
-//        builder.deleteCharAt(builder.length()-1);
         return builder.toString();
     }
 

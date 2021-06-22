@@ -11,6 +11,8 @@ public class BitUtil {
     public static void main (String args[]) throws IOException {
         int i=11111;
         byte[] bytes=null;
+        String name="聂楠";
+        System.out.println(bytes2hex02(name.getBytes()));
 //        int to byte
         BigInteger integer=BigInteger.valueOf(i);
         bytes = integer.toByteArray();
@@ -32,6 +34,24 @@ public class BitUtil {
         buffer=ByteBuffer.wrap(bytes);
         buffer.order(ByteOrder.BIG_ENDIAN);
         System.out.println(buffer.getInt());
+
+    }
+    public static String bytes2hex02(byte[] bytes)
+    {
+        StringBuilder sb = new StringBuilder();
+        String tmp = null;
+        for (byte b : bytes)
+        {
+            // 将每个字节与0xFF进行与运算，然后转化为10进制，然后借助于Integer再转化为16进制
+            tmp = Integer.toHexString(0xFF & b);
+            if (tmp.length() == 1)// 每个字节8为，转为16进制标志，2个16进制位
+            {
+                tmp = "0" + tmp;
+            }
+            sb.append(tmp);
+        }
+
+        return sb.toString();
 
     }
     public static int[] byteArrayToIntArray(byte[] bytes){

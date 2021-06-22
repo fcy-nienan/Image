@@ -97,6 +97,7 @@ public class RedisUtil {
                     t.getClass().getInterfaces(),this);
         }
     }
+    //可重入    续命    阻塞使用自旋
     public void lock(){
         long result;
         while((result=getJedisProxy().setnx("state","1"))!=1){

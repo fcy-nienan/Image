@@ -16,7 +16,7 @@ public class Fig1010 {
 //            System.out.println("Wrong number cmd line args");
 //            System.exit(1);
 //        }
-        File file=new File("G:\\test");
+        File file=new File("E:\\test");
         file.createNewFile();
         String content="+ 17 * 2 5";
         FileOutputStream outputStream=new FileOutputStream(file);

@@ -95,7 +95,6 @@ public class BitUtil {
         return bytes;
     }
     private static int b2i(byte[] bytes){
-
         int i=(bytes[0]&0xff)<<24;
         i+=(bytes[1]&0xff)<<24;
         i+=(bytes[2]&0xff)<<8;
@@ -124,15 +123,27 @@ public class BitUtil {
     public static int cleanZero(int i,int index){
         return i&~(1<<index);
     }
-    public static int StringToBinary(String str){
-        int r=0;
-        char[] chars=str.toCharArray();
-        for (int i=0;i<chars.length;i++) {
-            char aChar=chars[i];
-            if (aChar=='1'){
-                r|=(1<<i);
+    public static String bytesToBinary(byte[] bytes){
+        StringBuilder binary = new StringBuilder();
+        for (byte b : bytes)
+        {
+            int val = b;
+            for (int i = 0; i < 8; i++)
+            {
+                binary.append((val & 128) == 0 ? 0 : 1);
+                val <<= 1;
             }
+            binary.append(' ');
         }
-        return r;
+        return binary.toString();
+    }
+    private static final char[] hexCode = "0123456789ABCDEF".toCharArray();
+    public static String bytesToHexString(byte[] bytes){
+        StringBuilder r = new StringBuilder(bytes.length * 2);
+        for (byte b : bytes) {
+            r.append(hexCode[(b >> 4) & 0xF]);
+            r.append(hexCode[(b & 0xF)]);
+        }
+        return r.toString();
     }
 }

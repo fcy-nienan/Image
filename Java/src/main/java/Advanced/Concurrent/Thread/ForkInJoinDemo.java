@@ -28,7 +28,7 @@ public class ForkInJoinDemo {
         watch.start();
         System.out.println(pool.invoke(forkJoinTask));
         watch.stop();
-        System.out.println("forkJoin cost:"+watch.getTime(TimeUnit.SECONDS));
+        System.out.println("forkJoin cost:"+watch.getTime());
         watch.reset();
 
         long sum=0;
@@ -38,7 +38,7 @@ public class ForkInJoinDemo {
         }
         watch.stop();
         System.out.println(sum);
-        System.out.println("normal cost:"+watch.getTime(TimeUnit.SECONDS));
+        System.out.println("normal cost:"+watch.getTime());
     }
     static class ForkJoinTask extends RecursiveTask<Long>{
         private static final int THRESHOLD=10000000;

@@ -24,6 +24,17 @@
             <artifactId>lombok</artifactId>
             <version>1.14.4</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20210307</version>
+        </dependency>
+
+
         <!--slf4j-->
         <!--日志接口定义-->
         <dependency>

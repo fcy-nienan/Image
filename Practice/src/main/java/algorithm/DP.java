@@ -11,7 +11,7 @@ public class DP {
     public int lengthOfLongestSubstring(String s) {
         if(s==null){
             return 0;
-        }DF
+        }
         Map<Character,Integer> map = new HashMap();
 
         int left = 0;
@@ -23,7 +23,7 @@ public class DP {
                 right++;
             }else{
                 left++;
-                map.get(s.charAt(right))
+                map.get(s.charAt(right));
             }
         }
         return right - left;

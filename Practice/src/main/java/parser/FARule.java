@@ -1,4 +1,4 @@
-package DFA;
+package parser;
 
 public class FARule {
     private Object currentState;
@@ -10,6 +10,12 @@ public class FARule {
         this.nextState=nextState;
     }
     public boolean appliesTo(Object currentState,Character character){
+        System.out.println(currentState);
+        System.out.println(character);
+        System.out.println(this.character);
+        if (this.character==null || character==null){
+            return false;
+        }
         return this.currentState.equals(currentState) && this.character.equals(character);
     }
     public Object follow(){

@@ -1,4 +1,4 @@
-package DFA;
+package parser.DFA;
 
 public class DFA {
     private Object currentState;
@@ -18,7 +18,9 @@ public class DFA {
         return false;
     }
     public void readCharacter(char character){
-        currentState = faBook.nextState(currentState,character);
+        Object current = currentState;
+        currentState = faBook.getNextState(currentState,character);
+        System.out.println("current:"+current+"character:"+character+",next:"+currentState);
     }
     public void readString(String str){
         for (int i=0;i<str.length();i++){

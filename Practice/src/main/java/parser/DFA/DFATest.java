@@ -1,4 +1,6 @@
-package DFA;
+package parser.DFA;
+
+import parser.FARule;
 
 import java.util.ArrayList;
 import java.util.List;

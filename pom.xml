@@ -120,16 +120,6 @@
 
     </dependencies>
     <repositories><!-- 代码库 -->
-        <repository>
-            <id>group</id>
-            <!--            <url>http://localhost:8081/nexus/repository/fcy-snapshot/</url>-->
-            <url>http://120.79.158.25:8096/nexus/repository/fcy-group/</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-            </snapshots>
-        </repository>
     </repositories>
     <build>
         <finalName>comparison-data-project</finalName>

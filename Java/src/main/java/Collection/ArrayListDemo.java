@@ -19,13 +19,9 @@ public class ArrayListDemo {
 
 
         ArrayList<String> list=new ArrayList();
-        list.contains(null);
-        Vector vector=new Vector<>();
-        LinkedList linkedList=new LinkedList();
-        System.out.println(new Date().getMonth());
-        Calendar calendar=Calendar.getInstance();
-        int i = calendar.get(Calendar.MONTH);
-        System.out.println(i);
+        list.add("test");
+        list.add("sdfsdf");
+        new HashMap();
 
     }
 }

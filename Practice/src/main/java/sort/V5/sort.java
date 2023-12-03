@@ -6,15 +6,19 @@ package sort.V5;
 import sort.AbstractSort;
 import sort.sortUtil;
 
+import java.util.Arrays;
+
 public class sort extends AbstractSort {
     public static int count=0;
     public static void main(String[] args) {
-        new sort().execute();
+//        new sort().execute();
+        int[] array = new int[]{1,2,3,4,8,1,0,3,9,5};
+        new sort().sort(array);
         System.out.println(count);
     }
     @Override
     protected void sort(int[] array) {
-        shellSort1(array);
+        heapSort(array);
     }
     public static void quickSort(int[] array,int start,int end){
         int low=start,high=end;
@@ -36,9 +40,11 @@ public class sort extends AbstractSort {
         for (int i=array.length/2-1;i>=0;i--){
             adjustHeap(array,i,array.length);
         }
+        System.out.println(Arrays.toString(array));
         for (int i=1;i<array.length;i++){
             sortUtil.swap(array,0,array.length-i);
             adjustHeap(array,0,array.length-i);
+            System.out.println(Arrays.toString(array));
         }
     }
     public static void adjustHeap(int[] array,int current,int len){

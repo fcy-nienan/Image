@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Stack;
 
 public class Traversing {
+    public static void main(String[] args) {
+        Node node = TreeUtil.create(new int[]{1,2,3,4,5,6,7,8});
+        postOrder2(node);
+    }
 //    前序遍历
     public static List<Integer> preOrderStack(Node root){
         List<Integer> list=new ArrayList<>();
@@ -92,5 +96,120 @@ public class Traversing {
             }
         }
         return list;
+    }
+    public static void visit(Node node){
+        System.out.println(node.value);
+    }
+    public static void preOrder(Node root){
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(root);
+        while(!stack.empty()){
+            Node node = stack.pop();
+            visit(node);
+            if (node.right!=null){
+                stack.push(node.right);
+            }
+            if (node.left!=null){
+                stack.push(node.left);
+            }
+        }
+    }
+    public static void inOrder(Node root){
+        Stack<Node> stack = new Stack<Node>();
+        Node current = root;
+        while(current!=null){
+            stack.push(current);
+            current = current.left;
+        }
+        while(!stack.empty()){
+            Node node = stack.pop();
+            visit(node);
+            node = node.right;
+            while(node !=null){
+                stack.push(node);
+                node = node.left;
+            }
+        }
+    }
+    public static void inOrderV1(Node root){
+        Stack<Node> stack = new Stack<Node>();
+        Node current = root;
+        while (current!=null || !stack.isEmpty()){
+            if (current!=null){
+                stack.push(current);
+                current = current.left;
+            }else{
+                visit(current);
+                current = current.right;
+            }
+        }
+    }
+    public static void postOrder(Node root){
+        Stack<Node> stack = new Stack<Node>();
+        Node current = root;
+        stack.push(current);
+        while(!stack.isEmpty()){
+            if (current.right!=null){
+                stack.push(current.right);
+            } else if (current.left != null) {
+                stack.push(current.left);
+            }else{
+                current = stack.pop();
+                visit(current);
+            }
+
+        }
+    }
+
+    public static void preOrder1(Node root){
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(root);
+        while(!stack.isEmpty()){
+            Node node = stack.pop();
+            visit(node);
+            if (node.right!=null){
+                stack.push(node.right);
+            }
+            if (node.left!=null){
+                stack.push(node.left);
+            }
+        }
+    }
+    public static void inOrder1(Node root) {
+        Stack<Node> stack = new Stack<Node>();
+        Node current = root;
+        while (current!=null){
+            stack.push(current);
+            current=current.left;
+        }
+        while (!stack.isEmpty()){
+            current = stack.pop();
+            visit(current);
+            current = current.right;
+            while (current!=null){
+                stack.push(current);
+                current = current.left;
+            }
+        }
+    }
+    public static void postOrder2(Node root){
+        Stack<Node> stack = new Stack<Node>();
+        Stack<Integer> result = new Stack<Integer>();
+        stack.push(root);
+        while (!stack.isEmpty()){
+            Node node = stack.pop();
+            visit(node);
+            result.push(node.value);
+            if (node.left!=null){
+                stack.push(node.left);
+            }
+            if (node.right!=null){
+                stack.push(node.right);
+            }
+        }
+        System.out.println();
+        while (!result.isEmpty()){
+            System.out.println(result.pop());
+        }
     }
 }

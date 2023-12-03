@@ -1,6 +1,5 @@
 package parser;
 
-import org.json.JSONObject;
 
 public class FARule {
     private Object currentState;
